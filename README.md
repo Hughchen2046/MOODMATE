@@ -11,6 +11,7 @@
   - 08/27 建立"Noto Sans TC"字形 (Hugh)
 
 ## 更新請留下日期時間與內容
+  - 08/27 修改文字、間距、圓角、陰影 [DEMO](http://localhost:5173/MOODMATE/pages/utils.html) By Rabbit
 
 ## 指令列表
 - `npm install` - 初次下載該範例專案後，需要使用 npm install 來安裝套件

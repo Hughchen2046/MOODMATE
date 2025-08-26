@@ -615,7 +615,10 @@ $spacers: (
   10: $spacer * 3.5,
   11: $spacer * 4,
   12: $spacer * 4.5
+<<<<<<< HEAD
   // "3xs": 
+=======
+>>>>>>> f8d43a70592e88a1ba36143777a463f4e129c556
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -673,7 +676,7 @@ $icon-link-icon-transform:    translate3d(.25em, 0, 0) !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom:   0; //1rem !default;
 
 
 // Grid breakpoints
@@ -745,8 +748,8 @@ $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               .25rem; //.375rem !default;
-$border-radius-sm:            .5rem; //.25rem !default;
+$border-radius:               .5rem; //.375rem !default;
+$border-radius-sm:            .25rem; //.25rem !default;
 $border-radius-lg:            .75rem; //.5rem !default;
 $border-radius-xl:            1rem !default;
 $border-radius-xxl:           1.25rem; //2rem !default;
@@ -859,7 +862,7 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      0; //$spacer * .5 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        700; //500 !default;
