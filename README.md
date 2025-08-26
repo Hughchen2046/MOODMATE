@@ -1,9 +1,15 @@
 # MOODMATE使用手冊
 
 ## 基本元件
-  - 顏色
+  - 08/27 顏色 (Hugh)
+          建立 $colors $theme-colors
+          建立主色 pricolor
+          建立次色 seccolor
+          更新 indigo,teal,info, danger,warning, success, orange, yellow, green
+          neutral 使用 gray 替代
   - 間距
-  - 08/27 建立"Noto Sans TC"字形
+  - 08/27 建立"Noto Sans TC"字形 (Hugh)
+
 ## 更新請留下日期時間與內容
 
 ## 指令列表
@@ -23,8 +29,3 @@
   - pages # 頁面放置處
 
 - JavaScript 程式碼可寫在 main.js 檔案
-
-### 注意事項
-- 已將 pages 資料夾內的 index.html 預設為首頁，建議不要任意修改 index.html 的檔案名稱
-- .gitignore 檔案是用來忽略掉不該上傳到 GitHub 的檔案（例如 node_modules），請不要移除 .gitignore
-
