@@ -8,6 +8,7 @@
           更新 indigo,teal,info, danger,warning, success, orange, yellow, green
           neutral 使用 gray 替代
   - 08/27 建立"Noto Sans TC"字形 (Hugh)
+  - 08/28 新增_button.scss
 
 ## 更新請留下日期時間與內容
   - 08/27 修改文字、間距、圓角、陰影 [DEMO](http://localhost:5173/MOODMATE/pages/utils.html) By Rabbit

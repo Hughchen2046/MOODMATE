@@ -8,8 +8,9 @@
   top: 0;
   left: 0;
   width: 100%;              /* 讓它撐滿螢幕 */
-  background: transparent;  /* 背景透明 */
   z-index: 1030;            /* 確保在最上層 */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+
 }
 .container-mobile{
   padding-left: 24px;

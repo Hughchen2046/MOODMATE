@@ -859,6 +859,15 @@ $font-sizes: (
 ) !default;
 // scss-docs-end font-sizes
 
+@each $name, $size in $font-sizes {
+  .fs-#{$name} {
+    font-size: $size !important;
+    @if str-index(#{$name}, "t") {
+      line-height: $line-height-base;
+    }
+  }
+}
+
 // scss-docs-start headings-variables
 $headings-margin-bottom:      0; //$spacer * .5 !default;
 $headings-font-family:        null !default;

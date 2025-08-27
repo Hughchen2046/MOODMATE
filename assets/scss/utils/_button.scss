@@ -1,0 +1,16 @@
+
+.btn-image{
+    padding: 0;
+    overflow: hidden;
+    border-radius: 1000px;
+    background: radial-gradient(50% 50% at 50% 50%, #FDF3E6 74.53%, #F5DDBD 100%);
+    border: 1px solid #DEBC8D;
+    &:focus{
+        border: 1px solid #DEBC8D !important;
+        box-shadow: none;
+    }
+    &.active, &:active{
+        border: 1px solid #DEBC8D !important;
+        box-shadow: 0px 4px 24px 0px #00000026 !important;
+    }
+}

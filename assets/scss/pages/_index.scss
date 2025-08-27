@@ -6,3 +6,25 @@
   background-position: center;  /* 置中 */
   background-repeat: no-repeat; /* 不重複 */
 }
+.user-image{
+    width: 52px;
+    height: 52px;
+}
+.character-image{
+  width: 100%;
+}
+.pt-160{
+  padding-top: 160px;
+}
+.talk-bubble{
+  position:absolute;
+  min-width: 200px;
+  max-width: 342px;
+  top: 48.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  padding: 24px 12px;
+  background-color: #FFF3EE;
+  box-shadow: 0px 4px 8px 0px #0000000D;
+}
