@@ -1,8 +1,8 @@
-.index-title {
-  font-size: 100px;
-}
-.box,.box-1{
-  display: block;
-  width: 100px;
-  height: 100px;
+.index-background {
+  min-height: 100vh; /* 直接至少吃滿一個視窗高度 */
+  min-width: 100%;
+  background-image: url(/assets/images/chat/homegape_backgorund.png);
+  background-size: cover;       /* 背景圖填滿容器 */
+  background-position: center;  /* 置中 */
+  background-repeat: no-repeat; /* 不重複 */
 }

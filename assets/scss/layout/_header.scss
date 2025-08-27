@@ -3,3 +3,16 @@
   line-height: 22px;
   letter-spacing: -0.41px;
 }
+.nav-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;              /* 讓它撐滿螢幕 */
+  background: transparent;  /* 背景透明 */
+  z-index: 1030;            /* 確保在最上層 */
+}
+.container-mobile{
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 auto;
+}

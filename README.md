@@ -7,7 +7,6 @@
           建立次色 seccolor
           更新 indigo,teal,info, danger,warning, success, orange, yellow, green
           neutral 使用 gray 替代
-  - 間距
   - 08/27 建立"Noto Sans TC"字形 (Hugh)
 
 ## 更新請留下日期時間與內容
