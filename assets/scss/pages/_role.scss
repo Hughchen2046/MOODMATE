@@ -1,0 +1,44 @@
+.page-role {
+    color: #64483E;
+    min-height: 100vh;
+    // 設定背景漸層色
+    background: linear-gradient(180deg, #FFF4E5 0%, #FFFFFF 100%) !important;
+}
+
+.role-wrapper {
+    margin-top: 48px;
+}
+
+.welcome-img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.text-default-color {
+    color: #64483E;
+}
+
+.py-148 {
+    padding-top: 148px;
+    padding-bottom: 148px;
+}
+
+.mb-14 {
+    margin-bottom: 14px;
+}
+
+.scroll-bar {
+    padding-top: 21px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    .bar-item {
+        width: 134px;
+        height: 5px;
+        background-color: $gray-400;
+        border-radius: 100px;
+    }
+}

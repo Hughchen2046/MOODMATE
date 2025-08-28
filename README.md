@@ -1,5 +1,12 @@
 # MOODMATE使用手冊
 
+## 更新 Layout
+ - 08/28 header.ejs 移除 text-white
+         _header.scss 新增 page-index(role)類別，當手機狀態列顏色不同時使用
+         index.html body 新增類別 page-index
+         新增角色核心頁面 role.html
+         By Tetsu
+
 ## 基本元件
   - 08/27 顏色 (Hugh)
           建立 $colors $theme-colors
