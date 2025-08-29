@@ -507,6 +507,12 @@ $theme-colors: map-merge(
     "seccolor":  $seccolor
   )
 );
+@each $name, $color in $pricolors {
+  $short: str-replace($name, "pricolor", "primary");
+  .text-#{$short} { color: $color !important; }
+  .bg-#{$short} { background-color: $color !important; }
+}
+
 
 // scss-docs-start theme-text-variables
 $primary-text-emphasis:   shade-color($primary, 60%) !default;

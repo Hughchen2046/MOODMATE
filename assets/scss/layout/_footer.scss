@@ -1,8 +1,7 @@
 
 
 .nav-footer{
-  
-  width: calc(100vw - 48px);
+  width: calc(100% - 48px);
   margin-left: 24px;
   margin-right: 24px;
   position: fixed;
@@ -53,4 +52,16 @@
   height: 56px;
   left: -7px;
   top: -25.5px;
+}
+
+.icon-add{
+  background: linear-gradient(180deg, #4DB1B4 0%, #51B6A1 41.83%, #379DA2 100%);
+  border-radius: 1000px;
+  padding: 6px;
+  border: 4px solid white;
+}
+.icon-add-position{
+  position: absolute;
+  bottom: 17px;
+  transform: translateX(-17px);
 }
