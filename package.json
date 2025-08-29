@@ -15,6 +15,7 @@
     "vite-plugin-ejs": "^1.7.0"
   },
   "dependencies": {
+    "@material/web": "^2.4.0",
     "bootstrap": "^5.3.6",
     "gh-pages": "^5.0.0",
     "glob": "^10.2.2",
