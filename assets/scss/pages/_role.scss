@@ -35,10 +35,11 @@
     padding-bottom: 8px;
     display: flex;
     justify-content: center;
-    .bar-item {
-        width: 134px;
-        height: 5px;
-        background-color: $gray-400;
-        border-radius: 100px;
-    }
+}
+
+.bar-item {
+    width: 134px;
+    height: 5px;
+    background-color: $gray-400;
+    border-radius: 1000px;
 }
