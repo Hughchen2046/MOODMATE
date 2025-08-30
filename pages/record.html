@@ -17,12 +17,13 @@
             <div class="container-mobile">
                 <div class="d-flex justify-content-between align-items-center pt-12 pb-5 text-white">
                     <button type="button" class="btn" id="back-index"
-                        onclick="location.href='/MOODMATE/pages/index.html'"><span
+                        onclick="location.href='index.html'"><span
                             class="material-symbols-outlined h5 text-white">arrow_back</span></button>
                     <h6 id="date-todayheading">
                     </h6>
                     <a href="#"><i class="bi bi-gear-fill h6 text-white"></i></a>
                 </div>
+                <!-- 今天過得怎麼樣？ -->
                 <div class="mood-block mb-4">
                     <div class="line-block">
                         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -78,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 今天出現了哪些情感？ -->
                 <div class="mood-block mb-4">
                     <div class="line-block">
                         <div class="accordion accordion-flush mood-accordion" id="MoodToday">
@@ -103,17 +105,140 @@
                                                 </label>
                                             </div>
                                             <div class="col p-3 text-center min-w-72">
-                                                <img src="/assets/images/record/Relaxed.svg" alt="" class="mood-today-icon mb-2">
-                                                <p class="fs-t4 text-color-new-2">放鬆</p>
-                                            </div>            
+                                                <input id="emo-relaxed" class="emo-check" type="checkbox" value="relaxed" data-label="放鬆"
+                                                    data-src-a="/assets/images/record/Relaxed-a.svg" data-src-b="/assets/images/record/Relaxed.svg" hidden>
+                                                <label for="emo-relaxed" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Relaxed-a.svg" alt="放鬆(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Relaxed.svg" alt="放鬆(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">放鬆</p>
+                                                </label>
+                                            </div>
                                             <div class="col p-3 text-center min-w-72">
-                                                <img src="/assets/images/record/Proud.svg" alt="" class="mood-today-icon mb-2">
-                                                <p class="fs-t4 text-color-new-2">自豪</p>
+                                                <input id="emo-Proud" class="emo-check" type="checkbox" value="Proud" data-label="自豪"
+                                                    data-src-a="/assets/images/record/Proud-a.svg" data-src-b="/assets/images/record/Proud.svg" hidden>
+                                                <label for="emo-Proud" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Proud-a.svg" alt="自豪(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Proud.svg" alt="自豪(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">自豪</p>
+                                                </label>
                                             </div>          
                                             <div class="col p-3 text-center min-w-72">
-                                                <img src="/assets/images/record/Happy.svg" alt="" class="mood-today-icon mb-2">
-                                                <p class="fs-t4 text-color-new-2">開心</p>
-                                            </div>                                                                                                                    
+                                                <input id="emo-Happy" class="emo-check" type="checkbox" value="Happy" data-label="開心"
+                                                    data-src-a="/assets/images/record/Happy-a.svg" data-src-b="/assets/images/record/Happy.svg" hidden>
+                                                <label for="emo-Happy" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Happy-a.svg" alt="開心(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Happy.svg" alt="開心(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">開心</p>
+                                                </label>
+                                            </div>            
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Grateful" class="emo-check" type="checkbox" value="Grateful" data-label="感恩"
+                                                    data-src-a="/assets/images/record/Grateful-a.svg" data-src-b="/assets/images/record/Grateful.svg" hidden>
+                                                <label for="emo-Grateful" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Grateful-a.svg" alt="感恩(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Grateful.svg" alt="感恩(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">感恩</p>
+                                                </label>
+                                            </div>        
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Hopeful" class="emo-check" type="checkbox" value="Hopeful" data-label="有希望"
+                                                    data-src-a="/assets/images/record/Hopeful-a.svg" data-src-b="/assets/images/record/Hopeful.svg" hidden>
+                                                <label for="emo-Hopeful" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Hopeful-a.svg" alt="有希望(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Hopeful.svg" alt="有希望(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">有希望</p>
+                                                </label>
+                                            </div>      
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Bright" class="emo-check" type="checkbox" value="Bright" data-label="樂觀"
+                                                    data-src-a="/assets/images/record/Bright-a.svg" data-src-b="/assets/images/record/Bright.svg" hidden>
+                                                <label for="emo-Bright" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Bright-a.svg" alt="樂觀(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Bright.svg" alt="樂觀(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">樂觀</p>
+                                                </label>
+                                            </div>          
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Heart-flutter" class="emo-check" type="checkbox" value="Heart-flutter" data-label="心動"
+                                                    data-src-a="/assets/images/record/Heart-flutter-a.svg" data-src-b="/assets/images/record/Heart-flutter.svg" hidden>
+                                                <label for="emo-Heart-flutter" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Heart-flutter-a.svg" alt="心動(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Heart-flutter.svg" alt="心動(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">心動</p>
+                                                </label>
+                                            </div>   
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Fresh" class="emo-check" type="checkbox" value="Fresh" data-label="換然一新"
+                                                    data-src-a="/assets/images/record/Fresh-a.svg" data-src-b="/assets/images/record/Fresh.svg" hidden>
+                                                <label for="emo-Fresh" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Fresh-a.svg" alt="換然一新(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Fresh.svg" alt="換然一新(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">換然一新</p>
+                                                </label>
+                                            </div>    
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Depressed" class="emo-check" type="checkbox" value="Depressed" data-label="憂鬱"
+                                                    data-src-a="/assets/images/record/Depressed-a.svg" data-src-b="/assets/images/record/Depressed.svg" hidden>
+                                                <label for="emo-Depressed" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Depressed-a.svg" alt="憂鬱(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Depressed.svg" alt="憂鬱(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">憂鬱</p>
+                                                </label>
+                                            </div>    
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Lonely" class="emo-check" type="checkbox" value="Lonely" data-label="寂寞"
+                                                    data-src-a="/assets/images/record/Lonely-a.svg" data-src-b="/assets/images/record/Lonely.svg" hidden>
+                                                <label for="emo-Lonely" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Lonely-a.svg" alt="寂寞(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Lonely.svg" alt="寂寞(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">寂寞</p>
+                                                </label>
+                                            </div>       
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Nervous" class="emo-check" type="checkbox" value="Nervous" data-label="緊張"
+                                                    data-src-a="/assets/images/record/Nervous-a.svg" data-src-b="/assets/images/record/Nervous.svg" hidden>
+                                                <label for="emo-Nervous" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Nervous-a.svg" alt="緊張(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Nervous.svg" alt="緊張(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">緊張</p>
+                                                </label>
+                                            </div> 
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Sad" class="emo-check" type="checkbox" value="Sad" data-label="傷心"
+                                                    data-src-a="/assets/images/record/Sad-a.svg" data-src-b="/assets/images/record/Sad.svg" hidden>
+                                                <label for="emo-Sad" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Sad-a.svg" alt="傷心(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Sad.svg" alt="傷心(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">傷心</p>
+                                                </label>
+                                            </div>        
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Angry" class="emo-check" type="checkbox" value="Angry" data-label="憤怒"
+                                                    data-src-a="/assets/images/record/Angry-a.svg" data-src-b="/assets/images/record/Angry.svg" hidden>
+                                                <label for="emo-Angry" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Angry-a.svg" alt="憤怒(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Angry.svg" alt="憤怒(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">憤怒</p>
+                                                </label>
+                                            </div>     
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Anxious" class="emo-check" type="checkbox" value="Anxious" data-label="焦慮"
+                                                    data-src-a="/assets/images/record/Anxious-a.svg" data-src-b="/assets/images/record/Anxious.svg" hidden>
+                                                <label for="emo-Anxious" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Anxious-a.svg" alt="焦慮(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Anxious.svg" alt="焦慮(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">焦慮</p>
+                                                </label>
+                                            </div>    
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Powerless" class="emo-check" type="checkbox" value="Powerless" data-label="無力"
+                                                    data-src-a="/assets/images/record/Powerless-a.svg" data-src-b="/assets/images/record/Powerless.svg" hidden>
+                                                <label for="emo-Powerless" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Powerless-a.svg" alt="無力(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Powerless.svg" alt="無力(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">無力</p>
+                                                </label>
+                                            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                                         </div>
                                     </div>
                                 </div>
@@ -121,14 +246,193 @@
                         </div>
                     </div>
                 </div>
+                <!-- 今天有什麼事情影響你？ -->
+                <div class="mood-block mb-4">
+                    <div class="line-block">   
+                        <div class="accordion accordion-flush mood-accordion" id="MoodInfluenced">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#mood-Influenced"
+                                        aria-expanded="false" aria-controls="mood-Influenced">
+                                        今天有什麼事情影響你？
+                                    </button>
+                                </h2>
+                                <div id="mood-Influenced" class="accordion-collapse collapse"
+                                    data-bs-parent="#MoodInfluenced">
+                                    <div class="accordion-body"> 
+                                        <div class="row row-cols-4">
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Health" class="emo-check" type="checkbox" value="Health" data-label="健康"
+                                                    data-src-a="/assets/images/record/Health-a.svg" data-src-b="/assets/images/record/Health.svg" hidden>
+                                                <label for="emo-Health" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Health-a.svg" alt="健康(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Health.svg" alt="健康(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">健康</p>
+                                                </label>
+                                            </div>
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Work" class="emo-check" type="checkbox" value="Work" data-label="工作"
+                                                    data-src-a="/assets/images/record/Work-a.svg" data-src-b="/assets/images/record/Work.svg" hidden>
+                                                <label for="emo-Work" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Work-a.svg" alt="工作(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Work.svg" alt="工作(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">工作</p>
+                                                </label>
+                                            </div>
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Self" class="emo-check" type="checkbox" value="Self" data-label="自我狀態"
+                                                    data-src-a="/assets/images/record/Self-a.svg" data-src-b="/assets/images/record/Self.svg" hidden>
+                                                <label for="emo-Self" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Self-a.svg" alt="自我狀態(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Self.svg" alt="自我狀態(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">自我狀態</p>
+                                                </label>
+                                            </div> 
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Relationship" class="emo-check" type="checkbox" value="Relationship" data-label="人際互動"
+                                                    data-src-a="/assets/images/record/Relationship-a.svg" data-src-b="/assets/images/record/Relationship.svg" hidden>
+                                                <label for="emo-Relationship" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Relationship-a.svg" alt="人際互動(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Relationship.svg" alt="人際互動(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">人際互動</p>
+                                                </label>
+                                            </div>
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Lover" class="emo-check" type="checkbox" value="Lover" data-label="親密關係"
+                                                    data-src-a="/assets/images/record/Lover-a.svg" data-src-b="/assets/images/record/Lover.svg" hidden>
+                                                <label for="emo-Lover" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Lover-a.svg" alt="親密關係(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Lover.svg" alt="親密關係(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">親密關係</p>
+                                                </label>
+                                            </div>  
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Chores" class="emo-check" type="checkbox" value="Chores" data-label="家務責任"
+                                                    data-src-a="/assets/images/record/Chores-a.svg" data-src-b="/assets/images/record/Chores.svg" hidden>
+                                                <label for="emo-Chores" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Chores-a.svg" alt="家務責任(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Chores.svg" alt="家務責任(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">家務責任</p>
+                                                </label>
+                                            </div>  
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Family" class="emo-check" type="checkbox" value="Family" data-label="家庭關係"
+                                                    data-src-a="/assets/images/record/Family-a.svg" data-src-b="/assets/images/record/Family.svg" hidden>
+                                                <label for="emo-Family" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Family-a.svg" alt="家庭關係(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Family.svg" alt="家庭關係(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">家庭關係</p>
+                                                </label>
+                                            </div>    
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Hobbies" class="emo-check" type="checkbox" value="Hobbies" data-label="嗜好"
+                                                    data-src-a="/assets/images/record/Hobbies-a.svg" data-src-b="/assets/images/record/Hobbies.svg" hidden>
+                                                <label for="emo-Hobbies" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Hobbies-a.svg" alt="嗜好(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Hobbies.svg" alt="嗜好(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">嗜好</p>
+                                                </label>
+                                            </div>    
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Money" class="emo-check" type="checkbox" value="Money" data-label="金錢"
+                                                    data-src-a="/assets/images/record/Money-a.svg" data-src-b="/assets/images/record/Money.svg" hidden>
+                                                <label for="emo-Money" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Money-a.svg" alt="金錢(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Money.svg" alt="金錢(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">金錢</p>
+                                                </label>
+                                            </div>  
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Travel" class="emo-check" type="checkbox" value="Travel" data-label="旅遊"
+                                                    data-src-a="/assets/images/record/Travel-a.svg" data-src-b="/assets/images/record/Travel.svg" hidden>
+                                                <label for="emo-Travel" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Travel-a.svg" alt="旅遊(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Travel.svg" alt="旅遊(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">旅遊</p>
+                                                </label>
+                                            </div>  
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-News" class="emo-check" type="checkbox" value="News" data-label="時事"
+                                                    data-src-a="/assets/images/record/News-a.svg" data-src-b="/assets/images/record/News.svg" hidden>
+                                                <label for="emo-News" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/News-a.svg" alt="時事(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/News.svg" alt="時事(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">時事</p>
+                                                </label>
+                                            </div>    
+                                            <div class="col p-3 text-center min-w-72">
+                                                <input id="emo-Social-media" class="emo-check" type="checkbox" value="Social-media" data-label="社群媒體"
+                                                    data-src-a="/assets/images/record/Social-media-a.svg" data-src-b="/assets/images/record/Social-media.svg" hidden>
+                                                <label for="emo-Social-media" class="emo-label">
+                                                    <img class="emo-icon-a mood-today-icon-a" src="/assets/images/record/Social-media-a.svg" alt="社群媒體(a)">
+                                                    <img class="emo-icon-b mood-today-icon-b" src="/assets/images/record/Social-media.svg" alt="社群媒體(b)">
+                                                    <p class="fs-t4 mt-2 emo-text">社群媒體</p>
+                                                </label>
+                                            </div>                                                                                                                                                                                                                                                                                                                                                                                                                  
+                                        </div>                                         
+                                    </div>
+                                </div>                                                                      
+                            </div>                               
+                        </div>                        
+                    </div>
+                </div> 
+                <!-- 寫下今天的心情 -->  
+                <div class="mood-block mb-4">
+                    <div class="line-block">  
+                        <div class="accordion accordion-flush mood-accordion" id="MoodNote">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#mood-Note"
+                                        aria-expanded="false" aria-controls="mood-Note">
+                                        寫下今天的心情⋯
+                                    </button>
+                                </h2>    
+                                <div id="mood-Note" class="accordion-collapse collapse" data-bs-parent="#MoodNote">
+                                    <div class="accordion-body ">
+                                        <div class="position-relative textarea-pack">
+                                            <textarea placeholder="輸入今天的日記" maxlength="500" rows="4" class="fs-t2 mood-Note-text"></textarea>
+                                            <p id="count" class="textarea-count fs-t4 text-color-new-1">0/500</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>                               
+                        </div>                                                                                                                              
+                    </div>
+                </div>  
+                <!-- 加入今天的回憶畫面 -->
+                <div class="mood-block mb-4">
+                    <div class="line-block">  
+                        <div class="accordion accordion-flush mood-accordion" id="MoodAddimg">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#mood-Addimg"
+                                        aria-expanded="false" aria-controls="mood-Addimg">
+                                        加入今天的回憶畫面
+                                    </button>
+                                </h2>    
+                                <div id="mood-Addimg" class="accordion-collapse collapse" data-bs-parent="#MoodAddimg">
+                                    <div class="accordion-body ">
+                                        <div class="mood-whitebackground d-flex flex-column justify-content-center align-items-center">
+                                            <img src="/assets/images/record/add-photo.svg" alt="選擇照片上傳" class="mood-add-icon mb-2">
+                                            <label for="mood-addimages" class="form-label mb-3">最多 3 張照片</label>
+                                            <label for="mood-addimages" class="upload-btn fs-t3 fw-bold text-color-new-1">選擇照片</label>                                            
+                                            <input class="form-control d-none" type="file" id="mood-addimages" multiple>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>                               
+                        </div>                                                                                                                              
+                    </div>
+                </div> 
+                <div class="py-4">
+                    <button type="submit" class="w-100 submit-btn bg-primary text-white fs-t2 fw-bold">送出</button>
+                </div>                  
             </div>
 
         </section>
-
-
-
-
-
 
 
         <script type="module" src="../main.js"></script>
@@ -189,14 +493,27 @@
   });
 })();
 </script>
-        <style>
-            .picked {
-                padding: 12px 16px;
-                border-radius: 12px;
-                background: #fff8ee;
-                border: 1px dashed #d8b9ac;
-            }
-        </style>
+
+<script>
+const textarea = document.querySelector('textarea');
+const count = document.getElementById('count');
+
+textarea.addEventListener('input', () => {
+  count.textContent = `${textarea.value.length}/500`;
+});
+</script>
+
+<script>
+const fileInput = document.getElementById('mood-addimages');
+
+fileInput.addEventListener('change', function () {
+  if (this.files.length > 3) {
+    alert("最多只能選擇 3 張照片");
+    this.value = ""; // 清空已選檔案
+  }
+});
+</script>
+
 </body>
 
 </html>
