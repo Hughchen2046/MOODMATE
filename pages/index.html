@@ -1,65 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-  </head>
-  <body class="page-index">
-    <%- include('./layout/header'); -%>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>index</title>
+</head>
+
+<body class="page-index">
+  <%- include('./layout/header'); -%>
     <section class="index-background px-6 pb-6 pt-9">
       <div class="d-flex justify-content-between align-items-center  ">
-        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/assets/images/index/prize.png" alt="prize-logo" class="user-image"   ></button>
-        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/assets/images/index/user-img.png" alt="user-logo" class="user-image" ></button>
+        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/assets/images/index/prize.png"
+            alt="prize-logo" class="user-image"></button>
+        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/assets/images/index/user-img.png"
+            alt="user-logo" class="user-image"></button>
       </div>
       <div class="px-8 pt-10">
         <div class="talk-bubble text-center top-0 position-relative">
           <p class="fs-t2 fw-bold ">嗨!Lora!<br>今天過得怎麼樣?</p>
-        <i class="bi bi-caret-down-fill triangle-mark"></i>
+          <i class="bi bi-caret-down-fill triangle-mark"></i>
         </div>
+        <!-- <div class="added-banner fs-t3 fw-bold text-color-new-1 text-center">已新增回憶！</div> -->
         <img src="/assets/images/chat/chat_bubu.png" alt="bubu" class="character-image">
       </div>
-      <div class="mood-block mt-4 mb-150">
+      <div id="default-list" class="mood-block mt-4 mb-150">
         <div class="line-block text-center">
-            <h3 class="fs-t2 fw-bold text-color-new-1" id="date-todayheading"></h3>
-            <p class="fs-t4 text-color-new-2 mb-3">請選擇符合心情的圖示</p>
-            <ul class="nav justify-content-between">
-              <li><img class="mood-img" data-mood="very-happy" data-label="超開心" src="/assets/images/index/mood/mood-very-happy.svg"
-                  alt="超開心"></li>
-              <li><img class="mood-img" data-mood="happy" data-label="開心" src="/assets/images/index/mood/mood-happy.svg" alt="開心">
-              </li>
-              <li><img class="mood-img" data-mood="normal" data-label="普通" src="/assets/images/index/mood/mood-normal.svg" alt="普通">
-              </li>
-              <li><img class="mood-img" data-mood="unhappy" data-label="不開心" src="/assets/images/index/mood/mood-unhappy.svg"
-                  alt="不開心"></li>
-              <li><img class="mood-img" data-mood="sad" data-label="傷心" src="/assets/images/index/mood/mood-sad.svg" alt="傷心"></li>
-            </ul>
+          <h3 class="fs-t2 fw-bold text-color-new-1" id="date-todayheading"></h3>
+          <p class="fs-t4 text-color-new-2 mb-3">請選擇符合心情的圖示</p>
+          <ul class="nav justify-content-between">
+            <li><img class="mood-img" data-mood="very-happy" data-label="超開心"
+                src="/assets/images/index/mood/mood-very-happy.svg" alt="超開心"></li>
+            <li><img class="mood-img" data-mood="happy" data-label="開心" src="/assets/images/index/mood/mood-happy.svg"
+                alt="開心">
+            </li>
+            <li><img class="mood-img" data-mood="normal" data-label="普通" src="/assets/images/index/mood/mood-normal.svg"
+                alt="普通">
+            </li>
+            <li><img class="mood-img" data-mood="unhappy" data-label="不開心"
+                src="/assets/images/index/mood/mood-unhappy.svg" alt="不開心"></li>
+            <li><img class="mood-img" data-mood="sad" data-label="傷心" src="/assets/images/index/mood/mood-sad.svg"
+                alt="傷心"></li>
+          </ul>
         </div>
       </div>
+      <div id="journal-list" class="mt-4"></div>
+      <!-- <div class="mood-block mb-4">
+        <div class="line-block">
+          <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
+            <div class="accordion-item">
+              <div class="accordion-header d-flex justify-content-between align-items-center accordion-moodbg">
+                <img src="/assets/images/record/Angry-a.svg" class="mood-img-sm me-3">
+                <h6 class="fs-t3 fw-bold text-color-new-1 me-auto" id="date-todayheadingshort"></h6>
+                <img src="/assets/images/index/edit.svg" alt="">
+                <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1 ms-3" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#mood-indextext" aria-expanded="false" aria-controls="mood-indextext">
+                </button>
+              </div>
+              <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
+                <div class="accordion-body">
+                  <div class="index-whitebackground">
+                    <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
+                    <p class="fs-t4 text-color-new-3">tessdfsdfsdft</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
     </section>
 
 
     <%- include('./layout/footer'); -%>
 
-    <script type="module" src="../main.js"></script>
-    <script src="../date.js"></script>
-    <script>
+      <script type="module" src="../main.js"></script>
+      <script src="../date.js"></script>
+      <script>
 
-      // 點擊 → 存選擇 → 換頁
-  document.querySelectorAll('.mood-img').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', () => {
-      const pick = {
-        id:    img.dataset.mood,
-        label: img.dataset.label,
-        src:   img.getAttribute('src'),
-        time:  Date.now()
-      };
-      sessionStorage.setItem('selectedMood', JSON.stringify(pick));
-      location.href = 'record.html';  // 你的下一頁路徑
-    });
-  });
-    </script>
-  </body>
+        // 點擊 → 存選擇 → 換頁
+        document.querySelectorAll('.mood-img').forEach(img => {
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', () => {
+            const pick = {
+              id: img.dataset.mood,
+              label: img.dataset.label,
+              src: img.getAttribute('src'),
+              time: Date.now()
+            };
+            sessionStorage.setItem('selectedMood', JSON.stringify(pick));
+            location.href = 'record.html';  // 你的下一頁路徑
+          });
+        });
+      </script>
+
+      <script>
+        function escapeHtml(s) {
+          return s.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+        }
+
+        (function renderLatest() {
+          const root = document.getElementById('journal-list');
+          const defaultList = document.getElementById('default-list')
+          if (!root) return;
+
+          const data = sessionStorage.getItem('latestRecord');
+          if (!data) return;
+
+          const entry = JSON.parse(data);
+
+          // 在 record.html 的 radio 裡找對應的 data-src-b
+          // 這裡不是真的去讀 record.html，而是 index.html 上也有同樣 id 或 data-mood 的元素
+          const moodImgEl = document.querySelector(`[data-mood="${entry.moodId}"]`) ||
+            document.querySelector(`[value="${entry.moodId}"]`);
+          const moodSrc = moodImgEl?.dataset.srcB || moodImgEl?.getAttribute('src') || '';
+
+          // 隱藏default.listist
+          if (defaultList) defaultList.style.display = 'none';
+
+          root.innerHTML = `
+    <div class="mood-block mt-4">
+      <div class="line-block">
+        <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
+                      <div class="accordion-item">
+              <div class="accordion-header d-flex justify-content-between align-items-center accordion-moodbg">
+          ${moodSrc ? `<img src="${moodSrc}" alt="${entry.moodLabel}" class="mood-img-sm me-3">` : ''}
+                <h6 class="fs-t3 fw-bold text-color-new-1 me-auto" id="date-todayheadingshort"></h6>
+                <img src="/MOODMATE/assets/images/index/edit.svg" alt="">
+                <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1 ms-3" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#mood-indextext" aria-expanded="false" aria-controls="mood-indextext">
+                </button>
+              </div>
+              <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
+                <div class="accordion-body">
+                  <div class="index-whitebackground">
+                    <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
+        ${entry.note ? `<p class="fs-t4 text-color-new-3">${escapeHtml(entry.note)}</p>` : ''}
+                          </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>  
+      </div>
+    </div>
+  `;
+          // ←← 這裡再填日期（現在元素已存在）
+          const today = new Date();
+          const day = today.getDate();
+          const weekdayShort = today.toLocaleDateString('zh-TW', { weekday: 'short' });
+          const el = document.getElementById('date-todayheadingshort');
+          if (el) el.textContent = `${day} ${weekdayShort}`;
+
+(function checkMemoryAdded() {
+  if (!sessionStorage.getItem('memoryAdded')) return;
+
+  const talk = document.querySelector('.talk-bubble');
+  if (!talk) { sessionStorage.removeItem('memoryAdded'); return; }
+
+  // 先把 talk-bubble 暫時隱藏（不要移除 DOM，之後要顯示回來）
+  const prevDisplay = talk.style.display;
+  talk.style.display = 'none';
+
+  // 插入 Banner 在原位置
+  const banner = document.createElement('div');
+  banner.className = 'added-banner fs-t3 fw-bold text-color-new-1 text-center mb-12';
+  banner.textContent = '已新增回憶！';
+  talk.parentElement.insertBefore(banner, talk);
+
+  // 停留秒數與淡出時間（要與 CSS transition 對齊）
+  const stayMs = 1800;
+  const fadeMs = 1500;
+
+  // 開始倒數 → 加上淡出 class → 動畫結束後移除 Banner、還原 talk-bubble
+  setTimeout(() => {
+    banner.classList.add('fade-out');
+    banner.addEventListener('transitionend', () => {
+      banner.remove();
+      talk.style.display = prevDisplay || ''; // 還原顯示
+    }, { once: true });
+  }, stayMs);
+
+  // 只顯示一次，顯示完就移除旗標
+  sessionStorage.removeItem('memoryAdded');
+})();
+
+
+
+        })();
+      </script>
+
+</body>
+
 </html>

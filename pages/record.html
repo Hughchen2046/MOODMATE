@@ -70,11 +70,11 @@
 
                             <!-- sad -->
                             <input id="mood-sad" class="mood-radio" type="radio" name="mood" value="sad" data-label="爆哭"
-                                data-src-a="/assets/images/record/mood-normal.png"
-                                data-src-b="/assets/images/index/mood/mood-normal.svg" hidden>
+                                data-src-a="/assets/images/record/mood-sad.png"
+                                data-src-b="/assets/images/index/mood/mood-sad.svg" hidden>
                             <label for="mood-sad" class="mood-label">
-                                <img class="img-a" src="/assets/images/record/mood-normal.png" alt="傷心(a)">
-                                <img class="img-b" src="/assets/images/index/mood/mood-normal.svg" alt="傷心(b)">
+                                <img class="img-a" src="/assets/images/record/mood-sad.png" alt="傷心(a)">
+                                <img class="img-b" src="/assets/images/index/mood/mood-sad.svg" alt="傷心(b)">
                             </label>
                         </div>
                     </div>
@@ -514,6 +514,39 @@ fileInput.addEventListener('change', function () {
 });
 </script>
 
+<script>
+(() => {
+  const submitBtn = document.querySelector('.submit-btn');
+  if (!submitBtn) return;
+
+  submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // 驗證：至少要選一個 mood
+    const picked = document.querySelector('.mood-radio:checked');
+    if (!picked) {
+      alert('請先選擇「今天過得怎麼樣？」');
+      return;
+    }
+
+    // 擷取：心情與日記文字
+    const note = (document.querySelector('.mood-Note-text')?.value || '').trim();
+    const entry = {
+      id: Date.now(),
+      moodId: picked.value,
+      moodLabel: picked.dataset.label,
+      note
+    };
+
+    // 直接覆蓋舊的
+    sessionStorage.setItem('latestRecord', JSON.stringify(entry));
+    sessionStorage.setItem('memoryAdded', '1');
+
+    // 回到首頁
+    location.href = 'index.html';
+  });
+})();
+</script>
 </body>
 
 </html>
