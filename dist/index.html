@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/main-CoF9BI4A.js"></script>
-    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-DwPTKNvz.css">
-  </head>
-  <body class="page-index">
-    <div class="container-mobile nav-header">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>index</title>
+  <script type="module" crossorigin src="/MOODMATE/assets/main-DcatxARL.js"></script>
+  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-Dg8Oe95e.css">
+</head>
+
+<body class="page-index">
+  <div class="container-mobile nav-header">
     <ul class="nav justify-content-between gap-3 py-4 text-white">
         <li class="nav-item me-auto">
             <time datetime="9:41" class="SF-Pro-Text ios-font">9:41</time>
@@ -26,33 +28,65 @@
     </ul>
 </div>    <section class="index-background px-6 pb-6 pt-9">
       <div class="d-flex justify-content-between align-items-center  ">
-        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/MOODMATE/assets/prize-DiuxNWvh.png" alt="prize-logo" class="user-image"   ></button>
-        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/MOODMATE/assets/user-img-DoAws8ta.png" alt="user-logo" class="user-image" ></button>
+        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/MOODMATE/assets/prize-DiuxNWvh.png"
+            alt="prize-logo" class="user-image"></button>
+        <button type="button" class="btn btn-image" data-bs-toggle="button"><img src="/MOODMATE/assets/user-img-DoAws8ta.png"
+            alt="user-logo" class="user-image"></button>
       </div>
       <div class="px-8 pt-10">
         <div class="talk-bubble text-center top-0 position-relative">
           <p class="fs-t2 fw-bold ">嗨!Lora!<br>今天過得怎麼樣?</p>
-        <i class="bi bi-caret-down-fill triangle-mark"></i>
+          <i class="bi bi-caret-down-fill triangle-mark"></i>
         </div>
+        <!-- <div class="added-banner fs-t3 fw-bold text-color-new-1 text-center">已新增回憶！</div> -->
         <img src="/MOODMATE/assets/chat_bubu-DgTJyhZ0.png" alt="bubu" class="character-image">
       </div>
-      <div class="mood-block mt-4 mb-150">
+      <div id="default-list" class="mood-block mt-4 mb-150">
         <div class="line-block text-center">
-            <h3 class="fs-t2 fw-bold text-color-new-1" id="date-todayheading"></h3>
-            <p class="fs-t4 text-color-new-2 mb-3">請選擇符合心情的圖示</p>
-            <ul class="nav justify-content-between">
-              <li><img class="mood-img" data-mood="very-happy" data-label="超開心" src="data:image/svg+xml,%3csvg%20width='51'%20height='50'%20viewBox='0%200%2051%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.699951'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%23FF5E28'/%3e%3crect%20x='0.699951'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1701)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.5'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.7999'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.95'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%2359210E'/%3e%3crect%20x='28.8827'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%2359210E'/%3e%3cpath%20d='M29.5001%2028.3251C30.0247%2028.3251%2030.456%2028.752%2030.3938%2029.2729C30.3359%2029.7577%2030.2336%2030.2329%2030.0885%2030.6882C29.8498%2031.4374%2029.4999%2032.1181%2029.0588%2032.6915C28.6178%2033.2649%2028.0941%2033.7198%2027.5178%2034.0301C26.9415%2034.3404%2026.3239%2034.5001%2025.7001%2034.5001C25.0763%2034.5001%2024.4586%2034.3404%2023.8823%2034.0301C23.306%2033.7198%2022.7824%2033.2649%2022.3413%2032.6915C21.9002%2032.1181%2021.5504%2031.4374%2021.3116%2030.6882C21.1666%2030.2329%2021.0643%2029.7577%2021.0064%2029.2729C20.9441%2028.752%2021.3754%2028.3251%2021.9001%2028.3251L25.7001%2028.3251H29.5001Z'%20fill='%2359210E'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1701'%20x1='25.4'%20y1='0.300049'%20x2='25.4'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
-                  alt="超開心"></li>
-              <li><img class="mood-img" data-mood="happy" data-label="開心" src="data:image/svg+xml,%3csvg%20width='50'%20height='50'%20viewBox='0%200%2050%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%23FFC531'/%3e%3crect%20x='0.5'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1707)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.30005'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.6'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.75'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23594511'/%3e%3crect%20x='28.6827'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23594511'/%3e%3cpath%20d='M29.2805%2030.0745C29.5789%2029.7156%2030.1427%2029.6435%2030.54%2029.913C30.9375%2030.1828%2031.0181%2030.6928%2030.7202%2031.0525L30.0601%2030.6048C30.6745%2031.0217%2030.7165%2031.051%2030.7193%2031.0533V31.0541L30.7184%2031.0549C30.7176%2031.0558%2030.7159%2031.0576%2030.7149%2031.0588C30.7129%2031.0612%2030.7106%2031.0643%2030.7079%2031.0676C30.702%2031.0744%2030.6943%2031.0832%2030.685%2031.0938C30.666%2031.1155%2030.6392%2031.1454%2030.6059%2031.1813C30.5394%2031.253%2030.4445%2031.3511%2030.322%2031.4667C30.0772%2031.6978%2029.718%2032.0028%2029.2541%2032.308C28.3297%2032.9162%2026.9476%2033.55%2025.1996%2033.55C23.4517%2033.5499%2022.0695%2032.9162%2021.1451%2032.308C20.6814%2032.0028%2020.3228%2031.6977%2020.0781%2031.4667C19.9554%2031.3509%2019.8598%2031.253%2019.7933%2031.1813C19.76%2031.1454%2019.7341%2031.1155%2019.7151%2031.0938C19.7058%2031.0832%2019.6981%2031.0744%2019.6922%2031.0676C19.6893%2031.0642%2019.6863%2031.0612%2019.6843%2031.0588C19.6833%2031.0576%2019.6825%2031.0558%2019.6817%2031.0549L19.6799%2031.0533C19.68%2031.0528%2019.6946%2031.0427%2020.3998%2030.5643C20.5331%2030.4738%2020.6417%2030.4001%2020.7302%2030.34L19.6799%2031.0525C19.3818%2030.6927%2019.4625%2030.1828%2019.8601%2029.913C20.2577%2029.6434%2020.8205%2029.7166%2021.1187%2030.076C21.1202%2030.0778%2021.1236%2030.0797%2021.1266%2030.0832C21.1355%2030.0933%2021.1506%2030.1107%2021.1723%2030.1341C21.216%2030.1811%2021.2851%2030.2524%2021.378%2030.34C21.5645%2030.5161%2021.8432%2030.7537%2022.2042%2030.9912C22.9298%2031.4686%2023.9477%2031.9215%2025.1996%2031.9216C26.4517%2031.9216%2027.4702%2031.4687%2028.1959%2030.9912C28.5568%2030.7537%2028.8356%2030.516%2029.0221%2030.34C29.1149%2030.2524%2029.1841%2030.1811%2029.2277%2030.1341C29.2494%2030.1107%2029.2646%2030.0933%2029.2734%2030.0832C29.2777%2030.0784%2029.2802%2030.075%2029.2814%2030.0737V30.0745H29.2805Z'%20fill='%23594511'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1707'%20x1='25.2'%20y1='0.300049'%20x2='25.2'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="開心">
-              </li>
-              <li><img class="mood-img" data-mood="normal" data-label="普通" src="data:image/svg+xml,%3csvg%20width='50'%20height='50'%20viewBox='0%200%2050%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.299927'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%2349BC6E'/%3e%3crect%20x='0.299927'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1713)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.09998'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.3999'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.5499'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%231A4227'/%3e%3crect%20x='28.4827'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%231A4227'/%3e%3cpath%20d='M28.9999%2029.75L29.0761%2029.7546C29.4544%2029.8031%2029.7499%2030.208%2029.7499%2030.7C29.7499%2031.192%2029.4544%2031.5969%2029.0761%2031.6454L28.9999%2031.65H20.9999C20.5857%2031.65%2020.2499%2031.2247%2020.2499%2030.7C20.2499%2030.1753%2020.5857%2029.75%2020.9999%2029.75H28.9999Z'%20fill='%231A4227'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1713'%20x1='24.9999'%20y1='0.300049'%20x2='24.9999'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="普通">
-              </li>
-              <li><img class="mood-img" data-mood="unhappy" data-label="不開心" src="data:image/svg+xml,%3csvg%20width='50'%20height='50'%20viewBox='0%200%2050%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.0998535'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%233DBFBE'/%3e%3crect%20x='0.0998535'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1719)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='3.8999'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.2'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.3499'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23184A4A'/%3e%3crect%20x='28.2825'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23184A4A'/%3e%3cpath%20d='M20.7193%2033.2256C20.4208%2033.5845%2019.8571%2033.6566%2019.4598%2033.387C19.0623%2033.1173%2018.9816%2032.6073%2019.2796%2032.2476L19.9397%2032.6952C19.3252%2032.2783%2019.2832%2032.249%2019.2805%2032.2468V32.246L19.2814%2032.2452C19.2821%2032.2442%2019.2839%2032.2424%2019.2849%2032.2412C19.2868%2032.2389%2019.2891%2032.2357%2019.2919%2032.2325C19.2977%2032.2256%2019.3054%2032.2169%2019.3148%2032.2062C19.3338%2032.1845%2019.3606%2032.1547%2019.3939%2032.1188C19.4604%2032.0471%2019.5553%2031.9489%2019.6778%2031.8333C19.9225%2031.6022%2020.2817%2031.2973%2020.7457%2030.9921C21.6701%2030.3838%2023.0521%2029.75%2024.8002%2029.75C26.548%2029.7501%2027.9303%2030.3839%2028.8547%2030.9921C29.3184%2031.2972%2029.677%2031.6023%2029.9217%2031.8333C30.0444%2031.9491%2030.1399%2032.047%2030.2064%2032.1188C30.2398%2032.1547%2030.2657%2032.1845%2030.2847%2032.2062C30.294%2032.2169%2030.3017%2032.2256%2030.3075%2032.2325C30.3104%2032.2359%2030.3134%2032.2388%2030.3154%2032.2412C30.3165%2032.2424%2030.3173%2032.2442%2030.3181%2032.2452L30.3198%2032.2468C30.3197%2032.2472%2030.3052%2032.2573%2029.6%2032.7358C29.4667%2032.8262%2029.358%2032.8999%2029.2695%2032.96L30.3198%2032.2476C30.6179%2032.6073%2030.5373%2033.1172%2030.1396%2033.387C29.7421%2033.6566%2029.1793%2033.5835%2028.881%2033.224C28.8795%2033.2223%2028.8762%2033.2203%2028.8731%2033.2168C28.8643%2033.2067%2028.8491%2033.1894%2028.8274%2033.166C28.7838%2033.119%2028.7146%2033.0477%2028.6217%2032.96C28.4353%2032.784%2028.1565%2032.5463%2027.7955%2032.3088C27.07%2031.8314%2026.0521%2031.3786%2024.8002%2031.3785C23.5481%2031.3785%2022.5295%2031.8314%2021.8039%2032.3088C21.4429%2032.5463%2021.1641%2032.784%2020.9777%2032.96C20.8849%2033.0477%2020.8156%2033.119%2020.772%2033.166C20.7503%2033.1893%2020.7351%2033.2068%2020.7263%2033.2168C20.7221%2033.2217%2020.7196%2033.225%2020.7184%2033.2264V33.2256H20.7193Z'%20fill='%23184A4A'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1719'%20x1='24.7999'%20y1='0.300049'%20x2='24.7999'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
-                  alt="不開心"></li>
-              <li><img class="mood-img" data-mood="sad" data-label="傷心" src="data:image/svg+xml,%3csvg%20width='51'%20height='50'%20viewBox='0%200%2051%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.899902'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%233D77E2'/%3e%3crect%20x='0.899902'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1725)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.69995'%20y='24.05'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='37'%20y='24.05'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='7.5498'%20y='22.1501'%20width='14.25'%20height='2.85'%20rx='1.425'%20fill='%231B3666'/%3e%3crect%20x='28.45'%20y='22.1501'%20width='14.25'%20height='2.85'%20rx='1.425'%20fill='%231B3666'/%3e%3cpath%20d='M23.05%2030.7C22.5254%2030.7%2022.0903%2030.2709%2022.1895%2029.7556C22.2228%2029.5823%2022.2654%2029.4119%2022.317%2029.2458C22.4602%2028.7848%2022.6701%2028.3659%2022.9348%2028.013C23.1994%2027.6601%2023.5136%2027.3802%2023.8594%2027.1893C24.2052%2026.9983%2024.5758%2026.9%2024.95%2026.9C25.3243%2026.9%2025.6949%2026.9983%2026.0407%2027.1893C26.3865%2027.3802%2026.7007%2027.6601%2026.9653%2028.013C27.23%2028.3659%2027.4399%2028.7848%2027.5831%2029.2458C27.6347%2029.4119%2027.6773%2029.5823%2027.7106%2029.7556C27.8098%2030.2709%2027.3747%2030.7%2026.85%2030.7L24.95%2030.7L23.05%2030.7Z'%20fill='%231B3666'/%3e%3cpath%20d='M11.3499%2025H17.9999V44.475C17.9999%2046.3113%2016.5112%2047.8%2014.6749%2047.8C12.8385%2047.8%2011.3499%2046.3113%2011.3499%2044.475V25Z'%20fill='%23C3D5F6'/%3e%3cpath%20d='M32.25%2025H38.9V44.475C38.9%2046.3113%2037.4113%2047.8%2035.575%2047.8C33.7387%2047.8%2032.25%2046.3113%2032.25%2044.475V25Z'%20fill='%23C3D5F6'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1725'%20x1='25.5999'%20y1='0.300049'%20x2='25.5999'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="傷心"></li>
-            </ul>
+          <h3 class="fs-t2 fw-bold text-color-new-1" id="date-todayheading"></h3>
+          <p class="fs-t4 text-color-new-2 mb-3">請選擇符合心情的圖示</p>
+          <ul class="nav justify-content-between">
+            <li><img class="mood-img" data-mood="very-happy" data-label="超開心"
+                src="data:image/svg+xml,%3csvg%20width='51'%20height='50'%20viewBox='0%200%2051%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.699951'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%23FF5E28'/%3e%3crect%20x='0.699951'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1701)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.5'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.7999'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.95'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%2359210E'/%3e%3crect%20x='28.8827'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%2359210E'/%3e%3cpath%20d='M29.5001%2028.3251C30.0247%2028.3251%2030.456%2028.752%2030.3938%2029.2729C30.3359%2029.7577%2030.2336%2030.2329%2030.0885%2030.6882C29.8498%2031.4374%2029.4999%2032.1181%2029.0588%2032.6915C28.6178%2033.2649%2028.0941%2033.7198%2027.5178%2034.0301C26.9415%2034.3404%2026.3239%2034.5001%2025.7001%2034.5001C25.0763%2034.5001%2024.4586%2034.3404%2023.8823%2034.0301C23.306%2033.7198%2022.7824%2033.2649%2022.3413%2032.6915C21.9002%2032.1181%2021.5504%2031.4374%2021.3116%2030.6882C21.1666%2030.2329%2021.0643%2029.7577%2021.0064%2029.2729C20.9441%2028.752%2021.3754%2028.3251%2021.9001%2028.3251L25.7001%2028.3251H29.5001Z'%20fill='%2359210E'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1701'%20x1='25.4'%20y1='0.300049'%20x2='25.4'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="超開心"></li>
+            <li><img class="mood-img" data-mood="happy" data-label="開心" src="data:image/svg+xml,%3csvg%20width='50'%20height='50'%20viewBox='0%200%2050%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%23FFC531'/%3e%3crect%20x='0.5'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1707)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.30005'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.6'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.75'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23594511'/%3e%3crect%20x='28.6827'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23594511'/%3e%3cpath%20d='M29.2805%2030.0745C29.5789%2029.7156%2030.1427%2029.6435%2030.54%2029.913C30.9375%2030.1828%2031.0181%2030.6928%2030.7202%2031.0525L30.0601%2030.6048C30.6745%2031.0217%2030.7165%2031.051%2030.7193%2031.0533V31.0541L30.7184%2031.0549C30.7176%2031.0558%2030.7159%2031.0576%2030.7149%2031.0588C30.7129%2031.0612%2030.7106%2031.0643%2030.7079%2031.0676C30.702%2031.0744%2030.6943%2031.0832%2030.685%2031.0938C30.666%2031.1155%2030.6392%2031.1454%2030.6059%2031.1813C30.5394%2031.253%2030.4445%2031.3511%2030.322%2031.4667C30.0772%2031.6978%2029.718%2032.0028%2029.2541%2032.308C28.3297%2032.9162%2026.9476%2033.55%2025.1996%2033.55C23.4517%2033.5499%2022.0695%2032.9162%2021.1451%2032.308C20.6814%2032.0028%2020.3228%2031.6977%2020.0781%2031.4667C19.9554%2031.3509%2019.8598%2031.253%2019.7933%2031.1813C19.76%2031.1454%2019.7341%2031.1155%2019.7151%2031.0938C19.7058%2031.0832%2019.6981%2031.0744%2019.6922%2031.0676C19.6893%2031.0642%2019.6863%2031.0612%2019.6843%2031.0588C19.6833%2031.0576%2019.6825%2031.0558%2019.6817%2031.0549L19.6799%2031.0533C19.68%2031.0528%2019.6946%2031.0427%2020.3998%2030.5643C20.5331%2030.4738%2020.6417%2030.4001%2020.7302%2030.34L19.6799%2031.0525C19.3818%2030.6927%2019.4625%2030.1828%2019.8601%2029.913C20.2577%2029.6434%2020.8205%2029.7166%2021.1187%2030.076C21.1202%2030.0778%2021.1236%2030.0797%2021.1266%2030.0832C21.1355%2030.0933%2021.1506%2030.1107%2021.1723%2030.1341C21.216%2030.1811%2021.2851%2030.2524%2021.378%2030.34C21.5645%2030.5161%2021.8432%2030.7537%2022.2042%2030.9912C22.9298%2031.4686%2023.9477%2031.9215%2025.1996%2031.9216C26.4517%2031.9216%2027.4702%2031.4687%2028.1959%2030.9912C28.5568%2030.7537%2028.8356%2030.516%2029.0221%2030.34C29.1149%2030.2524%2029.1841%2030.1811%2029.2277%2030.1341C29.2494%2030.1107%2029.2646%2030.0933%2029.2734%2030.0832C29.2777%2030.0784%2029.2802%2030.075%2029.2814%2030.0737V30.0745H29.2805Z'%20fill='%23594511'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1707'%20x1='25.2'%20y1='0.300049'%20x2='25.2'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                alt="開心">
+            </li>
+            <li><img class="mood-img" data-mood="normal" data-label="普通" src="data:image/svg+xml,%3csvg%20width='50'%20height='50'%20viewBox='0%200%2050%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.299927'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%2349BC6E'/%3e%3crect%20x='0.299927'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1713)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.09998'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.3999'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.5499'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%231A4227'/%3e%3crect%20x='28.4827'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%231A4227'/%3e%3cpath%20d='M28.9999%2029.75L29.0761%2029.7546C29.4544%2029.8031%2029.7499%2030.208%2029.7499%2030.7C29.7499%2031.192%2029.4544%2031.5969%2029.0761%2031.6454L28.9999%2031.65H20.9999C20.5857%2031.65%2020.2499%2031.2247%2020.2499%2030.7C20.2499%2030.1753%2020.5857%2029.75%2020.9999%2029.75H28.9999Z'%20fill='%231A4227'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1713'%20x1='24.9999'%20y1='0.300049'%20x2='24.9999'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                alt="普通">
+            </li>
+            <li><img class="mood-img" data-mood="unhappy" data-label="不開心"
+                src="data:image/svg+xml,%3csvg%20width='50'%20height='50'%20viewBox='0%200%2050%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.0998535'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%233DBFBE'/%3e%3crect%20x='0.0998535'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1719)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='3.8999'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.2'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.3499'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23184A4A'/%3e%3crect%20x='28.2825'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%23184A4A'/%3e%3cpath%20d='M20.7193%2033.2256C20.4208%2033.5845%2019.8571%2033.6566%2019.4598%2033.387C19.0623%2033.1173%2018.9816%2032.6073%2019.2796%2032.2476L19.9397%2032.6952C19.3252%2032.2783%2019.2832%2032.249%2019.2805%2032.2468V32.246L19.2814%2032.2452C19.2821%2032.2442%2019.2839%2032.2424%2019.2849%2032.2412C19.2868%2032.2389%2019.2891%2032.2357%2019.2919%2032.2325C19.2977%2032.2256%2019.3054%2032.2169%2019.3148%2032.2062C19.3338%2032.1845%2019.3606%2032.1547%2019.3939%2032.1188C19.4604%2032.0471%2019.5553%2031.9489%2019.6778%2031.8333C19.9225%2031.6022%2020.2817%2031.2973%2020.7457%2030.9921C21.6701%2030.3838%2023.0521%2029.75%2024.8002%2029.75C26.548%2029.7501%2027.9303%2030.3839%2028.8547%2030.9921C29.3184%2031.2972%2029.677%2031.6023%2029.9217%2031.8333C30.0444%2031.9491%2030.1399%2032.047%2030.2064%2032.1188C30.2398%2032.1547%2030.2657%2032.1845%2030.2847%2032.2062C30.294%2032.2169%2030.3017%2032.2256%2030.3075%2032.2325C30.3104%2032.2359%2030.3134%2032.2388%2030.3154%2032.2412C30.3165%2032.2424%2030.3173%2032.2442%2030.3181%2032.2452L30.3198%2032.2468C30.3197%2032.2472%2030.3052%2032.2573%2029.6%2032.7358C29.4667%2032.8262%2029.358%2032.8999%2029.2695%2032.96L30.3198%2032.2476C30.6179%2032.6073%2030.5373%2033.1172%2030.1396%2033.387C29.7421%2033.6566%2029.1793%2033.5835%2028.881%2033.224C28.8795%2033.2223%2028.8762%2033.2203%2028.8731%2033.2168C28.8643%2033.2067%2028.8491%2033.1894%2028.8274%2033.166C28.7838%2033.119%2028.7146%2033.0477%2028.6217%2032.96C28.4353%2032.784%2028.1565%2032.5463%2027.7955%2032.3088C27.07%2031.8314%2026.0521%2031.3786%2024.8002%2031.3785C23.5481%2031.3785%2022.5295%2031.8314%2021.8039%2032.3088C21.4429%2032.5463%2021.1641%2032.784%2020.9777%2032.96C20.8849%2033.0477%2020.8156%2033.119%2020.772%2033.166C20.7503%2033.1893%2020.7351%2033.2068%2020.7263%2033.2168C20.7221%2033.2217%2020.7196%2033.225%2020.7184%2033.2264V33.2256H20.7193Z'%20fill='%23184A4A'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1719'%20x1='24.7999'%20y1='0.300049'%20x2='24.7999'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="不開心"></li>
+            <li><img class="mood-img" data-mood="sad" data-label="傷心" src="data:image/svg+xml,%3csvg%20width='51'%20height='50'%20viewBox='0%200%2051%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.899902'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%233D77E2'/%3e%3crect%20x='0.899902'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1725)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.69995'%20y='24.05'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='37'%20y='24.05'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='7.5498'%20y='22.1501'%20width='14.25'%20height='2.85'%20rx='1.425'%20fill='%231B3666'/%3e%3crect%20x='28.45'%20y='22.1501'%20width='14.25'%20height='2.85'%20rx='1.425'%20fill='%231B3666'/%3e%3cpath%20d='M23.05%2030.7C22.5254%2030.7%2022.0903%2030.2709%2022.1895%2029.7556C22.2228%2029.5823%2022.2654%2029.4119%2022.317%2029.2458C22.4602%2028.7848%2022.6701%2028.3659%2022.9348%2028.013C23.1994%2027.6601%2023.5136%2027.3802%2023.8594%2027.1893C24.2052%2026.9983%2024.5758%2026.9%2024.95%2026.9C25.3243%2026.9%2025.6949%2026.9983%2026.0407%2027.1893C26.3865%2027.3802%2026.7007%2027.6601%2026.9653%2028.013C27.23%2028.3659%2027.4399%2028.7848%2027.5831%2029.2458C27.6347%2029.4119%2027.6773%2029.5823%2027.7106%2029.7556C27.8098%2030.2709%2027.3747%2030.7%2026.85%2030.7L24.95%2030.7L23.05%2030.7Z'%20fill='%231B3666'/%3e%3cpath%20d='M11.3499%2025H17.9999V44.475C17.9999%2046.3113%2016.5112%2047.8%2014.6749%2047.8C12.8385%2047.8%2011.3499%2046.3113%2011.3499%2044.475V25Z'%20fill='%23C3D5F6'/%3e%3cpath%20d='M32.25%2025H38.9V44.475C38.9%2046.3113%2037.4113%2047.8%2035.575%2047.8C33.7387%2047.8%2032.25%2046.3113%2032.25%2044.475V25Z'%20fill='%23C3D5F6'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1725'%20x1='25.5999'%20y1='0.300049'%20x2='25.5999'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                alt="傷心"></li>
+          </ul>
         </div>
       </div>
+      <div id="journal-list" class="mt-4"></div>
+      <!-- <div class="mood-block mb-4">
+        <div class="line-block">
+          <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
+            <div class="accordion-item">
+              <div class="accordion-header d-flex justify-content-between align-items-center accordion-moodbg">
+                <img src="/assets/images/record/Angry-a.svg" class="mood-img-sm me-3">
+                <h6 class="fs-t3 fw-bold text-color-new-1 me-auto" id="date-todayheadingshort"></h6>
+                <img src="/assets/images/index/edit.svg" alt="">
+                <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1 ms-3" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#mood-indextext" aria-expanded="false" aria-controls="mood-indextext">
+                </button>
+              </div>
+              <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
+                <div class="accordion-body">
+                  <div class="index-whitebackground">
+                    <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
+                    <p class="fs-t4 text-color-new-3">tessdfsdfsdft</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M14%2022V18.925L19.525%2013.425C19.675%2013.275%2019.8417%2013.1667%2020.025%2013.1C20.2083%2013.0333%2020.3917%2013%2020.575%2013C20.775%2013%2020.9667%2013.0375%2021.15%2013.1125C21.3333%2013.1875%2021.5%2013.3%2021.65%2013.45L22.575%2014.375C22.7083%2014.525%2022.8125%2014.6917%2022.8875%2014.875C22.9625%2015.0583%2023%2015.2417%2023%2015.425C23%2015.6083%2022.9667%2015.7958%2022.9%2015.9875C22.8333%2016.1792%2022.725%2016.35%2022.575%2016.5L17.075%2022H14ZM15.5%2020.5H16.45L19.475%2017.45L19.025%2016.975L18.55%2016.525L15.5%2019.55V20.5ZM6%2022C5.45%2022%204.97917%2021.8042%204.5875%2021.4125C4.19583%2021.0208%204%2020.55%204%2020V4C4%203.45%204.19583%202.97917%204.5875%202.5875C4.97917%202.19583%205.45%202%206%202H14L20%208V11H18V9H13V4H6V20H12V22H6ZM19.025%2016.975L18.55%2016.525L19.475%2017.45L19.025%2016.975Z'%20fill='%2364483E'/%3e%3c/svg%3e" class="d-none" alt="">
     </section>
 
 
@@ -95,23 +129,121 @@
         </nav>
     </div>
 </footer>
-    <script src="../date.js"></script>
-    <script>
+      <script src="../date.js"></script>
+      <script>
 
-      // 點擊 → 存選擇 → 換頁
-  document.querySelectorAll('.mood-img').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', () => {
-      const pick = {
-        id:    img.dataset.mood,
-        label: img.dataset.label,
-        src:   img.getAttribute('src'),
-        time:  Date.now()
-      };
-      sessionStorage.setItem('selectedMood', JSON.stringify(pick));
-      location.href = 'record.html';  // 你的下一頁路徑
-    });
-  });
-    </script>
-  </body>
+        // 點擊 → 存選擇 → 換頁
+        document.querySelectorAll('.mood-img').forEach(img => {
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', () => {
+            const pick = {
+              id: img.dataset.mood,
+              label: img.dataset.label,
+              src: img.getAttribute('src'),
+              time: Date.now()
+            };
+            sessionStorage.setItem('selectedMood', JSON.stringify(pick));
+            location.href = 'record.html';  // 你的下一頁路徑
+          });
+        });
+      </script>
+
+      <script>
+        function escapeHtml(s) {
+          return s.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+        }
+
+        (function renderLatest() {
+          const root = document.getElementById('journal-list');
+          const defaultList = document.getElementById('default-list')
+          if (!root) return;
+
+          const data = sessionStorage.getItem('latestRecord');
+          if (!data) return;
+
+          const entry = JSON.parse(data);
+
+          // 在 record.html 的 radio 裡找對應的 data-src-b
+          // 這裡不是真的去讀 record.html，而是 index.html 上也有同樣 id 或 data-mood 的元素
+          const moodImgEl = document.querySelector(`[data-mood="${entry.moodId}"]`) ||
+            document.querySelector(`[value="${entry.moodId}"]`);
+          const moodSrc = moodImgEl?.dataset.srcB || moodImgEl?.getAttribute('src') || '';
+
+          // 隱藏default.listist
+          if (defaultList) defaultList.style.display = 'none';
+
+          root.innerHTML = `
+    <div class="mood-block mt-4">
+      <div class="line-block">
+        <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
+                      <div class="accordion-item">
+              <div class="accordion-header d-flex justify-content-between align-items-center accordion-moodbg">
+          ${moodSrc ? `<img src="${moodSrc}" alt="${entry.moodLabel}" class="mood-img-sm me-3">` : ''}
+                <h6 class="fs-t3 fw-bold text-color-new-1 me-auto" id="date-todayheadingshort"></h6>
+                <img src="/assets/images/index/edit.svg" alt="">
+                <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1 ms-3" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#mood-indextext" aria-expanded="false" aria-controls="mood-indextext">
+                </button>
+              </div>
+              <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
+                <div class="accordion-body">
+                  <div class="index-whitebackground">
+                    <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
+        ${entry.note ? `<p class="fs-t4 text-color-new-3">${escapeHtml(entry.note)}</p>` : ''}
+                          </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>  
+      </div>
+    </div>
+  `;
+          // ←← 這裡再填日期（現在元素已存在）
+          const today = new Date();
+          const day = today.getDate();
+          const weekdayShort = today.toLocaleDateString('zh-TW', { weekday: 'short' });
+          const el = document.getElementById('date-todayheadingshort');
+          if (el) el.textContent = `${day} ${weekdayShort}`;
+
+(function checkMemoryAdded() {
+  if (!sessionStorage.getItem('memoryAdded')) return;
+
+  const talk = document.querySelector('.talk-bubble');
+  if (!talk) { sessionStorage.removeItem('memoryAdded'); return; }
+
+  // 先把 talk-bubble 暫時隱藏（不要移除 DOM，之後要顯示回來）
+  const prevDisplay = talk.style.display;
+  talk.style.display = 'none';
+
+  // 插入 Banner 在原位置
+  const banner = document.createElement('div');
+  banner.className = 'added-banner fs-t3 fw-bold text-color-new-1 text-center mb-12';
+  banner.textContent = '已新增回憶！';
+  talk.parentElement.insertBefore(banner, talk);
+
+  // 停留秒數與淡出時間（要與 CSS transition 對齊）
+  const stayMs = 1800;
+  const fadeMs = 1500;
+
+  // 開始倒數 → 加上淡出 class → 動畫結束後移除 Banner、還原 talk-bubble
+  setTimeout(() => {
+    banner.classList.add('fade-out');
+    banner.addEventListener('transitionend', () => {
+      banner.remove();
+      talk.style.display = prevDisplay || ''; // 還原顯示
+    }, { once: true });
+  }, stayMs);
+
+  // 只顯示一次，顯示完就移除旗標
+  sessionStorage.removeItem('memoryAdded');
+})();
+
+
+
+        })();
+      </script>
+
+</body>
+
 </html>
