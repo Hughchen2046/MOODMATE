@@ -1,7 +1,8 @@
 # MOODMATE使用手冊
 
 ## 更新 Layout
- - 08/30 新增 header-role.ejs
+ - 08/30 新增 bar元件、移除 role 的 footer (Tetsu)
+ - 08/30 新增 header-role.ejs(Tetsu)
  - 08/28 新增角色核心頁面 role.html
          By Tetsu
 

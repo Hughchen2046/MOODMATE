@@ -1,3 +1,4 @@
+@import '../utils/bars';
 .page-role {
     color: #64483E;
     min-height: 100vh;
@@ -37,9 +38,17 @@
     justify-content: center;
 }
 
-.bar-item {
-    width: 134px;
-    height: 5px;
-    background-color: $gray-400;
+@mixin bar-item($width, $height, $background-color) {
+    width: $width;
+    height: $height;
+    background-color: $background-color;
     border-radius: 1000px;
+}
+
+.role-bar-item {
+  @include bar-item(134px, 5px, $gray-400); // 默认颜色为 $gray-400
+}
+
+.active-bar-item {
+  @include bar-item(54.5px, 8px, $seccolor-400); // 第一个的颜色
 }
