@@ -10,26 +10,41 @@
     <%- include('./layout/header-role'); -%>
 
     <section class="role-wrapper">
-        <div class="container-mobile text-center py-148">
-            <h2 class="mb-6">Welcome!</h2>
-            <img class="welcome-img mb-6" src="/assets/images/onboarding/onboarding_welcome.png" alt="welcome" />
-            <p class="mb-6">
-                準備好了嗎？<br />
-                現在先花點時間認識自己，<br />
-                接下來我們一起踏上屬於你的成長旅程。<br />
-            </p>
-            <p>想更了解自己的情緒，跟它做朋友嗎？   </p>
-        </div>
-        <div class="container-mobile mb-14">
-            <button class="btn btn-primary text-white rounded-pill py-4 px-6 w-100" type="button">
-                開始吧！
-            </button>
-        </div>
-        <div class="container-mobile scroll-bar">
-            <div class="role-bar-item"></div>
-        </div>
+      <div class="container-mobile text-center py-148">
+        <h2 class="mb-6">Welcome!</h2>
+        <img
+          class="welcome-img mb-6"
+          src="/assets/images/onboarding/onboarding_welcome.png"
+          alt="welcome"
+        />
+        <p class="mb-6">
+          準備好了嗎？<br />
+          現在先花點時間認識自己，<br />
+          接下來我們一起踏上屬於你的成長旅程。<br />
+        </p>
+        <p>想更了解自己的情緒，跟它做朋友嗎？</p>
+      </div>
+      <div class="container-mobile mb-14">
+        <button
+          id="startBtn"
+          class="btn btn-primary text-white rounded-pill py-4 px-6 w-100"
+          type="button"
+        >
+          開始吧！
+        </button>
+      </div>
+      <div class="container-mobile scroll-bar">
+        <div class="role-bar-item"></div>
+      </div>
     </section>
 
     <script type="module" src="../main.js"></script>
+    <script>
+      document
+        .getElementById("startBtn")
+        .addEventListener("click", function () {
+          window.location.href = "role-step1.html";
+        });
+    </script>
   </body>
 </html>

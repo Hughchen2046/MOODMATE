@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step1 - 選取角色 | MOODMATE</title>
+  </head>
+  <body class="page-role">
+    <%- include('./layout/header-role'); -%>
+
+    <section class="role-wrapper">
+      <div class="container-mobile pb-314">
+        <div class="d-flex justify-content-between align-items-center mb-6">
+          <a class="pre fs-t2 text-default-color" href="role.html">返回</a>
+          <div class="d-flex justify-content-between">
+            <div class="active-bar-item me-4"></div>
+            <div class="step-bar-item me-4"></div>
+            <div class="step-bar-item me-4"></div>
+            <div class="step-bar-item"></div>
+          </div>
+          <a class="next fs-t2 text-default-color" href="role-step4.html"
+            >跳過</a
+          >
+        </div>
+        <h6 class="text-default-color text-center mb-6">
+          最近是否常有以下情境？
+        </h6>
+        <div class="form-check d-flex flex-column">
+          <input
+            type="checkbox"
+            id="option1"
+            name="situation"
+            value="1"
+            autocomplete="off"
+          />
+          <label
+            class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow mb-5"
+            for="option1"
+            >情緒起伏大但找不到原因
+          </label>
+
+          <input
+            type="checkbox"
+            id="option2"
+            name="situation"
+            value="2"
+            autocomplete="off"
+          />
+          <label
+            class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow mb-5"
+            for="option2"
+            >總覺得被壓力壓著，不知道怎麼整理自己
+          </label>
+
+          <input
+            type="checkbox"
+            id="option3"
+            name="situation"
+            value="3"
+            autocomplete="off"
+          />
+          <label
+            class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow mb-5"
+            for="option3"
+            >遇到低潮時，很難跟人說
+          </label>
+
+          <input
+            type="checkbox"
+            id="option4"
+            name="situation"
+            value="4"
+            autocomplete="off"
+          />
+          <label
+            class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow"
+            for="option4"
+            >目前都沒有
+          </label>
+        </div>
+      </div>
+      <div class="container-mobile mb-14">
+        <button
+          id="nextStep"
+          class="btn btn-secondary text-white rounded-pill py-4 px-6 w-100"
+          type="button"
+        >
+          下一步
+        </button>
+      </div>
+      <div class="container-mobile scroll-bar">
+        <div class="role-bar-item"></div>
+      </div>
+    </section>
+
+    <script type="module" src="../main.js"></script>
+    <script>
+      document
+        .getElementById("nextStep")
+        .addEventListener("click", function () {
+          // 取得所有的checkbox選項
+          const checkboxes = document.querySelectorAll(
+            'input[name="situation"]:checked'
+          );
+          const selectedValues = [];
+
+          // 將選中的checkbox值存入陣列
+          checkboxes.forEach(function (checkbox) {
+            selectedValues.push(checkbox.value);
+          });
+
+          // 將選擇的值儲存到sessionStorage中
+          sessionStorage.setItem(
+            "selectedSituations",
+            JSON.stringify(selectedValues)
+          );
+
+          // 跳轉到下一頁
+          window.location.href = "role-step4.html";
+        });
+    </script>
+  </body>
+</html>

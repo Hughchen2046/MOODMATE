@@ -1,4 +1,3 @@
-@import '../utils/bars';
 .page-role {
     color: #64483E;
     min-height: 100vh;
@@ -27,6 +26,10 @@
     padding-bottom: 148px;
 }
 
+.pb-314 {
+    padding-bottom: 314px;
+}
+
 .mb-14 {
     margin-bottom: 14px;
 }
@@ -46,9 +49,56 @@
 }
 
 .role-bar-item {
-  @include bar-item(134px, 5px, $gray-400); // 默认颜色为 $gray-400
+  @include bar-item(134px, 5px, $gray-400);
+}
+
+.step-bar-item {
+  @include bar-item(54.5px, 8px, $white);
 }
 
 .active-bar-item {
-  @include bar-item(54.5px, 8px, $seccolor-400); // 第一个的颜色
+  @include bar-item(54.5px, 8px, $seccolor-400);
+}
+
+.pre, .next {
+    text-decoration: none;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+// Step 1
+.situation-select {
+    background-color: $white;
+    color: #64483E;
+    border: 1px solid $seccolor-400;
+    border-radius: 8px;
+    transition: background-color 0.3s, border 0.3s; /* 添加平滑过渡效果 */
+
+    &:hover, &:focus, &:active {
+        background-color: #FCF3EE;
+        border: 1px solid $seccolor-400;
+        border-radius: 8px;
+    }
+}
+
+.form-check input[type="checkbox"] {
+    opacity: 0; /* 隐藏默认的复选框 */
+    width: 20px;
+    height: 20px;
+    position: absolute; /* 使用绝对定位避免影响布局 */
+    cursor: pointer;
+}
+
+.form-check input[type="checkbox"]:checked + .situation-select {
+    background-color: #FCF3EE; /* 选中时的背景色 */
+    color: #64483E;  /* 选中时保持文字颜色不变 */
+    border: 1px solid $seccolor-400; /* 选中时的边框 */
+}
+
+
+.lh-145 {
+    line-height: 1.45;
 }
