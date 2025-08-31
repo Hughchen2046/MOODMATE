@@ -94,7 +94,7 @@
 
   // 插入 Banner 在原位置
   const banner = document.createElement('div');
-  banner.className = 'added-banner fs-t3 fw-bold text-color-new-1 text-center mb-12';
+  banner.className = 'added-banner fs-t3 fw-bold text-color-new-1 text-center mb-10';
   banner.textContent = '已新增回憶！';
   talk.parentElement.insertBefore(banner, talk);
 
