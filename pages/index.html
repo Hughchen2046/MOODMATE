@@ -13,108 +13,107 @@
 <body class="bg-black d-flex justify-content-center align-items-center">
 
   <div class="device">
-    <div class="screen-index">
-      <div class="screen-scroll">
-        <%- include('./layout/top'); -%>
+    <div class="screen">
+        <section class="index p-6 pt-9">
+          <%- include('./layout/top'); -%>
           <!-- <%- include('./layout/header'); -%> -->
-          <section class=" px-6 pb-6"> <!-- index-background -->
-            <div class="d-flex justify-content-between align-items-center  ">
-              <button type="button" class="btn btn-image" data-bs-toggle="button"><img
-                  src="/assets/images/index/prize.png" alt="prize-logo" class="user-image"></button>
-              <button type="button" class="btn btn-image" data-bs-toggle="button"><img
-                  src="/assets/images/index/user-img.png" alt="user-logo" class="user-image"></button>
+          <div class="d-flex justify-content-between align-items-center  ">
+            <button type="button" class="btn btn-image" data-bs-toggle="button"><img
+                src="/assets/images/index/prize.png" alt="prize-logo" class="user-image"></button>
+            <button type="button" class="btn btn-image" data-bs-toggle="button"><img
+                src="/assets/images/index/user-img.png" alt="user-logo" class="user-image"></button>
+          </div>
+          <div class="px-6 pt-9">
+            <div class="talk-bubble text-center top-0 position-relative">
+              <p class="fs-t2 fw-bold " id="typeWriter">嗨!Lora!<br>今天過得怎麼樣?</p>
+              <i class="bi bi-caret-down-fill triangle-mark"></i>
             </div>
-            <div class="px-6 pt-9">
-              <div class="talk-bubble text-center top-0 position-relative">
-                <p class="fs-t2 fw-bold " id="typeWriter">嗨!Lora!<br>今天過得怎麼樣?</p>
-                <i class="bi bi-caret-down-fill triangle-mark"></i>
-              </div>
-              <!-- <div class="added-banner fs-t3 fw-bold text-color-new-1 text-center">已新增回憶！</div> -->
-              <img src="/assets/images/chat/chat_bubu.png" alt="bubu" class="character-image">
+            <!-- <div class="added-banner fs-t3 fw-bold text-color-new-1 text-center">已新增回憶！</div> -->
+            <img src="/assets/images/chat/chat_bubu.png" alt="bubu" class="character-image">
+          </div>
+          <div id="default-list" class="mood-block mt-4 mb-9">
+            <div class="line-block text-center">
+              <h3 class="fs-t2 fw-bold text-color-new-1" id="date-todayheading"></h3>
+              <p class="fs-t4 text-color-new-2 mb-3">請選擇符合心情的圖示</p>
+              <ul class="nav justify-content-between">
+                <li><img class="mood-img" data-mood="very-happy" data-label="超開心"
+                    src="/assets/images/index/mood/mood-very-happy.svg" alt="超開心"></li>
+                <li><img class="mood-img" data-mood="happy" data-label="開心"
+                    src="/assets/images/index/mood/mood-happy.svg" alt="開心">
+                </li>
+                <li><img class="mood-img" data-mood="normal" data-label="普通"
+                    src="/assets/images/index/mood/mood-normal.svg" alt="普通">
+                </li>
+                <li><img class="mood-img" data-mood="unhappy" data-label="不開心"
+                    src="/assets/images/index/mood/mood-unhappy.svg" alt="不開心"></li>
+                <li><img class="mood-img" data-mood="sad" data-label="傷心" src="/assets/images/index/mood/mood-sad.svg"
+                    alt="傷心"></li>
+              </ul>
             </div>
-            <div id="default-list" class="mood-block mt-4 mb-9">
-              <div class="line-block text-center">
-                <h3 class="fs-t2 fw-bold text-color-new-1" id="date-todayheading"></h3>
-                <p class="fs-t4 text-color-new-2 mb-3">請選擇符合心情的圖示</p>
-                <ul class="nav justify-content-between">
-                  <li><img class="mood-img" data-mood="very-happy" data-label="超開心"
-                      src="/assets/images/index/mood/mood-very-happy.svg" alt="超開心"></li>
-                  <li><img class="mood-img" data-mood="happy" data-label="開心"
-                      src="/assets/images/index/mood/mood-happy.svg" alt="開心">
-                  </li>
-                  <li><img class="mood-img" data-mood="normal" data-label="普通"
-                      src="/assets/images/index/mood/mood-normal.svg" alt="普通">
-                  </li>
-                  <li><img class="mood-img" data-mood="unhappy" data-label="不開心"
-                      src="/assets/images/index/mood/mood-unhappy.svg" alt="不開心"></li>
-                  <li><img class="mood-img" data-mood="sad" data-label="傷心" src="/assets/images/index/mood/mood-sad.svg"
-                      alt="傷心"></li>
-                </ul>
-              </div>
+          </div>
+          <div id="journal-list" class="mt-4 mb-10"></div>
+          <!-- <div class="mood-block mb-4">
+      <div class="line-block">
+        <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
+          <div class="accordion-item">
+            <div class="accordion-header d-flex justify-content-between align-items-center accordion-moodbg">
+              <img src="/assets/images/record/Angry-a.svg" class="mood-img-sm me-3">
+              <h6 class="fs-t3 fw-bold text-color-new-1 me-auto" id="date-todayheadingshort"></h6>
+              <img src="/assets/images/index/edit.svg" alt="">
+              <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1 ms-3" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mood-indextext" aria-expanded="false" aria-controls="mood-indextext">
+              </button>
             </div>
-            <div id="journal-list" class="mt-4 mb-10"></div>
-            <!-- <div class="mood-block mb-4">
-        <div class="line-block">
-          <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
-            <div class="accordion-item">
-              <div class="accordion-header d-flex justify-content-between align-items-center accordion-moodbg">
-                <img src="/assets/images/record/Angry-a.svg" class="mood-img-sm me-3">
-                <h6 class="fs-t3 fw-bold text-color-new-1 me-auto" id="date-todayheadingshort"></h6>
-                <img src="/assets/images/index/edit.svg" alt="">
-                <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1 ms-3" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#mood-indextext" aria-expanded="false" aria-controls="mood-indextext">
-                </button>
-              </div>
-              <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
-                <div class="accordion-body">
-                  <div class="index-whitebackground">
-                    <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
-                    <p class="fs-t4 text-color-new-3">tessdfsdfsdft</p>
-                  </div>
+            <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
+              <div class="accordion-body">
+                <div class="index-whitebackground">
+                  <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
+                  <p class="fs-t4 text-color-new-3">tessdfsdfsdft</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
-            <nav class="d-flex justify-content-between position-relative nav-footer-fix">
-              <div class="d-flex gap-4">
-                <a href="index.html" class="fs-t4 fw-bold icon-active">
-                  <div class="text-center">
-                    <img src="/assets/images/nav/home-img.png" alt="" class="icon-img unvisible">
-                    <img src="/assets/images/nav/home-img.png" alt="" class="icon-bigger">
-                    <p>首頁</p>
-                  </div>
-                </a>
-                <a href="#" class="fs-t4 fw-bold icon-inactive">
-                  <div class="text-center">
-                    <img src="/assets/images/nav/diary-icon.svg" alt="" class="icon-img">
-                    <p>日記</p>
-                  </div>
-                </a>
-              </div>
-              <div class="text-center fs-t4 fw-bold">
-                <button type="button" class="bh-white icon-add icon-add-position-fix"
-                  onclick="location.href='record.html'"><img src="/assets/images/nav/add-icon.svg" alt=""></button>
-                <img src="/assets/images/nav/home-img.png" alt="" class="icon-img unvisible">
-                <p class="text-primary-700">新增</p>
-              </div>
-              <div class="d-flex gap-4">
-                <a href="#" class="fs-t4 fw-bold icon-inactive">
-                  <div class="text-center">
-                    <img src="/assets/images/nav/search-icon.svg" alt="" class="icon-img">
-                    <p>分析</p>
-                  </div>
-                </a>
-                <a href="chat.html" class="fs-t4 fw-bold icon-inactive">
-                  <div class="text-center">
-                    <img src="/assets/images/nav/chat-icon.svg" alt="" class="icon-img">
-                    <p>聊聊</p>
-                  </div>
-                </a>
-              </div>
-            </nav>
-          </section>
+      </div>
+    </div> -->
+          <nav class="d-flex justify-content-between position-relative nav-footer-fix">
+            <div class="d-flex gap-4">
+              <a href="index.html" class="fs-t4 fw-bold icon-active">
+                <div class="text-center">
+                  <img src="/assets/images/nav/home-img.png" alt="" class="icon-img unvisible">
+                  <img src="/assets/images/nav/home-img.png" alt="" class="icon-bigger">
+                  <p>首頁</p>
+                </div>
+              </a>
+              <a href="#" class="fs-t4 fw-bold icon-inactive">
+                <div class="text-center">
+                  <img src="/assets/images/nav/diary-icon.svg" alt="" class="icon-img">
+                  <p>日記</p>
+                </div>
+              </a>
+            </div>
+            <div class="text-center fs-t4 fw-bold">
+              <button type="button" class="bh-white icon-add icon-add-position-fix"
+                onclick="location.href='record.html'"><img src="/assets/images/nav/add-icon.svg" alt=""></button>
+              <img src="/assets/images/nav/home-img.png" alt="" class="icon-img unvisible">
+              <p class="text-primary-700">新增</p>
+            </div>
+            <div class="d-flex gap-4">
+              <a href="#" class="fs-t4 fw-bold icon-inactive">
+                <div class="text-center">
+                  <img src="/assets/images/nav/search-icon.svg" alt="" class="icon-img">
+                  <p>分析</p>
+                </div>
+              </a>
+              <a href="chat.html" class="fs-t4 fw-bold icon-inactive">
+                <div class="text-center">
+                  <img src="/assets/images/nav/chat-icon.svg" alt="" class="icon-img">
+                  <p>聊聊</p>
+                </div>
+              </a>
+            </div>
+          </nav>
+        </section>
       </div>
     </div>
   </div>
