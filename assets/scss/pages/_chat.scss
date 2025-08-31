@@ -54,6 +54,14 @@
     }
 }
 
+.scroll {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 .chat {
     background: url("../images/chat/chat_background.png") no-repeat center bottom;
     background-size: cover;
