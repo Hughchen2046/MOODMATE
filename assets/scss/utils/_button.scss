@@ -1,3 +1,8 @@
+button {
+    border: 0;
+    font-size: 0;
+    background: none;
+}
 
 .btn-image{
     padding: 0;
@@ -17,9 +22,14 @@
 
 // chat
 .btn-arrow-left, .btn-sound {
-    border: none;
     border-radius: $border-radius-pill;
     padding: .5rem;
     font-size: 0;
     background: $seccolor-200;
+}
+
+.btn-recording {
+    border-radius: $border-radius-pill;
+    padding: 1.875rem;
+    background: linear-gradient($pricolor, #51B6A1, $pricolor-500);
 }

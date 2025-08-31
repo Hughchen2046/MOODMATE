@@ -9,6 +9,7 @@
 }
 
 .device {
+    position: relative;
     padding: 1.2rem 1.3rem;
     max-width: 408px;
     width: 100%;
@@ -25,6 +26,7 @@
 }
 
 .screen {
+    position: relative;
     border-radius: 2.9rem;
     margin: 0 auto;
     max-width: 390px;
@@ -40,11 +42,84 @@
     }
 }
 
-.text-default {
-    color: #64483E;
-    letter-spacing: 0;
+.bottom-line {
+    border-radius: $border-radius-pill;
+    position: absolute;
+    width: 134px;
+    height: 5px;
+    left: 50%;
+    bottom: .5rem;
+    transform: translateX(-50%);
+    background: $black;
 }
 
-.recording {
+.chat {
+    .text-default {
+        color: #64483E;
+        letter-spacing: 0;
+    }
 
+    .chat-dialog {
+        position: relative;
+        background: #FFF3EE;
+        opacity: 1;
+        animation: dialog .3s ease-in-out forwards;
+        animation-delay: .15s;
+
+        @keyframes dialog {
+            from {
+                transform: scale(.5);
+                transform-origin: bottom;
+                opacity: 0;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: .125rem;
+            margin-left: -.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            bottom: -.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFF3EE;
+            transform: scaleX(.75) rotate(45deg);
+        }
+
+        p {
+            height: 1.5em;
+        }
+    }
+    
+    .chat-role {
+        animation: light 1s ease-in-out infinite alternate;
+    
+        @keyframes light {
+            to {
+                transform: scaleY(.98);
+                transform-origin: bottom;
+                filter: brightness(1.03) drop-shadow(0 0 0 $white);
+            }
+        }
+    }
+    
+    .chat-recording {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+
+        .chat-dialog {
+            margin-left: -.125rem;
+
+            &::before {
+                background: $white;
+            }
+
+            .text-default {
+                color: $orange-900;
+            }
+        }
+    }
 }

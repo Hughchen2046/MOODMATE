@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
         document.getElementById('time').textContent = `${hours}:${minutes}`;
     }
 
@@ -36,5 +35,21 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCountdown();
     // 每秒更新
     let timer = setInterval(updateCountdown, 1000);
-    
+
+    // typeWriter
+    const text = "跟我說說你今天的心情吧？";
+    const speed = 100; // 每個字顯示間隔 (毫秒)
+
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typeWriter").textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    // 晚 3 秒後開始
+    setTimeout(typeWriter, 500);
+
 });
