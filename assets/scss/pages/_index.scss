@@ -12,6 +12,15 @@
 }
 .character-image{
   width: 100%;
+          animation: light 1s ease-in-out infinite alternate;
+    
+        @keyframes light {
+            to {
+                transform: scaleY(.98);
+                transform-origin: bottom;
+                filter: brightness(1.03) drop-shadow(0 0 0 $white);
+            }
+        }
 }
 .pt-160{
   padding-top: 160px;
@@ -20,6 +29,7 @@
   position:absolute;
   min-width: 200px;
   max-width: 342px;
+  min-height: 94px;
   top: 48.5px;
   left: 50%;
   transform: translateX(-50%);
@@ -108,7 +118,8 @@
   border-radius: 1000px;
   background-color: #FDF3E6;
   transform: translateY(0);
-  transition: opacity .5s ease, transform .5s ease;  
+    --fadeMs: 500ms;
+  transition: opacity var(--fadeMs) ease, transform var(--fadeMs) ease;
 
 }
 
