@@ -114,7 +114,6 @@
 .index-whitebackground{
   background: white;
   width: 100%;
-  padding: 8px;
   border-radius: 4px;
 }
 .text-color-new-3{
@@ -152,4 +151,13 @@
   top: -23px;
   left: 50%;
   transform: translateX(-50%);
+}
+.h-47{
+  height: 47px !important;
+}
+.journal-note{
+  white-space: pre-wrap; 
+  overflow-wrap: anywhere; 
+  word-break: break-word; 
+  scrollbar-width: none;
 }

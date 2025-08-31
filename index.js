@@ -62,10 +62,10 @@
                 </button>
               </div>
               <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
-                <div class="accordion-body">
+                <div class="accordion-body p-3">
                   <div class="index-whitebackground">
                     <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
-        ${entry.note ? `<p class="fs-t4 text-color-new-3">${escapeHtml(entry.note)}</p>` : ''}
+        ${entry.note ? `<p class="fs-t4 text-color-new-3 journal-note h-47 overflow-x-hidden overflow-y-scroll">${escapeHtml(entry.note)}</p>` : ''}
                           </div>
                 </div>
               </div>
