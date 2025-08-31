@@ -6,7 +6,7 @@
     }
 }
 
-.device {
+.device{
     position: relative;
     padding: 1.2rem 1.3rem;
     max-width: 408px;
@@ -14,7 +14,7 @@
     height: 829px;
     background: url("../images/common/device.png") no-repeat center top;
     background-size: cover;
-
+    overflow: hidden;
     @include media-breakpoint-down(sm) {
         padding: 0;
         max-width: 100%;
