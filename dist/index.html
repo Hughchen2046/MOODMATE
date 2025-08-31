@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_document" />
   <title>index</title>
-  <script type="module" crossorigin src="/MOODMATE/assets/main-DMcsC3aj.js"></script>
-  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-VWE0Gy7n.css">
+  <script type="module" crossorigin src="/MOODMATE/assets/index-BBIpG0WQ.js"></script>
+  <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-BzmhkIGp.js">
+  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-bj7YWboT.css">
 </head>
 
 <body>
@@ -36,7 +37,7 @@
       </div>
       <div class="px-8 pt-10">
         <div class="talk-bubble text-center top-0 position-relative">
-          <p class="fs-t2 fw-bold ">嗨!Lora!<br>今天過得怎麼樣?</p>
+          <p class="fs-t2 fw-bold " id="typeWriter">嗨!Lora!<br>今天過得怎麼樣?</p>
           <i class="bi bi-caret-down-fill triangle-mark"></i>
         </div>
         <!-- <div class="added-banner fs-t3 fw-bold text-color-new-1 text-center">已新增回憶！</div> -->
@@ -120,7 +121,7 @@
                         <p>分析</p>
                     </div>                    
                 </a>
-                <a href="#" class="fs-t4 fw-bold icon-inactive">
+                <a href="chat.html" class="fs-t4 fw-bold icon-inactive">
                     <div class="text-center">
                         <img src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M21%2021.1C20.8667%2021.1%2020.7417%2021.075%2020.625%2021.025C20.5083%2020.975%2020.4%2020.9%2020.3%2020.8L18%2018.5H8C7.45%2018.5%206.97917%2018.3042%206.5875%2017.9125C6.19583%2017.5208%206%2017.05%206%2016.5V15.5H17C17.55%2015.5%2018.0208%2015.3042%2018.4125%2014.9125C18.8042%2014.5208%2019%2014.05%2019%2013.5V6.5H20C20.55%206.5%2021.0208%206.69583%2021.4125%207.0875C21.8042%207.47917%2022%207.95%2022%208.5V20.075C22%2020.375%2021.9%2020.6208%2021.7%2020.8125C21.5%2021.0042%2021.2667%2021.1%2021%2021.1ZM4%2012.675L5.175%2011.5H15V4.5H4V12.675ZM3%2016.1C2.73333%2016.1%202.5%2016.0042%202.3%2015.8125C2.1%2015.6208%202%2015.375%202%2015.075V4.5C2%203.95%202.19583%203.47917%202.5875%203.0875C2.97917%202.69583%203.45%202.5%204%202.5H15C15.55%202.5%2016.0208%202.69583%2016.4125%203.0875C16.8042%203.47917%2017%203.95%2017%204.5V11.5C17%2012.05%2016.8042%2012.5208%2016.4125%2012.9125C16.0208%2013.3042%2015.55%2013.5%2015%2013.5H6L3.7%2015.8C3.6%2015.9%203.49167%2015.975%203.375%2016.025C3.25833%2016.075%203.13333%2016.1%203%2016.1Z'%20fill='%2364483E'/%3e%3c/svg%3e" alt="" class="icon-img">
                         <p>聊聊</p>
@@ -131,119 +132,6 @@
     </div>
 </footer>
       <script src="../date.js"></script>
-      <script>
-
-        // 點擊 → 存選擇 → 換頁
-        document.querySelectorAll('.mood-img').forEach(img => {
-          img.style.cursor = 'pointer';
-          img.addEventListener('click', () => {
-            const pick = {
-              id: img.dataset.mood,
-              label: img.dataset.label,
-              src: img.getAttribute('src'),
-              time: Date.now()
-            };
-            sessionStorage.setItem('selectedMood', JSON.stringify(pick));
-            location.href = 'record.html';  // 你的下一頁路徑
-          });
-        });
-      </script>
-
-      <script>
-        function escapeHtml(s) {
-          return s.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
-        }
-
-        (function renderLatest() {
-          const root = document.getElementById('journal-list');
-          const defaultList = document.getElementById('default-list')
-          if (!root) return;
-
-          const data = sessionStorage.getItem('latestRecord');
-          if (!data) return;
-
-          const entry = JSON.parse(data);
-
-          // 在 record.html 的 radio 裡找對應的 data-src-b
-          // 這裡不是真的去讀 record.html，而是 index.html 上也有同樣 id 或 data-mood 的元素
-          const moodImgEl = document.querySelector(`[data-mood="${entry.moodId}"]`) ||
-            document.querySelector(`[value="${entry.moodId}"]`);
-          const moodSrc = moodImgEl?.dataset.srcB || moodImgEl?.getAttribute('src') || '';
-
-          // 隱藏default.listist
-          if (defaultList) defaultList.style.display = 'none';
-
-          root.innerHTML = `
-    <div class="mood-block mt-4">
-      <div class="line-block">
-        <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
-                      <div class="accordion-item">
-              <div class="accordion-header d-flex justify-content-between align-items-center accordion-moodbg">
-          ${moodSrc ? `<img src="${moodSrc}" alt="${entry.moodLabel}" class="mood-img-sm me-3">` : ''}
-                <h6 class="fs-t3 fw-bold text-color-new-1 me-auto" id="date-todayheadingshort"></h6>
-                <span class="material-symbols-outlined text-color-new-1">edit_document</span>
-                <button class="accordion-button collapsed fs-t2 fw-bold text-color-new-1 ms-3" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#mood-indextext" aria-expanded="false" aria-controls="mood-indextext">
-                </button>
-              </div>
-              <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
-                <div class="accordion-body">
-                  <div class="index-whitebackground">
-                    <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
-        ${entry.note ? `<p class="fs-t4 text-color-new-3">${escapeHtml(entry.note)}</p>` : ''}
-                          </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  `;
-          // ←← 這裡再填日期（現在元素已存在）
-          const today = new Date();
-          const day = today.getDate();
-          const weekdayShort = today.toLocaleDateString('zh-TW', { weekday: 'short' });
-          const el = document.getElementById('date-todayheadingshort');
-          if (el) el.textContent = `${day} ${weekdayShort}`;
-
-(function checkMemoryAdded() {
-  if (!sessionStorage.getItem('memoryAdded')) return;
-
-  const talk = document.querySelector('.talk-bubble');
-  if (!talk) { sessionStorage.removeItem('memoryAdded'); return; }
-
-  // 先把 talk-bubble 暫時隱藏（不要移除 DOM，之後要顯示回來）
-  const prevDisplay = talk.style.display;
-  talk.style.display = 'none';
-
-  // 插入 Banner 在原位置
-  const banner = document.createElement('div');
-  banner.className = 'added-banner fs-t3 fw-bold text-color-new-1 text-center mb-12';
-  banner.textContent = '已新增回憶！';
-  talk.parentElement.insertBefore(banner, talk);
-
-  // 停留秒數與淡出時間（要與 CSS transition 對齊）
-  const stayMs = 1800;
-  const fadeMs = 1500;
-
-  // 開始倒數 → 加上淡出 class → 動畫結束後移除 Banner、還原 talk-bubble
-  setTimeout(() => {
-    banner.classList.add('fade-out');
-    banner.addEventListener('transitionend', () => {
-      banner.remove();
-      talk.style.display = prevDisplay || ''; // 還原顯示
-    }, { once: true });
-  }, stayMs);
-
-  // 只顯示一次，顯示完就移除旗標
-  sessionStorage.removeItem('memoryAdded');
-})();
-
-
-
-        })();
-      </script>
 
 </body>
 
