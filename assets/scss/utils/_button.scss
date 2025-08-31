@@ -31,6 +31,7 @@ button {
     border-radius: $border-radius-pill;
     padding: 1.875rem;
     background: linear-gradient($pricolor, #51B6A1, $pricolor-500);
+    transition: .2s;
 }
 
 .btn-sound-wave {
@@ -40,6 +41,7 @@ button {
     opacity: 0;
     pointer-events: none; 
     visibility: hidden;
+    transition: .2s;
 
     .wave {
         width: 48px;

@@ -1,12 +1,24 @@
 .header {
     background: linear-gradient(180deg, rgba($black, .3) 0%, rgba($black, 0) 100%);
 
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 37px;
+        top: 0;
+        left: 0;
+        background: url(../images/header/dynamic-island.png) no-repeat center top;
+        background-size: 100%;
+    }
+
     @include media-breakpoint-down(sm) {
         display: none;
     }
 }
 
-.device{
+.device {
     position: relative;
     padding: 1.2rem 1.3rem;
     max-width: 408px;
@@ -39,6 +51,19 @@
     }
 }
 
+.scroll {
+    padding-top: 3rem;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    @include media-breakpoint-down(sm) {
+        padding-top: 0;
+    }
+}
+
 .bottom-line {
     border-radius: $border-radius-pill;
     position: absolute;
@@ -54,14 +79,6 @@
     }
 }
 
-.scroll {
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
 .chat {
     background: url("../images/chat/chat_background.png") no-repeat center bottom;
     background-size: cover;
@@ -71,12 +88,31 @@
         letter-spacing: 0;
     }
 
+    .text-error {
+        color: $red;
+    }
+
+    .chat-loading {
+        max-width: 32px;
+        transition: .2s;
+    }
+
     .chat-box {
         margin-top: 4.3rem;
         padding-top: 6.25rem;
 
         @include media-breakpoint-down(sm) {
             margin-top: 6.8rem;
+        }
+
+        .chat-prompt {
+            max-width: 206px;
+            opacity: 0;
+            transition: .2s;
+
+            &.status {
+                opacity: 1;
+            }
         }
     }
 
@@ -86,6 +122,17 @@
         background: #FFF3EE;
         animation: dialog .3s ease-in-out forwards;
         animation-delay: .15s;
+
+        @keyframes dialog {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to   { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
 
         &::before {
             content: "";
@@ -108,16 +155,30 @@
     
     .chat-role {
         animation: light 1s ease-in-out infinite alternate;
+
+        @keyframes light {
+            to {
+                transform: scaleY(.98);
+                transform-origin: bottom;
+                filter: brightness(1.03) drop-shadow(0 0 0 $white);
+            }
+        }
     }
     
     .chat-bottom {
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
 
+        .chat-recording {
+            max-width: 228px;
+            width: 100%;
+        }
+
         .chat-prompt {
             position: relative;
             margin-left: -.125rem;
             background: #FFF3EE;
+            transition: .2s;
 
             &::before {
                 content: "";
@@ -136,73 +197,39 @@
                 color: $orange-900;
             }
         }
+    }
 
-        .chat-recording {
-            max-width: 228px;
-            width: 100%;
+    .recordingArea {
+        transition: .3s;
+
+        &.down {
+            transform: translateY(14.25rem);
+        }
+    }
+
+    .typingArea {
+        transform: translateY(5.6rem);
+        transition: .3s;
+
+        &.up {
+            transform: translateY(0);
         }
     }
 }
 
 .status {
-    animation: fade-in .15s ease-in-out forwards;
+    opacity: 1; 
+    pointer-events: auto; 
+    visibility: visible;
 }
 
 .remove-status {
-    animation: fade-out .15s ease-in-out forwards;
+    opacity: 0; 
+    pointer-events: none; 
+    visibility: hidden;
 }
 
 .disable {
-    animation: disable .15s ease-in-out forwards;
-}
-
-@keyframes dialog {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
-    }
-    to   { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-}
-
-@keyframes light {
-    to {
-        transform: scaleY(.98);
-        transform-origin: bottom;
-        filter: brightness(1.03) drop-shadow(0 0 0 $white);
-    }
-}
-
-@keyframes fade-in {
-    from { 
-        opacity: 0; 
-    }
-    to   { 
-        opacity: 1; 
-        pointer-events: auto; 
-        visibility: visible;
-    }
-}
-
-@keyframes fade-out {
-    from { 
-        opacity: 1; 
-    }
-    to   { 
-        opacity: 0; 
-        pointer-events: none; 
-        visibility: hidden;
-    }
-}
-
-@keyframes disable {
-    from { 
-        opacity: 1; 
-    }
-    to   { 
-        opacity: .5;
-        pointer-events: none; 
-    }
+    opacity: .5;
+    pointer-events: none; 
 }

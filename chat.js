@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // time
+    //---- time
     function updateTime() {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
@@ -11,17 +11,24 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTime();
     setInterval(updateTime, 1000);
 
-    // countdown
-    let time = 4 * 60 + 59; // 4:59 轉成秒數
+    //---- countdown
+    let time = 40 * 60 + 59; // 4:59 轉成秒數
+    let timer = null;
+    const countdownEl = document.getElementById("countdown");
+    const countdownText = document.querySelector(".countdown");
 
     function updateCountdown() {
         let minutes = Math.floor(time / 60);
         let seconds = time % 60;
 
-        let display =
-        String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+        let display = String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
 
-        document.getElementById("countdown").textContent = display;
+        countdownEl.textContent = display;
+
+        // 小於 30 秒變紅
+        if (time <= 30) {
+            countdownText.classList.add("text-error");
+        }
 
         if (time > 0) {
             time--;
@@ -30,12 +37,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    updateCountdown();
-    let timer = setInterval(updateCountdown, 1000);
+    function startCountdown() {
+        // 重置時間
+        time = 4 * 60 + 59;
 
-    // recording
+        // 重置顏色
+        countdownText.classList.remove("text-error");
+
+        // 清掉舊的 interval，避免重複
+        clearInterval(timer);
+
+        // 立刻更新一次，然後開始倒數
+        updateCountdown();
+        timer = setInterval(updateCountdown, 1000);
+    }
+
+    // 預設啟動一次
+    startCountdown();
+
+    //---- recording
+    const chatLoading = document.querySelector(".chat-loading");
+    const chatSend = document.querySelector(".chat-box .chat-prompt");
     const btnRecording = document.querySelector(".btn-recording");
-    const chatPrompt = document.querySelector(".chat-prompt");
+    const chatPrompt = document.querySelector(".chat-bottom .chat-prompt");
     const btnSoundWave = document.querySelector(".btn-sound-wave");
     const typeWriterEl = document.getElementById("typeWriter");
 
@@ -45,20 +69,24 @@ document.addEventListener("DOMContentLoaded", function () {
         typeWriterEl.innerHTML = "";
         
         function step() {
-    if (i < text.length) {
-      const char = text.charAt(i);
-      // 遇到換行符號 \n 就轉成 <br>
-      if (char === "\n") {
-        typeWriterEl.innerHTML += "<br>";
-      } else {
-        typeWriterEl.innerHTML += char;
-      }
-      i++;
-      setTimeout(step, speed);
-    } else if (callback) {
-      callback();
-    }
-  }
+            if (i < text.length) {
+                const char = text.charAt(i);
+
+                // 遇到換行符號 \n 就轉成 <br>
+                if (char === "\n") {
+                    typeWriterEl.innerHTML += "<br>";
+                } 
+                else {
+                    typeWriterEl.innerHTML += char;
+                }
+
+                i++;
+                setTimeout(step, speed);
+            } 
+            else if (callback) {
+                callback();
+            }
+        }
         step();
     }
 
@@ -76,19 +104,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 點聲波按鈕
     btnSoundWave.addEventListener("click", () => {
+        chatLoading.classList.remove("d-none");
+        chatSend.classList.add("status");
         btnSoundWave.classList.remove("status");
         btnRecording.classList.remove("remove-status");
         btnRecording.classList.add("disable");
 
         // 思考中
-        typeWriter("思考中...", 100, () => {
-            // 思考完 3 秒後打字新訊息
-            setTimeout(() => {
-                typeWriter("第一次接手新的工作任務，\n會緊張是很自然的反應！", 50, () => {
-                    btnRecording.classList.remove("disable");
-                });
-            }, 3000);
-        });
+        typeWriterEl.textContent = "思考中...";
+
+        // 思考完 3 秒後打字新訊息
+        setTimeout(() => {
+            chatLoading.classList.add("d-none");
+            chatSend.classList.remove("status");
+
+            typeWriter("第一次接手新的工作任務，\n會緊張是很自然的反應！", 50, () => {
+                btnRecording.classList.remove("disable");
+                chatPrompt.classList.remove("remove-status");
+            });
+
+        }, 2000);
+    });
+
+    //---- typingArea
+    const btnKeyboard = document.querySelector(".btn-keyboard");
+    const btnMicphine = document.querySelector(".btn-micphine");
+    const recordingArea = document.querySelector(".recordingArea");
+    const typingArea = document.querySelector(".typingArea");
+
+    // 點擊鍵盤
+    btnKeyboard.addEventListener("click", () => {
+        recordingArea.classList.add("down");
+        typingArea.classList.add("up");
+    });
+
+    // 點擊錄音
+    btnMicphine.addEventListener("click", () => {
+        recordingArea.classList.remove("down");
+        typingArea.classList.remove("up");
     });
 
 });
