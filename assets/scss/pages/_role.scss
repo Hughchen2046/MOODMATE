@@ -1,12 +1,19 @@
-.page-role {
-    min-height: 100vh;
-    // 設定背景漸層色
-    background: linear-gradient(180deg, #fff4e5 0%, #ffffff 100%) !important;
+html, body {
+    min-height: 100%;
+    background-color: #fff;
 }
 
-.role-wrapper {
-    margin-top: 48px;
+body.page-role {
+    background: linear-gradient(to bottom, #fff4e5 0%, #ffffff 100%) !important;
+    background-attachment: fixed; /* 漸層會隨整個頁面高度延伸 */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
+
+
+// .role-wrapper {
+//     margin-top: 48px;
+// }
 
 .welcome-img {
     width: 100%;
@@ -25,8 +32,16 @@
     padding-bottom: 148px;
 }
 
+.pt-48 {
+    padding-top: 48px;
+}
+
 .pb-314 {
     padding-bottom: 314px;
+}
+
+.mt-48 {
+    margin-top: 48px;
 }
 
 .mb-14 {
@@ -35,6 +50,10 @@
 
 .lh-145 {
     line-height: 1.45;
+}
+
+.btn-secondary {
+    background-color: #7D594E;
 }
 
 .scroll-bar {
