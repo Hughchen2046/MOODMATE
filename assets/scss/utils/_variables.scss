@@ -504,7 +504,8 @@ $theme-colors: map-merge(
   $theme-colors,
   (
     "pricolor":  $pricolor,
-    "seccolor":  $seccolor
+    "seccolor":  $seccolor,
+    "seccolor-200":   $seccolor-200,
   )
 );
 @each $name, $color in $pricolors {
@@ -621,7 +622,8 @@ $spacers: (
   9: $spacer * 3,
   10: $spacer * 3.5,
   11: $spacer * 4,
-  12: $spacer * 4.5
+  12: $spacer * 4.5,
+  13: $spacer * 5
 ) !default;
 // scss-docs-end spacer-variables-maps
 

@@ -14,3 +14,12 @@
         box-shadow: 0px 4px 24px 0px #00000026 !important;
     }
 }
+
+// chat
+.btn-arrow-left, .btn-sound {
+    border: none;
+    border-radius: $border-radius-pill;
+    padding: .5rem;
+    font-size: 0;
+    background: $seccolor-200;
+}
