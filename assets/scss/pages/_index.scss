@@ -10,6 +10,31 @@
     width: 52px;
     height: 52px;
 }
+.screen-index {
+    position: relative;
+    border-radius: 2.9rem;
+    margin: 0 auto;
+    max-width: 390px;
+    width: 100%;
+    height: 100%;
+    background: url("/assets/images/chat/homegape_backgorund.png") no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+
+    @include media-breakpoint-down(sm) {
+        border-radius: 0;
+        max-width: 100%;
+    }
+}
+.screen-scroll{
+  height: 100%;
+  overflow-y: auto;        /* 這層專門滾動 */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+  padding-bottom: 0px;
+}
 .character-image{
   width: 100%;
           animation: light 1s ease-in-out infinite alternate;
@@ -67,8 +92,8 @@
 .text-color-new-2{
   color: #a67668;
 }
-.mb-150{
-  margin-bottom: 150px;
+.mb-60{
+  margin-bottom: 60px;
 }
 .mood-img-sm{
   width: 36px;
@@ -126,4 +151,21 @@
 .added-banner.fade-out {
   opacity: 0;
   transform: translateY(-6px);
+}
+
+.nav-footer-fix{
+  padding-top: 12px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 1000px;
+  background: #FFFFFF;
+}
+
+
+.icon-add-position-fix{
+  position: absolute;
+  top: -23px;
+  left: 50%;
+  transform: translateX(-50%);
 }
