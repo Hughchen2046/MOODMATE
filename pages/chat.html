@@ -14,7 +14,7 @@
 			<%- include('./layout/top'); -%>
 
 			<section class="chat">
-				<div class="d-flex justify-content-between align-items-center px-5">
+				<div class="d-flex justify-content-between align-items-center px-5 pt-5 pt-sm-0">
 					<a href="index.html" class="btn-arrow-left p-3">
 						<img src="../assets/images/chat/arrow-left-brown-icon.svg" alt="arrow-left">
 					</a>
@@ -25,30 +25,35 @@
 						<img src="../assets/images/chat/open-sound-icon.svg" alt="open-sound">
 					</button>
 				</div>
-				<div class="d-flex flex-column justify-content-center px-6 py-10">
-					<div class="px-7 mb-8">
-						<div class="chat-dialog rounded-5 shadow px-4 py-6">
-							<p class="text-default fs-t2 fw-bold text-center" id="typeWriter"></p>
-						</div>
-					</div>
+				<div class="chat-box position-relative d-flex flex-column justify-content-center px-6 pb-6">
 					<div class="chat-role px-8">
 						<img class="img-fluid" src="../assets/images/chat/chat_bubu.png" alt="chat_bubu">
 					</div>
-				</div>
-				<div class="chat-recording bg-seccolor-200 position-absolute bottom-0 w-100 px-13 py-11">
-					<div class="chat-dialog position-absolute top-0 start-50 translate-middle-x bg-white rounded-5 shadow px-5 py-3 mt-6">
-						<p class="text-default fs-t3 fw-bold text-center">按一下開始說話！</p>
+					<div class="chat-dialog position-absolute start-50 top-0 translate-middle-x w-100 rounded-5 shadow px-4 py-6">
+						<p class="text-default fs-t2 fw-bold text-center" id="typeWriter"></p>
 					</div>
-					<div class="d-flex justify-content-center align-items-center column-gap-6">
+				</div>
+				<div class="chat-bottom bg-seccolor-200 position-absolute bottom-0 w-100 d-flex justify-content-center py-11 pb-7 pb-sm-11">
+					<div class="chat-recording d-flex justify-content-center align-items-center column-gap-6">
 						<button class="p-3" type="button">
 							<img src="../assets/images/chat/close-icon.svg" alt="close">
 						</button>
-						<button class="btn-recording" type="button">
-							<img src="../assets/images/chat/micphine-lg-icon.svg" alt="micphine">
-						</button>
+						<div class="position-relative">
+							<button class="btn-sound-wave position-absolute start-0 top-0" type="button">
+								<div class="wave">
+									<img src="../assets/images/chat/sound-wave.gif" alt="sound-wave">
+								</div>
+							</button>
+							<button class="btn-recording" type="button">
+								<img src="../assets/images/chat/micphine-lg-icon.svg" alt="micphine">
+							</button>
+						</div>
 						<button class="p-3" type="button">
 							<img src="../assets/images/chat/keyboard-icon.svg" alt="keyboard-icon">
 						</button>
+					</div>
+					<div class="chat-prompt position-absolute top-0 start-50 translate-middle-x bg-white rounded-5 shadow px-5 py-3 mt-6">
+						<p class="text-default fs-t3 fw-bold text-center">按一下開始說話！</p>
 					</div>
 					<div class="bottom-line"></div>
 				</div>

@@ -1,6 +1,5 @@
 button {
     border: 0;
-    font-size: 0;
     background: none;
 }
 
@@ -32,4 +31,26 @@ button {
     border-radius: $border-radius-pill;
     padding: 1.875rem;
     background: linear-gradient($pricolor, #51B6A1, $pricolor-500);
+}
+
+.btn-sound-wave {
+    border-radius: $border-radius-pill;
+    padding: 1.625rem;
+    background: $white;
+    opacity: 0;
+    pointer-events: none; 
+    visibility: hidden;
+
+    .wave {
+        width: 48px;
+        height: 48px;
+        overflow: hidden;
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.62);
+    }
 }

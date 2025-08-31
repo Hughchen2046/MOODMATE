@@ -2,9 +2,7 @@
     background: linear-gradient(180deg, rgba($black, .3) 0%, rgba($black, 0) 100%);
 
     @include media-breakpoint-down(sm) {
-        .dynamic-island {
-            display: none;
-        }
+        display: none;
     }
 }
 
@@ -32,7 +30,7 @@
     max-width: 390px;
     width: 100%;
     height: 100%;
-    background: url("../images/chat/chat_background.png") no-repeat center top;
+    background: url("../images/chat/chat_background.png") no-repeat center bottom;
     background-size: cover;
     overflow: hidden;
 
@@ -51,6 +49,10 @@
     bottom: .5rem;
     transform: translateX(-50%);
     background: $black;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
 }
 
 .chat {
@@ -59,61 +61,64 @@
         letter-spacing: 0;
     }
 
+    .chat-box {
+        margin-top: 4.3rem;
+        padding-top: 6.25rem;
+
+        @include media-breakpoint-down(sm) {
+            margin-top: 6.8rem;
+        }
+    }
+
     .chat-dialog {
         position: relative;
+        max-width: 280px;
         background: #FFF3EE;
-        opacity: 1;
         animation: dialog .3s ease-in-out forwards;
         animation-delay: .15s;
-
-        @keyframes dialog {
-            from {
-                transform: scale(.5);
-                transform-origin: bottom;
-                opacity: 0;
-            }
-        }
 
         &::before {
             content: "";
             display: block;
             position: absolute;
             border-radius: .125rem;
-            margin-left: -.5rem;
             width: 1.25rem;
             height: 1.25rem;
             bottom: -.6rem;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) scaleX(.75) rotate(45deg);
             background: #FFF3EE;
-            transform: scaleX(.75) rotate(45deg);
         }
 
         p {
-            height: 1.5em;
+            max-height: 3em;
+            min-height: 1.5em;
         }
     }
     
     .chat-role {
         animation: light 1s ease-in-out infinite alternate;
-    
-        @keyframes light {
-            to {
-                transform: scaleY(.98);
-                transform-origin: bottom;
-                filter: brightness(1.03) drop-shadow(0 0 0 $white);
-            }
-        }
     }
     
-    .chat-recording {
+    .chat-bottom {
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
 
-        .chat-dialog {
+        .chat-prompt {
+            position: relative;
             margin-left: -.125rem;
+            background: #FFF3EE;
 
             &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                border-radius: .125rem;
+                width: 1.25rem;
+                height: 1.25rem;
+                bottom: -.6rem;
+                left: 50%;
+                transform: translateX(-50%) scaleX(.75) rotate(45deg);
                 background: $white;
             }
 
@@ -121,5 +126,73 @@
                 color: $orange-900;
             }
         }
+
+        .chat-recording {
+            max-width: 228px;
+            width: 100%;
+        }
+    }
+}
+
+.status {
+    animation: fade-in .15s ease-in-out forwards;
+}
+
+.remove-status {
+    animation: fade-out .15s ease-in-out forwards;
+}
+
+.disable {
+    animation: disable .15s ease-in-out forwards;
+}
+
+@keyframes dialog {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to   { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes light {
+    to {
+        transform: scaleY(.98);
+        transform-origin: bottom;
+        filter: brightness(1.03) drop-shadow(0 0 0 $white);
+    }
+}
+
+@keyframes fade-in {
+    from { 
+        opacity: 0; 
+    }
+    to   { 
+        opacity: 1; 
+        pointer-events: auto; 
+        visibility: visible;
+    }
+}
+
+@keyframes fade-out {
+    from { 
+        opacity: 1; 
+    }
+    to   { 
+        opacity: 0; 
+        pointer-events: none; 
+        visibility: hidden;
+    }
+}
+
+@keyframes disable {
+    from { 
+        opacity: 1; 
+    }
+    to   { 
+        opacity: .5;
+        pointer-events: none; 
     }
 }

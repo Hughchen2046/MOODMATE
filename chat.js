@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let minutes = Math.floor(time / 60);
         let seconds = time % 60;
 
-        // 格式化補零
         let display =
         String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
 
@@ -31,25 +30,65 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // 先顯示一次
     updateCountdown();
-    // 每秒更新
     let timer = setInterval(updateCountdown, 1000);
 
-    // typeWriter
-    const text = "跟我說說你今天的心情吧？";
-    const speed = 100; // 每個字顯示間隔 (毫秒)
+    // recording
+    const btnRecording = document.querySelector(".btn-recording");
+    const chatPrompt = document.querySelector(".chat-prompt");
+    const btnSoundWave = document.querySelector(".btn-sound-wave");
+    const typeWriterEl = document.getElementById("typeWriter");
 
-    let i = 0;
-    function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("typeWriter").textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
+    // 打字機函數
+    function typeWriter(text, speed = 100, callback) {
+        let i = 0;
+        typeWriterEl.innerHTML = "";
+        
+        function step() {
+    if (i < text.length) {
+      const char = text.charAt(i);
+      // 遇到換行符號 \n 就轉成 <br>
+      if (char === "\n") {
+        typeWriterEl.innerHTML += "<br>";
+      } else {
+        typeWriterEl.innerHTML += char;
+      }
+      i++;
+      setTimeout(step, speed);
+    } else if (callback) {
+      callback();
+    }
+  }
+        step();
     }
 
-    // 晚 3 秒後開始
-    setTimeout(typeWriter, 500);
+    // 頁面一進入先打字
+    setTimeout(() => {
+        typeWriter("跟我說說你今天的心情吧？", 100);
+    }, 500);
+
+    // 點錄音按鈕
+    btnRecording.addEventListener("click", () => {
+        btnRecording.classList.add("remove-status");
+        chatPrompt.classList.add("remove-status");
+        btnSoundWave.classList.add("status");
+    });
+
+    // 點聲波按鈕
+    btnSoundWave.addEventListener("click", () => {
+        btnSoundWave.classList.remove("status");
+        btnRecording.classList.remove("remove-status");
+        btnRecording.classList.add("disable");
+
+        // 思考中
+        typeWriter("思考中...", 100, () => {
+            // 思考完 3 秒後打字新訊息
+            setTimeout(() => {
+                typeWriter("第一次接手新的工作任務，\n會緊張是很自然的反應！", 50, () => {
+                    btnRecording.classList.remove("disable");
+                });
+            }, 3000);
+        });
+    });
 
 });
