@@ -80,7 +80,7 @@
 }
 
 .chat {
-    background: url("../images/chat/chat_background.png") no-repeat center bottom;
+    background: url("../images/chat/chat_background.png") no-repeat center top;
     background-size: cover;
 
     .text-default {
@@ -213,6 +213,19 @@
 
         &.up {
             transform: translateY(0);
+        }
+    }
+
+    .form-control {
+        border-color: #D8B9AC;
+        border-radius: $border-radius-pill;
+
+        &:focus {
+            box-shadow: 0 0 0 .25rem rgba(#D8B9AC, .25);
+        }
+
+        &::placeholder {
+            color: rgba(#A67668, .5);
         }
     }
 }
