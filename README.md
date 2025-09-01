@@ -1,12 +1,13 @@
 # MOODMATE使用手冊
 
 ## 更新 Layout
+ - 09/01 整合 header.ejs 刪除舊的 top.ejs (Rabbit)
+ - 08/31 新增 chat.html (Rabbit)
  - 08/31 新增 role-step1.html、role-step4.html (Tetsu)
  - 08/31 role-step4.html doneBtn -> index.html (Tetsu)
  - 08/30 新增 bar元件、移除 role 的 footer (Tetsu)
- - 08/30 新增 header-role.ejs(Tetsu)
- - 08/28 新增角色核心頁面 role.html
-         By Tetsu
+ - 08/30 新增 header-role.ejs (Tetsu)
+ - 08/28 新增角色核心頁面 role.html (Tetsu)
 
 ## 基本元件
   - 08/27 顏色 (Hugh)
@@ -19,7 +20,8 @@
   - 08/28 新增_button.scss
 
 ## 更新請留下日期時間與內容
-  - 08/27 修改文字、間距、圓角、陰影 [DEMO](http://localhost:5173/MOODMATE/pages/utils.html) By Rabbit
+  - 08/27 修改文字、間距、圓角、陰影 [DEMO](http://localhost:5173/MOODMATE/pages/utils.html) (Rabbit)
+  - 08/30 新增手機外框 (Rabbit)
 
 ## 指令列表
 - `npm install` - 初次下載該範例專案後，需要使用 npm install 來安裝套件
