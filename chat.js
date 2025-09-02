@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnMicphine = document.querySelector(".btn-micphine");
     const recordingArea = document.querySelector(".recordingArea");
     const typingArea = document.querySelector(".typingArea");
+    const chatInput = document.getElementById("chatInput");
 
     // 點擊鍵盤
     btnKeyboard.addEventListener("click", () => {
@@ -142,6 +143,15 @@ document.addEventListener("DOMContentLoaded", function () {
     btnMicphine.addEventListener("click", () => {
         recordingArea.classList.remove("down");
         typingArea.classList.remove("up");
+    });
+
+    // 監聽輸入事件
+    chatInput.addEventListener("input", () => {
+        if (chatInput.value.trim() !== "") {
+            
+        } else {
+            
+        }
     });
 
 });
