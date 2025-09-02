@@ -19,6 +19,17 @@
   min-width: 42px;
   border-radius: 8px;
   opacity: 0.6;
+  &:hover, &:focus{
+    opacity: 1;
+  }
+  &:hover, &:focus, &:active{
+    .icon-img{
+      visibility: hidden;
+    }
+     .icon-bigger{
+      display:block !important;
+     }    
+  }
 }
 
 .icon-active {
@@ -46,12 +57,12 @@
 }
 
 .icon-bigger{
-  display: none;
+  display: none !important;
   position:absolute;
   width: 56px;
   height: 56px;
   left: -7px;
-  top: -25.5px;
+  top: -26px;
 }
 
 .icon-add{
@@ -64,4 +75,14 @@
   position: absolute;
   bottom: 17px;
   transform: translateX(-17px);
+}
+
+.page-home .device .screen section nav div .icon-inactive[data-key="page-home"]{
+  opacity: 1;
+  .current-page .icon-img{
+    visibility: hidden;
+  }
+  .current-page .icon-bigger{
+    display:block !important;
+  }
 }
