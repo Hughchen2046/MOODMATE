@@ -6,40 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>選取角色 | MOODMATE</title>
   </head>
-  <body class="page-role">
+  <body class="bg-black d-flex justify-content-center align-items-center">
+    <div class="device">
+      <div class="screen page-role">
 
-    <%- include('./layout/header-role'); -%>
+        <%- include('./layout/header-role'); -%>
 
-    <section class="role-wrapper">
-      <div class="container-mobile text-center py-148 mb-48">
-        <h2 class="text-default-color mb-6">Welcome!</h2>
-        <img
-          class="welcome-img mb-6"
-          src="/assets/images/onboarding/onboarding_welcome.png"
-          alt="welcome"
-        />
-        <p class="text-default-color mb-6">
-          準備好了嗎？<br />
-          現在先花點時間認識自己，<br />
-          接下來我們一起踏上屬於你的成長旅程。<br />
-        </p>
-        <p class="text-default-color">想更了解自己的情緒，跟它做朋友嗎？</p>
-      </div>
-      <div class="container-mobile mb-14">
-        <button
-          id="startBtn"
-          class="btn btn-primary text-white rounded-pill py-4 px-6 w-100"
-          type="button"
-        >
-          開始吧！
-        </button>
-      </div>
-      <div class="container-mobile scroll-bar">
+        <section class="scroll">
+          <div class="container-mobile text-center py-148">
+            <h2 class="text-default-color mb-6">Welcome!</h2>
+            <img
+              class="welcome-img mb-6"
+              src="/assets/images/onboarding/onboarding_welcome.png"
+              alt="welcome"
+            />
+            <p class="text-default-color mb-6">
+              準備好了嗎？<br />
+              現在先花點時間認識自己，<br />
+              接下來我們一起踏上屬於你的成長旅程。<br />
+            </p>
+            <p class="text-default-color">想更了解自己的情緒，跟它做朋友嗎？</p>
+          </div>
+          <div class="container-mobile mb-14">
+            <button
+              id="startBtn"
+              class="btn btn-primary text-white rounded-pill py-4 px-6 w-100"
+              type="button"
+            >
+              開始吧！
+            </button>
+          </div>
+          <!-- <div class="scroll-bar">
+            <div class="role-bar-item"></div>
+          </div> -->
+        </section>
         <div class="role-bar-item"></div>
+
       </div>
-    </section>
+    </div>
+
 
     <script type="module" src="../main.js"></script>
+    <script type="module" src="../role.js"></script>
     <script>
       document
         .getElementById("startBtn")

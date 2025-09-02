@@ -6,286 +6,310 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Step4 - 選取角色 | MOODMATE</title>
   </head>
-  <body class="page-role">
-    <%- include('./layout/header-role'); -%>
+  <body class="bg-black d-flex justify-content-center align-items-center">
+    <div class="device">
+      <div class="screen page-role">
 
-    <section class="role-wrapper">
-      <div class="container-mobile pt-48">
-        <div class="d-flex justify-content-between align-items-center mb-6">
-          <a class="pre fs-t2 text-default-color" href="role-step3.html"
-            >返回</a
-          >
-          <div class="d-flex justify-content-between">
-            <div class="active-bar-item me-4"></div>
-            <div class="active-bar-item me-4"></div>
-            <div class="active-bar-item me-4"></div>
-            <div class="active-bar-item"></div>
+        <%- include('./layout/header-role'); -%>
+
+        <section class="scroll">
+          <!-- <div class="container-mobile pt-48"> -->
+            <div class="container-mobile">
+            <!-- <div class="d-flex justify-content-between align-items-center mb-6">
+              <a class="pre fs-t2 text-default-color" href="role-step3.html"
+                >返回</a
+              >
+              <div class="d-flex justify-content-between">
+                <div class="active-bar-item me-4"></div>
+                <div class="active-bar-item me-4"></div>
+                <div class="active-bar-item me-4"></div>
+                <div class="active-bar-item"></div>
+              </div>
+              <a class="next fs-t2 text-default-color disabled">跳過</a>
+            </div> -->
+            <div
+              class="d-flex justify-content-between align-items-center mb-6 role-header"
+            >
+              <a class="pre fs-t2 text-default-color disabled" href="role-step3.html"
+              >
+                返回
+              </a>
+
+              <div class="d-flex justify-content-between role-bar">
+                <div class="active-bar-item me-4"></div>
+                <div class="step-bar-item me-4"></div>
+                <div class="step-bar-item me-4"></div>
+                <div class="step-bar-item"></div>
+              </div>
+
+              <a class="next fs-t2 text-default-color ms-4">跳過</a>
+            </div>
+            <h1 class="h6 text-default-color text-center mb-6">
+              選擇 Moodmate 的個性<br />
+              讓我們的對話更貼近你
+            </h6>
+            <div class="d-flex justify-content-evenly mb-6" role="tablist">
+              <!-- role 1 -->
+              <button
+                class="btn-kidney active"
+                id="bubu-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#bubu"
+                type="button"
+                role="tab"
+                aria-controls="bubu"
+                aria-selected="true"
+              >
+                <div class="kidney-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_bubu_thumb.png"
+                    alt="bubu"
+                    class="kidney-image"
+                  />
+                </div>
+                <span class="kidney-label">最適合你！</span>
+              </button>
+
+              <!-- role 2 -->
+              <button
+                class="btn-kidney"
+                id="toki-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#toki"
+                type="button"
+                role="tab"
+                aria-controls="toki"
+                aria-selected="false"
+              >
+                <div class="kidney-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_toki_thumb.png"
+                    alt="toki"
+                    class="kidney-image"
+                  />
+                </div>
+                <span class="kidney-label">最適合你！</span>
+              </button>
+
+              <!-- role 3 -->
+              <button
+                class="btn-kidney"
+                id="lumi-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#lumi"
+                type="button"
+                role="tab"
+                aria-controls="lumi"
+                aria-selected="false"
+              >
+                <div class="kidney-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_lumi_thumb.png"
+                    alt="lumi"
+                    class="kidney-image"
+                  />
+                </div>
+                <span class="kidney-label">最適合你！</span>
+              </button>
+
+              <!-- role 4 -->
+              <button
+                class="btn-kidney"
+                id="yoyo-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#yoyo"
+                type="button"
+                role="tab"
+                aria-controls="yoyo"
+                aria-selected="false"
+              >
+                <div class="kidney-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_yoyo_thumb.png"
+                    alt="lumi"
+                    class="kidney-image"
+                  />
+                </div>
+                <span class="kidney-label">最適合你！</span>
+              </button>
+            </div>
+
+            <!-- Tab content -->
+            <div class="tab-content" id="Kidney-Content">
+              <!-- bubu tab -->
+              <div
+                class="tab-pane fade show active"
+                id="bubu"
+                role="tabpanel"
+                aria-labelledby="bubu-tab"
+                tabindex="0"
+              >
+                <div class="text-center mb-6">
+                  <div class="content-wrapper">
+                      <img
+                        src="../assets/images/onboarding/onboarding_bubu.png"
+                        alt="Role-Bubu"
+                        class="content-img"
+                      />
+
+                      <!-- 左邊 -->
+                      <div class="label left">陪伴</div>
+
+                      <!-- 右上 -->
+                      <div class="label top-right">傾聽</div>
+
+                      <!-- 右下 -->
+                      <div class="label bottom-right">好麻吉</div>
+                  </div>
+                </div>
+
+                <!-- comment -->
+                <div class="content-comment">
+                  <h2 class="fs-t2 fw-bold text-default-color mb-4">Bubu（布布）</h2>
+                  <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                    我會傾聽你的心情，陪你輕鬆聊聊<br />像朋友一樣在你身邊
+                  </p>
+                  <h3 class="fs-t4 fw-bold text-default-color content-talk">
+                    布布：讓我陪你一起聊聊今天的心情 ☕️
+                  </h3>
+                </div>
+
+              </div><!-- tab end -->
+
+              <!-- toki tab -->
+              <div
+                class="tab-pane fade"
+                id="toki"
+                role="tabpanel"
+                aria-labelledby="toki-tab"
+                tabindex="0"
+              >
+                <div class="text-center mb-6">
+                  <div class="content-wrapper">
+                      <img
+                        src="../assets/images/onboarding/onboarding_toki.png"
+                        alt="Role-Toki"
+                        class="content-img"
+                      />
+
+                      <!-- 左邊 -->
+                      <div class="label toki-left">心理學</div>
+
+                      <!-- 右上 -->
+                      <div class="label toki-top-right">理性</div>
+
+                      <!-- 右下 -->
+                      <div class="label toki-bottom-right">知識</div>
+                  </div>
+                </div>
+
+                <!-- comment -->
+                <div class="content-comment">
+                  <h2 class="fs-t2 fw-bold text-default-color mb-4">Toki（托奇）</h2>
+                  <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                    我會幫你一起釐清情緒、找出背後的想法<br />讓你更認識自己。
+                  </p>
+                  <h3 class="fs-t4 fw-bold text-default-color content-talk">
+                    托奇：沒關係，我們一步一步來
+                  </h3>
+                </div>
+              </div><!-- tab end -->
+
+              <!-- lumi tab -->
+              <div
+                class="tab-pane fade"
+                id="lumi"
+                role="tabpanel"
+                aria-labelledby="lumi-tab"
+                tabindex="0"
+              >
+                <div class="text-center mb-6">
+                  <div class="content-wrapper">
+                      <img
+                        src="../assets/images/onboarding/onboarding_lumi.png"
+                        alt="Role-Lumi"
+                        class="content-img"
+                      />
+
+                      <!-- 左邊 -->
+                      <div class="label lumi-left">找回動力</div>
+
+                      <!-- 右上 -->
+                      <div class="label lumi-top-right">行動</div>
+
+                      <!-- 右下 -->
+                      <div class="label lumi-bottom-right">鼓勵</div>
+                  </div>
+                </div>
+
+                <!-- comment -->
+                <div class="content-comment">
+                  <h2 class="fs-t2 fw-bold text-default-color mb-4">Lumi（露米）</h2>
+                  <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                    我會替你加油，幫你找回動力和信心<br />陪你往目標邁進！
+                  </p>
+                  <h3 class="fs-t4 fw-bold text-default-color content-talk">
+                    露米：你真的比你想的還厲害 💪！
+                  </h3>
+                </div>
+              </div>
+
+              <!-- yoyo tab -->
+              <div
+                class="tab-pane fade"
+                id="yoyo"
+                role="tabpanel"
+                aria-labelledby="yoyo-tab"
+                tabindex="0"
+              >
+                <div class="text-center mb-6">
+                  <div class="content-wrapper">
+                      <img
+                        src="../assets/images/onboarding/onboarding_yoyo.png"
+                        alt="Role-Yoyo"
+                        class="content-img"
+                      />
+
+                      <!-- 左邊 -->
+                      <div class="label yoyo-left">開心一下</div>
+
+                      <!-- 右上 -->
+                      <div class="label yoyo-top-right">幽默</div>
+
+                      <!-- 右下 -->
+                      <div class="label yoyo-bottom-right">放鬆</div>
+                  </div>
+                </div>
+
+                <!-- comment -->
+                <div class="content-comment">
+                  <h2 class="fs-t2 fw-bold text-default-color mb-4">Yoyo（悠悠）</h2>
+                  <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                    我會用一點幽默、一點可愛<br />讓你忘記煩惱，輕鬆一下！
+                  </p>
+                  <h3 class="fs-t4 fw-bold text-default-color content-talk">
+                    悠悠：不想想事情也沒關係
+                  </h3>
+                </div>
+              </div>
+            </div>
           </div>
-          <a class="next fs-t2 text-default-color disabled">跳過</a>
-        </div>
-        <h1 class="h6 text-default-color text-center mb-6">
-          選擇 Moodmate 的個性<br />
-          讓我們的對話更貼近你
-        </h6>
-        <div class="d-flex justify-content-evenly mb-6" role="tablist">
-          <!-- role 1 -->
-          <button
-            class="btn-kidney active"
-            id="bubu-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#bubu"
-            type="button"
-            role="tab"
-            aria-controls="bubu"
-            aria-selected="true"
-          >
-            <div class="kidney-wrapper">
-              <img
-                src="../assets/images/onboarding/onboarding_bubu_thumb.png"
-                alt="bubu"
-                class="kidney-image"
-              />
-            </div>
-            <span class="kidney-label">最適合你！</span>
-          </button>
-
-          <!-- role 2 -->
-          <button
-            class="btn-kidney"
-            id="toki-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#toki"
-            type="button"
-            role="tab"
-            aria-controls="toki"
-            aria-selected="false"
-          >
-            <div class="kidney-wrapper">
-              <img
-                src="../assets/images/onboarding/onboarding_toki_thumb.png"
-                alt="toki"
-                class="kidney-image"
-              />
-            </div>
-            <span class="kidney-label">最適合你！</span>
-          </button>
-
-          <!-- role 3 -->
-          <button
-            class="btn-kidney"
-            id="lumi-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#lumi"
-            type="button"
-            role="tab"
-            aria-controls="lumi"
-            aria-selected="false"
-          >
-            <div class="kidney-wrapper">
-              <img
-                src="../assets/images/onboarding/onboarding_lumi_thumb.png"
-                alt="lumi"
-                class="kidney-image"
-              />
-            </div>
-            <span class="kidney-label">最適合你！</span>
-          </button>
-
-          <!-- role 4 -->
-          <button
-            class="btn-kidney"
-            id="yoyo-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#yoyo"
-            type="button"
-            role="tab"
-            aria-controls="yoyo"
-            aria-selected="false"
-          >
-            <div class="kidney-wrapper">
-              <img
-                src="../assets/images/onboarding/onboarding_yoyo_thumb.png"
-                alt="lumi"
-                class="kidney-image"
-              />
-            </div>
-            <span class="kidney-label">最適合你！</span>
-          </button>
-        </div>
-
-        <!-- Tab content -->
-        <div class="tab-content" id="Kidney-Content">
-          <!-- bubu tab -->
-          <div
-            class="tab-pane fade show active"
-            id="bubu"
-            role="tabpanel"
-            aria-labelledby="bubu-tab"
-            tabindex="0"
-          >
-            <div class="text-center mb-6">
-              <div class="content-wrapper">
-                  <img
-                    src="../assets/images/onboarding/onboarding_bubu.png"
-                    alt="Role-Bubu"
-                    class="content-img"
-                  />
-
-                  <!-- 左邊 -->
-                  <div class="label left">陪伴</div>
-
-                  <!-- 右上 -->
-                  <div class="label top-right">傾聽</div>
-
-                  <!-- 右下 -->
-                  <div class="label bottom-right">好麻吉</div>
-              </div>
-            </div>
-
-            <!-- comment -->
-            <div class="content-comment">
-              <h2 class="fs-t2 fw-bold text-default-color mb-4">Bubu（布布）</h2>
-              <p class="fs-t4 fw-normal text-gray-700 mb-4">
-                我會傾聽你的心情，陪你輕鬆聊聊<br />像朋友一樣在你身邊
-              </p>
-              <h3 class="fs-t4 fw-bold text-default-color content-talk">
-                布布：讓我陪你一起聊聊今天的心情 ☕️
-              </h3>
-            </div>
-
-          </div><!-- tab end -->
-
-          <!-- toki tab -->
-          <div
-            class="tab-pane fade"
-            id="toki"
-            role="tabpanel"
-            aria-labelledby="toki-tab"
-            tabindex="0"
-          >
-            <div class="text-center mb-6">
-              <div class="content-wrapper">
-                  <img
-                    src="../assets/images/onboarding/onboarding_toki.png"
-                    alt="Role-Toki"
-                    class="content-img"
-                  />
-
-                  <!-- 左邊 -->
-                  <div class="label toki-left">心理學</div>
-
-                  <!-- 右上 -->
-                  <div class="label toki-top-right">理性</div>
-
-                  <!-- 右下 -->
-                  <div class="label toki-bottom-right">知識</div>
-              </div>
-            </div>
-
-            <!-- comment -->
-            <div class="content-comment">
-              <h2 class="fs-t2 fw-bold text-default-color mb-4">Toki（托奇）</h2>
-              <p class="fs-t4 fw-normal text-gray-700 mb-4">
-                我會幫你一起釐清情緒、找出背後的想法<br />讓你更認識自己。
-              </p>
-              <h3 class="fs-t4 fw-bold text-default-color content-talk">
-                托奇：沒關係，我們一步一步來
-              </h3>
-            </div>
-          </div><!-- tab end -->
-
-          <!-- lumi tab -->
-          <div
-            class="tab-pane fade"
-            id="lumi"
-            role="tabpanel"
-            aria-labelledby="lumi-tab"
-            tabindex="0"
-          >
-            <div class="text-center mb-6">
-              <div class="content-wrapper">
-                  <img
-                    src="../assets/images/onboarding/onboarding_lumi.png"
-                    alt="Role-Lumi"
-                    class="content-img"
-                  />
-
-                  <!-- 左邊 -->
-                  <div class="label lumi-left">找回動力</div>
-
-                  <!-- 右上 -->
-                  <div class="label lumi-top-right">行動</div>
-
-                  <!-- 右下 -->
-                  <div class="label lumi-bottom-right">鼓勵</div>
-              </div>
-            </div>
-
-            <!-- comment -->
-            <div class="content-comment">
-              <h2 class="fs-t2 fw-bold text-default-color mb-4">Lumi（露米）</h2>
-              <p class="fs-t4 fw-normal text-gray-700 mb-4">
-                我會替你加油，幫你找回動力和信心<br />陪你往目標邁進！
-              </p>
-              <h3 class="fs-t4 fw-bold text-default-color content-talk">
-                露米：你真的比你想的還厲害 💪！
-              </h3>
-            </div>
+          <div class="container-mobile mb-14">
+            <button
+              id="doneBtn"
+              class="btn btn-primary text-white rounded-pill py-4 px-6 w-100"
+              type="button"
+            >
+              完成設定
+            </button>
           </div>
-
-          <!-- yoyo tab -->
-          <div
-            class="tab-pane fade"
-            id="yoyo"
-            role="tabpanel"
-            aria-labelledby="yoyo-tab"
-            tabindex="0"
-          >
-            <div class="text-center mb-6">
-              <div class="content-wrapper">
-                  <img
-                    src="../assets/images/onboarding/onboarding_yoyo.png"
-                    alt="Role-Yoyo"
-                    class="content-img"
-                  />
-
-                  <!-- 左邊 -->
-                  <div class="label yoyo-left">開心一下</div>
-
-                  <!-- 右上 -->
-                  <div class="label yoyo-top-right">幽默</div>
-
-                  <!-- 右下 -->
-                  <div class="label yoyo-bottom-right">放鬆</div>
-              </div>
-            </div>
-
-            <!-- comment -->
-            <div class="content-comment">
-              <h2 class="fs-t2 fw-bold text-default-color mb-4">Yoyo（悠悠）</h2>
-              <p class="fs-t4 fw-normal text-gray-700 mb-4">
-                我會用一點幽默、一點可愛<br />讓你忘記煩惱，輕鬆一下！
-              </p>
-              <h3 class="fs-t4 fw-bold text-default-color content-talk">
-                悠悠：不想想事情也沒關係
-              </h3>
-            </div>
+          <div class="container-mobile scroll-bar">
+            <div class="role-bar-item"></div>
           </div>
-        </div>
+        </section>
+
       </div>
-      <div class="container-mobile mb-14">
-        <button
-          id="doneBtn"
-          class="btn btn-primary text-white rounded-pill py-4 px-6 w-100"
-          type="button"
-        >
-          完成設定
-        </button>
-      </div>
-      <div class="container-mobile scroll-bar">
-        <div class="role-bar-item"></div>
-      </div>
-    </section>
+    </div>
 
     <!-- loading 遮罩 -->
     <div id="loadingOverlay">
@@ -296,6 +320,7 @@
     </div>
 
     <script type="module" src="../main.js"></script>
+    <script type="module" src="../role.js"></script>
     <script>
       document.querySelectorAll(".btn-kidney").forEach((button) => {
         button.addEventListener("shown.bs.tab", function () {

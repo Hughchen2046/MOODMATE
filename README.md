@@ -1,6 +1,7 @@
 # MOODMATE使用手冊
 
 ## 更新 Layout
+- 09/02 新增 role 頁面外框(Tetsu)
 - 09/02 新增 role-step2.html、role-step3.html (Tetsu)
 - 09/01 整合 header.ejs 刪除舊的 top.ejs (Rabbit)
 - 08/31 新增 chat.html (Rabbit)
