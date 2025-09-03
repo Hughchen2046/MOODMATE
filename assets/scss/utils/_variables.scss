@@ -506,6 +506,7 @@ $theme-colors: map-merge(
     "pricolor":  $pricolor,
     "seccolor":  $seccolor,
     "seccolor-200":   $seccolor-200,
+    "seccolor-800":   $seccolor-800,
   )
 );
 @each $name, $color in $pricolors {

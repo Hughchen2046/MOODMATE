@@ -1,19 +1,14 @@
-html, body {
-    min-height: 100%;
-    background-color: #fff;
-}
+// html, body {
+//     min-height: 100%;
+//     background-color: #fff;
+// }
 
-body.page-role {
+.page-role {
     background: linear-gradient(to bottom, #fff4e5 0%, #ffffff 100%) !important;
     background-attachment: fixed; /* 漸層會隨整個頁面高度延伸 */
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-
-
-// .role-wrapper {
-//     margin-top: 48px;
-// }
 
 .welcome-img {
     width: 100%;
@@ -44,8 +39,8 @@ body.page-role {
     padding-bottom: 125px;
 }
 
-.pb-314 {
-    padding-bottom: 314px;
+.pb-200 {
+    padding-bottom: 240px;
 }
 
 .mt-48 {
@@ -62,38 +57,104 @@ body.page-role {
 
 .btn-secondary {
     background-color: #7D594E;
+    &:focus {
+        background-color: #7D594E;
+    }
+    &:active {
+        background-color: #64483E;
+    }
 }
 
-.scroll-bar {
-    padding-top: 21px;
-    padding-bottom: 8px;
-    display: flex;
-    justify-content: center;
-}
 
-@mixin bar-item($width, $height, $background-color) {
-    width: $width;
-    height: $height;
-    background-color: $background-color;
-    border-radius: 1000px;
-}
+// .scroll-bar {
+//     padding-top: 21px;
+//     padding-bottom: 8px;
+//     display: flex;
+//     justify-content: center;
+// }
+
+// @mixin bar-item($width, $height, $background-color) {
+//     width: $width;
+//     height: $height;
+//     background-color: $background-color;
+//     border-radius: 1000px;
+// }
+
+// .role-bar-item {
+//     @include bar-item(134px, 5px, $gray-400);
+// }
 
 .role-bar-item {
-    @include bar-item(134px, 5px, $gray-400);
+    border-radius: $border-radius-pill;
+    position: absolute;
+    width: 134px;
+    height: 5px;
+    left: 50%;
+    bottom: .5rem;
+    transform: translateX(-50%);
+    background: $gray-400;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
 }
 
+
+
+// 共用 mixin
+@mixin step-item($height, $background-color) {
+  flex: 1 1 auto;          // 可縮放
+  max-width: 70px;         // 最大寬度 70px
+  min-width: 20px;         // 給個最小值，避免太小看不見
+  height: $height;
+  background-color: $background-color;
+  border-radius: 1000px;
+}
+
+// bar item 樣式
 .step-bar-item {
-    @include bar-item(54.5px, 8px, $white);
+  @include step-item(8px, $white);
 }
 
 .active-bar-item {
-    @include bar-item(54.5px, 8px, $seccolor-400);
+  @include step-item(8px, $seccolor-400);
 }
 
-.pre,
-.next {
-    text-decoration: none;
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
+
+.role-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+a.pre,
+a.next {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.step-bar-item,
+.active-bar-item {
+    flex: 1 1 auto;     // 可以縮放
+    max-width: 70px;    // 最大 70px
+    height: 8px;
+    border-radius: 1000px;
+}
+
+.step-bar-item {
+    background-color: $white;
+}
+
+.active-bar-item {
+    background-color: $seccolor-400;
+}
+
 
 .disabled {
     cursor: not-allowed;
