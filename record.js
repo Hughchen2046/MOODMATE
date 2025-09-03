@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   updateTime(); setInterval(updateTime, 1000);
 
-  // A) 還原 index 傳來的 mood
+  // A) 還原 Homepage 傳來的 mood
   const imgEl = document.getElementById('picked-img');
   const labEl = document.getElementById('picked-label');
   const raw = sessionStorage.getItem('selectedMood');
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       sessionStorage.setItem('latestRecord', JSON.stringify(entry));
       sessionStorage.setItem('memoryAdded', '1');
-      location.href = 'index.html';
+      location.href = 'Homepage.html';
     });
   }
 });

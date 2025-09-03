@@ -1,0 +1,163 @@
+.Homepage-background {
+  min-height: 100vh; /* 直接至少吃滿一個視窗高度 */
+  min-width: 100%;
+  background-image: url(/assets/images/chat/homegape_backgorund.png);
+  background-size: cover;       /* 背景圖填滿容器 */
+  background-position: center;  /* 置中 */
+  background-repeat: no-repeat; /* 不重複 */
+}
+.user-image{
+    width: 52px;
+    height: 52px;
+}
+.Homepage {
+  height: 100%;
+  background: url("/assets/images/chat/homegape_backgorund.png") no-repeat top left;
+  background-size: cover; 
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.character-image{
+  width: 100%;
+          animation: light 1s ease-in-out infinite alternate;
+    
+        @keyframes light {
+            to {
+                transform: scaleY(.98);
+                transform-origin: bottom;
+                filter: brightness(1.03) drop-shadow(0 0 0 $white);
+            }
+        }
+}
+.pt-160{
+  padding-top: 160px;
+}
+.talk-bubble{
+  position:absolute;
+  min-width: 200px;
+  max-width: 342px;
+  min-height: 94px;
+  top: 48.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  padding: 24px 12px;
+  background-color: #FFF3EE;
+  box-shadow: 0px 4px 8px 0px #0000000D;
+}
+
+.triangle-mark{
+  font-size: 28px;
+  position: absolute;
+  color: #FFF3EE;
+  top:100%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+.mood-block {
+  border-radius: 12px;               // 外框圓角
+  padding: 8px;
+  background: $seccolor-200;                  // 或者用透明
+  position: relative;
+  border: 1px solid #a67668;
+}
+.line-block {
+  position: relative;
+  border-radius: 4px;          /* 外圓角 */
+  padding: 16px;
+  border: 1px dashed #d8b9ac;
+}
+.text-color-new-1{
+  color: #64483e;
+}
+.text-color-new-2{
+  color: #a67668;
+}
+.mb-60{
+  margin-bottom: 60px;
+}
+.mood-img-sm{
+  width: 36px;
+  height: 36px;
+}
+.Moodindextext-accordion .accordion-button{
+  background-color: #FDF3E6 !important;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+.Moodindextext-accordion .accordion-button::after{
+  margin: 0 auto;
+}
+
+.Moodindextext-accordion .accordion-button:not(.collapsed) {
+  background-color: #FDF3E6 !important;
+  box-shadow: none; /* 避免陰影 */
+  color: #64483e !important; /* 保持原本的字色 */
+  margin-bottom: 12px;
+}
+.Moodindextext-accordion .accordion-button,
+.Moodindextext-accordion .accordion-collapse,
+.Moodindextext-accordion .accordion-body {
+  box-shadow: none !important; /* 移除陰影 */
+}
+.Moodindextext-accordion .accordion-body{
+  width: 100%;
+  min-height: 68px;
+}
+.accordion-moodbg{
+    background-color: #FDF3E6 !important;
+}
+.Homepage-whitebackground{
+  background: white;
+  width: 100%;
+  border-radius: 4px;
+}
+.text-color-new-3{
+  color: #595959;
+}
+.added-banner{
+  padding: 8px 24px;
+  border: 1px solid #C6AA84;
+  box-shadow: 0px 0px 20px 0px #FFDDB0;
+  border-radius: 1000px;
+  background-color: #FDF3E6;
+  transform: translateY(0);
+    --fadeMs: 500ms;
+  transition: opacity var(--fadeMs) ease, transform var(--fadeMs) ease;
+
+}
+
+.added-banner.fade-out {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.nav-footer-fix{
+  padding-top: 12px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 1000px;
+  background: #FFFFFF;
+}
+
+
+.icon-add-position-fix{
+  position: absolute;
+  top: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.h-47{
+  height: 47px !important;
+}
+.journal-note{
+  white-space: pre-wrap; 
+  overflow-wrap: anywhere; 
+  word-break: break-word; 
+  scrollbar-width: none;
+}

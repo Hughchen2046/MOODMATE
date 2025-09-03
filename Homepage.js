@@ -9,7 +9,7 @@
     updateTime();
     setInterval(updateTime, 1000);
 
-        // index->record 點擊 → 存選擇 → 換頁
+        // Homepage->record 點擊 → 存選擇 → 換頁
         document.querySelectorAll('.mood-img').forEach(img => {
           img.style.cursor = 'pointer';
           img.addEventListener('click', () => {
@@ -40,7 +40,6 @@
           const entry = JSON.parse(data);
 
           // 在 record.html 的 radio 裡找對應的 data-src-b
-          // 這裡不是真的去讀 record.html，而是 index.html 上也有同樣 id 或 data-mood 的元素
           const moodImgEl = document.querySelector(`[data-mood="${entry.moodId}"]`) ||
             document.querySelector(`[value="${entry.moodId}"]`);
           const moodSrc = moodImgEl?.dataset.srcB || moodImgEl?.getAttribute('src') || '';
@@ -63,7 +62,7 @@
               </div>
               <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
                 <div class="accordion-body p-3">
-                  <div class="index-whitebackground">
+                  <div class="Homepage-whitebackground">
                     <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
         ${entry.note ? `<p class="fs-t4 text-color-new-3 journal-note h-47 overflow-x-hidden overflow-y-scroll">${escapeHtml(entry.note)}</p>` : ''}
                           </div>
