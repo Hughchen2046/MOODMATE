@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>選取角色 | MOODMATE</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/main-BjN4xl3X.js"></script>
+    <script type="module" crossorigin src="/MOODMATE/assets/main-CzW13ZWo.js"></script>
     <script type="module" crossorigin src="/MOODMATE/assets/role-pxWK1HRQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-BEZBV8Sy.css">
+    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-DcCHkb_A.css">
   </head>
   <body class="bg-black d-flex justify-content-center align-items-center">
     <div class="device">
       <div class="screen page-role">
 
-        <header class="header position-absolute start-0 top-0 w-100 px-6">
+        <header class="header position-absolute start-0 top-0 w-100 px-5 ps-7 py-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="SF-Pro-Text text-seccolor-800 text-center fs-t2" id="time"></span>
                     <div class="d-flex column-gap-3">
@@ -23,37 +23,40 @@
                     </div>
                 </div>
             </header>
-        <section>
+        <section class="scroll">
           <div class="container-mobile text-center py-148">
-            <h2 class="text-title mb-6">Welcome!</h2>
+            <h2 class="text-default-color mb-6">Welcome!</h2>
             <img
               class="welcome-img mb-6"
               src="/MOODMATE/assets/onboarding_welcome-Dgiye6Ea.png"
               alt="welcome"
             />
-            <p class="text-subTitle mb-6">
+            <p class="text-default-color mb-6">
               準備好了嗎？<br />
               現在先花點時間認識自己，<br />
               接下來我們一起踏上屬於你的成長旅程。<br />
             </p>
-            <p class="text-subTitle">想更了解自己的情緒，跟它做朋友嗎？</p>
+            <p class="text-default-color">想更了解自己的情緒，跟它做朋友嗎？</p>
           </div>
+          <div class="container-mobile mb-14">
+            <button
+              id="startBtn"
+              class="btn btn-primary text-white rounded-pill py-4 px-6 w-100"
+              type="button"
+            >
+              開始吧！
+            </button>
+          </div>
+          <!-- <div class="scroll-bar">
+            <div class="role-bar-item"></div>
+          </div> -->
         </section>
-        <div class="footer-area container-mobile">
-          <button
-            id="startBtn"
-            class="btn btn-start text-white py-4 px-6 w-100"
-            type="button"
-          >
-            開始吧！
-          </button>
-        </div>
         <div class="role-bar-item"></div>
 
       </div>
     </div>
 
-
+
     <script>
       document
         .getElementById("startBtn")
