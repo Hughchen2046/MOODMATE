@@ -1,0 +1,12 @@
+.index-background {
+    min-height: 789px;
+    /* 直接至少吃滿一個視窗高度 */
+    min-width: 100%;
+    background-image: url(/assets/images/index/index-background.png);
+    background-size: cover;
+    /* 背景圖填滿容器 */
+    background-position: center;
+    /* 置中 */
+    background-repeat: no-repeat;
+    /* 不重複 */
+}
