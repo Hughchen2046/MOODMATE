@@ -1,4 +1,4 @@
-import"./main-BOMzwXhE.js";function y(){const e=new Date,t=String(e.getHours()).padStart(2,"0"),d=String(e.getMinutes()).padStart(2,"0");document.getElementById("time").textContent=`${t}:${d}`}y();setInterval(y,1e3);document.querySelectorAll(".mood-img").forEach(e=>{e.style.cursor="pointer",e.addEventListener("click",()=>{const t={id:e.dataset.mood,label:e.dataset.label,src:e.getAttribute("src"),time:Date.now()};sessionStorage.setItem("selectedMood",JSON.stringify(t)),location.href="record.html"})});function x(e){return e.replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}(function(){const t=document.getElementById("journal-list"),d=document.getElementById("default-list");if(!t)return;const c=sessionStorage.getItem("latestRecord");if(!c)return;const n=JSON.parse(c),o=document.querySelector(`[data-mood="${n.moodId}"]`)||document.querySelector(`[value="${n.moodId}"]`),r=(o==null?void 0:o.dataset.srcB)||(o==null?void 0:o.getAttribute("src"))||"";d&&(d.style.display="none"),t.innerHTML=`
+import"./main-BjN4xl3X.js";function y(){const e=new Date,t=String(e.getHours()).padStart(2,"0"),d=String(e.getMinutes()).padStart(2,"0");document.getElementById("time").textContent=`${t}:${d}`}y();setInterval(y,1e3);document.querySelectorAll(".mood-img").forEach(e=>{e.style.cursor="pointer",e.addEventListener("click",()=>{const t={id:e.dataset.mood,label:e.dataset.label,src:e.getAttribute("src"),time:Date.now()};sessionStorage.setItem("selectedMood",JSON.stringify(t)),location.href="record.html"})});function x(e){return e.replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t])}(function(){const t=document.getElementById("journal-list"),d=document.getElementById("default-list");if(!t)return;const c=sessionStorage.getItem("latestRecord");if(!c)return;const n=JSON.parse(c),o=document.querySelector(`[data-mood="${n.moodId}"]`)||document.querySelector(`[value="${n.moodId}"]`),r=(o==null?void 0:o.dataset.srcB)||(o==null?void 0:o.getAttribute("src"))||"";d&&(d.style.display="none"),t.innerHTML=`
     <div class="mood-block mt-4">
       <div class="line-block">
         <div class="accordion accordion-flush Moodindextext-accordion" id="Moodindextext">
@@ -13,7 +13,7 @@ import"./main-BOMzwXhE.js";function y(){const e=new Date,t=String(e.getHours()).
               </div>
               <div id="mood-indextext" class="accordion-collapse collapse" data-bs-parent="#Moodindextext">
                 <div class="accordion-body p-3">
-                  <div class="index-whitebackground">
+                  <div class="Homepage-whitebackground">
                     <h4 class="fs-t4 fw-bold text-color-new-1 mb-2">日記</h4>
         ${n.note?`<p class="fs-t4 text-color-new-3 journal-note h-47 overflow-x-hidden overflow-y-scroll">${x(n.note)}</p>`:""}
                           </div>
