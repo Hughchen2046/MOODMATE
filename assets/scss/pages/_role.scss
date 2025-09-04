@@ -212,7 +212,7 @@ a.next {
     .kidney-label {
         display: none; /* 預設不顯示 */
         margin-top: -12px;
-        background-color: #c6aa84;
+        background-color: #A67668;
         color: #fff;
         font-size: 12px;
         font-weight: bold;
@@ -223,7 +223,7 @@ a.next {
 
     &.active {
         .kidney-wrapper {
-            border: 2px solid #c6aa84;
+            border: 2px solid #A67668;
         }
         .kidney-label {
             display: block;
