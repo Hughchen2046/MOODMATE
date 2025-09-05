@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Step1 - 選取角色 | MOODMATE</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/main-XptaWll2.js"></script>
-    <script type="module" crossorigin src="/MOODMATE/assets/role-pxWK1HRQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-Bpldysny.css">
-  </head>
-  <body class="bg-black d-flex justify-content-center align-items-center">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_document" />
+    <title>Onboarding-check</title>
+  <script type="module" crossorigin src="/MOODMATE/assets/onboarding-check-DusHaC_q.js"></script>
+  <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-XptaWll2.js">
+  <link rel="modulepreload" crossorigin href="/MOODMATE/assets/chat-DhdUz59A.js">
+  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-Bpldysny.css">
+</head>
+
+<body class="bg-black d-flex justify-content-center align-items-center page-home">
     <div class="device">
-      <div class="screen page-role">
-        <header class="header position-absolute start-0 top-0 w-100 px-6 py-4">
+        <div class="screen">
+            <section class="onboarding-background d-flex flex-column">
+                <header class="header position-absolute start-0 top-0 w-100 px-6 py-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="SF-Pro-Text text-seccolor-800 text-center fs-t2" id="time"></span>
                     <div class="d-flex column-gap-3">
@@ -21,142 +27,26 @@
                         <img src="data:image/svg+xml,%3csvg%20width='25'%20height='14'%20viewBox='0%200%2025%2014'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M24%205C24.5523%205%2025%205.44772%2025%206V8C25%208.55228%2024.5523%209%2024%209V5Z'%20fill='%235B3224'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M3%201H20C21.6569%201%2023%202.34315%2023%204V10C23%2011.6569%2021.6569%2013%2020%2013H3C1.34315%2013%200%2011.6569%200%2010V4C0%202.34315%201.34315%201%203%201ZM3%202C1.89543%202%201%202.89543%201%204V10C1%2011.1046%201.89543%2012%203%2012H20C21.1046%2012%2022%2011.1046%2022%2010V4C22%202.89543%2021.1046%202%2020%202H3Z'%20fill='%235B3224'/%3e%3crect%20x='2'%20y='3'%20width='19'%20height='8'%20rx='1'%20fill='%235B3224'/%3e%3c/svg%3e" alt="battery">
                     </div>
                 </div>
-            </header>
-        <section class="container-mobile">
-          <div class="pt-9">
-            <div
-              class="role-header"
-            >
-              <a class="pre fs-t2 me-4 disabled">返回</a>
-
-              <div class="d-flex justify-content-center">
-                <div class="active-bar-item me-4"></div>
-                <div class="step-bar-item me-4"></div>
-                <div class="step-bar-item me-4"></div>
-                <div class="step-bar-item"></div>
-              </div>
-
-              <a class="next fs-t2 ms-4" href="role-step2.html"
-                >跳過</a
-              >
-            </div>
-            <h1 class="h6 text-title text-center mb-2">
-              最近是否常有以下情境？
-            </h1>
-            <p class="fs-t3 fw-normal text-subTitle text-center mb-6">
-              請點選符合的情境
-            </p>
-            <div class="form-check d-flex flex-column pb-200">
-              <input
-                type="checkbox"
-                id="option1"
-                name="situation"
-                value="B"
-                autocomplete="off"
-              />
-              <label
-                class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow mb-5"
-                for="option1"
-                >情緒起伏大但找不到原因
-              </label>
-
-              <input
-                type="checkbox"
-                id="option2"
-                name="situation"
-                value="T"
-                autocomplete="off"
-              />
-              <label
-                class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow mb-5"
-                for="option2"
-                >總覺得被壓力壓著，不知道怎麼整理自己
-              </label>
-
-              <input
-                type="checkbox"
-                id="option3"
-                name="situation"
-                value="L"
-                autocomplete="off"
-              />
-              <label
-                class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow mb-5"
-                for="option3"
-                >遇到低潮時，很難跟人說
-              </label>
-
-              <input
-                type="checkbox"
-                id="option4"
-                name="situation"
-                value="Y"
-                autocomplete="off"
-              />
-              <label
-                class="situation-select fs-t2 fw-normal lh-145 text-start py-5 px-6 shadow"
-                for="option4"
-                >目前都沒有
-              </label>
-            </div>
-          </div>
-        </section>
-        <div class="footer-area container-mobile">
-          <button
-            id="nextStep"
-            class="btn btn-next text-white py-4 px-6 w-100"
-            type="button"
-          >
-            下一步
-          </button>
+            </header>                    <div class="mt-8 px-6 py-150 text-center">
+                        <p class="fs-t2 fw-bold text-color-new-1 mb-6">成長從來不是件容易的事<br>但慢慢來，也沒關係<br>你接下來願意一起練習認識情緒嗎？</p>
+                        <div class="draw-card">
+                            <div class="draw-card-title">
+                                <div class="draw-card-title-text fs-t1 fw-bold">
+                                    在這裡寫自己打個勾<br>當作一個小小的約定吧
+                                </div>
+                            </div>
+                            <div class="draw-body">
+                                <div class="draw-area">
+                                    <canvas id="pad"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="role-bar-item"></div>  
+            </section>
         </div>
-        <div class="role-bar-item"></div>
-      </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 從 sessionStorage 抓資料
-        const savedSituations = sessionStorage.getItem("selectedSituations");
+
+</body>
 
-        if (savedSituations) {
-          const selectedValues = JSON.parse(savedSituations);
-
-          // 把已儲存的值重新勾選回來
-          selectedValues.forEach(function (value) {
-            const checkbox = document.querySelector(
-              `input[name="situation"][value="${value}"]`
-            );
-            if (checkbox) {
-              checkbox.checked = true;
-            }
-          });
-        }
-      });
-
-      document
-        .getElementById("nextStep")
-        .addEventListener("click", function () {
-          // 取得所有的checkbox選項
-          const checkboxes = document.querySelectorAll(
-            'input[name="situation"]:checked'
-          );
-          const selectedValues = [];
-
-          // 將選中的checkbox值存入陣列
-          checkboxes.forEach(function (checkbox) {
-            selectedValues.push(checkbox.value);
-          });
-
-          // 將選擇的值儲存到sessionStorage中
-          sessionStorage.setItem(
-            "selectedSituations",
-            JSON.stringify(selectedValues)
-          );
-
-          // 跳轉到下一頁
-          window.location.href = "role-step2.html";
-        });
-    </script>
-  </body>
 </html>
