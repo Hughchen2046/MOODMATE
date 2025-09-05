@@ -1,6 +1,7 @@
 # MOODMATE使用手冊
 
 ## 更新 Layout
+- 09/05 新增 index頁面 + onboarding-start頁面 + onboarding-check頁面 (Hugh)
 - 09/02 新增 role 頁面外框(Tetsu)
 - 09/02 新增 role-step2.html、role-step3.html (Tetsu)
 - 09/01 整合 header.ejs 刪除舊的 top.ejs (Rabbit)
@@ -23,6 +24,7 @@
 - 08/27 建立"Noto Sans TC"字形 (Hugh)
 
 ## 更新請留下日期時間與內容
+- 09/05 更新由onboarding-check連結到role,並由role跳到Homepage (Hugh)
 - 08/30 新增手機外框 (Rabbit)
 - 08/27 修改文字、間距、圓角、陰影 [DEMO](http://localhost:5173/MOODMATE/pages/utils.html) (Rabbit)
 
