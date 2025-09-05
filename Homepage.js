@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!el) return;
 
   const speed = 100;   // 每字間隔
-  const delay = 3000;  // 開始前延遲（3 秒）
+  const delay = 2000;  // 開始前延遲（2 秒）
 
   // 把原本內容抓出來，保留換行
   const src = el.innerHTML.replace(/<br\s*\/?>/gi, '\n');
