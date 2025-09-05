@@ -1,7 +1,7 @@
 (() => {
   // ===== 可調參數 =====
   const INK = "#6b4b3f";                  // 筆色
-  const TIP_BASE_SIZE = 28;               // 筆尖基準尺寸(px，CSS像素)
+  const TIP_BASE_SIZE = 16;               // 筆尖基準尺寸(px，CSS像素)
   const SPACING = TIP_BASE_SIZE * 0.2;   // 連續蓋章間距
 
   // ===== 取得畫布 / context =====
@@ -22,32 +22,28 @@
 
   // ===== 筆尖（毛邊圓）產生器 =====
   function makeTip(size = TIP_BASE_SIZE, color = INK) {
-    const c = document.createElement("canvas");
-    c.width = c.height = size;
-    const t = c.getContext("2d");
+  const c = document.createElement("canvas");
+  c.width = c.height = size;
+  const t = c.getContext("2d");
 
-    // 基底圓
-    t.fillStyle = color;
-    t.beginPath();
-    t.arc(size / 2, size / 2, size * 0.45, 0, Math.PI * 2);
-    t.fill();
+  const cx = size / 2, cy = size / 2;
+  const R  = size * 0.45;          // 基本半徑
+  const N  = 64;                   // 外輪廓點數（越大越圓滑）
+  const J  = 0.01;                 // 抖動幅度（0~0.3）：邊緣毛邊程度
 
-    // 邊緣噪點 → 讓邊緣像毛筆/麥克筆
-    t.globalCompositeOperation = "destination-out";
-    t.fillStyle = "rgba(0,0,0,.35)";
-    for (let i = 0; i < 220; i++) {
-      const r = (Math.random() * 0.25 + 0.75) * size * 0.45;
-      const a = Math.random() * Math.PI * 2;
-      const x = size / 2 + Math.cos(a) * r;
-      const y = size / 2 + Math.sin(a) * r;
-      const d = Math.random() * 2 + 1;
-      t.beginPath();
-      t.arc(x, y, d, 0, Math.PI * 2);
-      t.fill();
-    }
-    t.globalCompositeOperation = "source-over";
-    return c;
+  t.fillStyle = color;
+  t.beginPath();
+  for (let i = 0; i < N; i++) {
+    const a = (i / N) * Math.PI * 2;
+    const r = R * (1 + (Math.random() * 2 - 1) * J); // 半徑有隨機抖動
+    const x = cx + Math.cos(a) * r;
+    const y = cy + Math.sin(a) * r;
+    i === 0 ? t.moveTo(x, y) : t.lineTo(x, y);
   }
+  t.closePath();
+  t.fill();                         // 直接實心填色 → 不會有透明暈
+  return c;
+}
 
   const tipCanvas = makeTip(TIP_BASE_SIZE, INK);
 
