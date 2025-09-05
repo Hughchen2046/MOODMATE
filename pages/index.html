@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_document" />
     <title>MOODMATE</title>
@@ -16,7 +17,9 @@
             <section class="index-background d-flex flex-column justify-content-end">
                 <%- include('./layout/header'); -%>
                     <div class="px-6 pb-11 text-center">
-                        <img src="/assets/images/index/Moodmate.svg" alt="" class="mb-3 px-3 w-100">
+                        <div class="item-group" xyz="duration-10 short-100% wide-25% ">
+                        <img src="/assets/images/index/Moodmate.svg" alt="" class="mb-3 px-3 w-100 xyz-in">
+                        </div>
                         <h6 class=" text-white mb-6">陪你一起，練習和情緒好好相處</h6>
                         <a href="onboarding-start.html" class="btn-pri fs-t2 fw-bold text-white py-4 px-6 w-100 mb-4 d-block text-decoration-none">開始記錄</a>
                         <a href="#" class="btn-second fs-t2 fw-bold py-4 px-6 w-100 d-block text-decoration-none">登入/註冊</a>

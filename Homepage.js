@@ -99,7 +99,7 @@
 
   // 停留秒數與淡出時間（要與 CSS transition 對齊）
   const stayMs = 1800;
-  const fadeMs = 1500;
+  const fadeMs = 1000;
   banner.style.transition = `opacity ${fadeMs}ms ease, transform ${fadeMs}ms ease`;
 
   // 開始倒數 → 加上淡出 class → 動畫結束後移除 Banner、還原 talk-bubble
@@ -126,19 +126,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('typeWriter');
   if (!el) return;
 
-  const speed = 100;   // 每字間隔
-  const delay = 2000;  // 開始前延遲（2 秒）
+  const speed = 150;   // 每字間隔
+  const delay = 200;   // Banner 完成後再延遲 0.2 秒
 
-  // 把原本內容抓出來，保留換行
-  const src = el.innerHTML.replace(/<br\s*\/?>/gi, '\n');
-  el.innerHTML = ''; // 清空，準備打字
-
-  let i = 0;
-  function tick() {
-    const ch = src[i++];
-    el.innerHTML += (ch === '\n') ? '<br>' : ch;
-    if (i < src.length) setTimeout(tick, speed);
+  function startTypewriter() {
+    const src = el.innerHTML.replace(/<br\s*\/?>/gi, '\n');
+    el.innerHTML = '';
+    let i = 0;
+    function tick() {
+      const ch = src[i++];
+      el.innerHTML += (ch === '\n') ? '<br>' : ch;
+      if (i < src.length) setTimeout(tick, speed);
+    }
+    setTimeout(tick, delay);
   }
 
-  setTimeout(tick, delay);
+  const banner = document.querySelector('.added-banner');
+  if (banner) {
+    // 等淡出動畫跑完才開始打字
+    banner.addEventListener('transitionend', () => {
+      startTypewriter();
+    }, { once: true });
+  } else {
+    // 沒有 Banner 就直接開始
+    startTypewriter();
+  }
 });

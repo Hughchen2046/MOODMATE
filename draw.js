@@ -131,5 +131,5 @@
   // === 自動跳轉 ===
   setTimeout(() => {
     window.location.href = "role.html";
-  }, 10000);
+  }, 13000);
 })();
