@@ -1,3 +1,4 @@
+// header time
 document.addEventListener("DOMContentLoaded", () => {
   // top 時間
   function updateTime() {
