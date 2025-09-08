@@ -287,12 +287,11 @@
             </div>
           </div>
 
-          <!-- nextBtn -->
+          <!-- doneBtn -->
           <div class="px-6">
             <a
               id="doneBtn"
               class="btn-done fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
-              href="role-step1.html"
               >完成設定</a
             >
           </div>
@@ -310,8 +309,9 @@
     </div>
 
     <script type="module" src="../main.js"></script>
-    <script src="../role.js"></script>
-    <script>
+    <script type="module">
+      import { getFinalRole } from "../role.js";
+
       document.addEventListener("DOMContentLoaded", function () {
         // 取得第三題答案（可能會用來處理平手）
         let lastAnswers =
@@ -351,7 +351,9 @@
       });
     </script>
 
-    <script>
+    <script type="module">
+      import { getFinalRole } from "../role.js";
+
       document
         .getElementById("doneBtn")
         .addEventListener("click", function (e) {

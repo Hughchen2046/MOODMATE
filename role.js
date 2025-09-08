@@ -13,18 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // 初始化角色分數
-function initScores() {
+export function initScores() {
   const initData = { A: 0, B: 0, C: 0, D: 0 };
   sessionStorage.setItem("scores", JSON.stringify(initData));
 }
 
 // 取得目前分數
-function getScores() {
+export function getScores() {
   return JSON.parse(sessionStorage.getItem("scores")) || { A: 0, B: 0, C: 0, D: 0 };
 }
 
 // 更新分數 (根據答案加分)
-function updateScores(questionIndex, selectedOptions) {
+export function updateScores(questionIndex, selectedOptions) {
   const questionScores = [
     // 第一題
     {
@@ -86,7 +86,7 @@ function updateScores(questionIndex, selectedOptions) {
 }
 
 // 最終決定角色
-function getFinalRole(lastAnswers) {
+export function getFinalRole(lastAnswers) {
   let scores = getScores();
 
   // 全部沒選 → 預設 A (Bubu)

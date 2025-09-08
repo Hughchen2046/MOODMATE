@@ -151,8 +151,9 @@
     </div>
 
     <script type="module" src="../main.js"></script>
-    <script src="../role.js"></script>
-    <script>
+    <script type="module">
+      import { updateScores } from "../role.js";
+
       const form = document.getElementById("step3Form");
       const nextBtn = document.getElementById("nextBtn");
 

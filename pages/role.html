@@ -26,7 +26,11 @@
             <p class="text-new-color-2">想更了解自己的情緒，跟它做朋友嗎？</p>
           </div>
           <div class="px-6">
-            <a class="btn-start fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none" href="role-stepform1.html" onclick="initScores()">開始吧！</a>
+            <a
+              class="btn-start fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
+              href="role-stepform1.html"
+              >開始吧！</a
+            >
           </div>
         </section>
       </div>
@@ -34,6 +38,12 @@
     </div>
 
     <script type="module" src="../main.js"></script>
-    <script type="module" src="../role.js"></script>
+    <script type="module">
+      import { initScores } from "../role.js";
+
+      document.getElementById("startBtn").addEventListener("click", () => {
+        initScores();
+      });
+    </script>
   </body>
 </html>
