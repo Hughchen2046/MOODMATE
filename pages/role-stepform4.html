@@ -303,8 +303,12 @@
     <!-- loading 遮罩 -->
     <div id="loadingOverlay">
       <div class="d-flex flex-column justify-content-center align-items-center">
-        <img class="load-img" src="../assets/images/Loading/moo-img.svg" alt="loading-img">
-        <img src="../assets/images/Loading/word.svg" alt="loading word">
+        <img
+          class="load-img"
+          src="../assets/images/Loading/moo-img.svg"
+          alt="loading-img"
+        />
+        <img src="../assets/images/Loading/word.svg" alt="loading word" />
       </div>
     </div>
 
@@ -316,8 +320,17 @@
         // 取得第三題答案（可能會用來處理平手）
         let lastAnswers =
           JSON.parse(sessionStorage.getItem("step3Answers")) || [];
+
         // 根據分數計算最後角色
         let role = getFinalRole(lastAnswers);
+
+        // 讀取所有分數
+        const scores = JSON.parse(sessionStorage.getItem("scores")) || {
+          A: 0,
+          B: 0,
+          C: 0,
+          D: 0,
+        };
 
         // 所有角色對應到 tab id
         const roleMap = {
@@ -337,7 +350,7 @@
         });
 
         // 找到正確角色的 tab 與內容
-        const selected = roleMap[role] || roleMap["A"]; // 沒分數預設 A
+        const selected = roleMap[role] || roleMap["A"]; // 預設 A
         let tabButton = document.getElementById(selected.tab);
         let tabPane = document.getElementById(selected.pane);
 
@@ -346,7 +359,15 @@
         tabButton.setAttribute("aria-selected", "true");
         tabPane.classList.add("show", "active");
 
-        // 讓「最適合你！」標籤出現
+        // 判斷是否全都沒分數
+        const isAllZero = Object.values(scores).every((v) => v === 0);
+        if (isAllZero) {
+          tabButton.querySelector(".kidney-label").textContent = "系統推薦";
+        } else {
+          tabButton.querySelector(".kidney-label").textContent = "最適合你！";
+        }
+
+        // 確保標籤顯示
         tabButton.querySelector(".kidney-label").style.display = "block";
       });
     </script>
