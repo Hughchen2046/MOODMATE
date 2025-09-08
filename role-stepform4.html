@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>選取角色 | MOODMATE</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/main-BF_yRpYv.js"></script>
+    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform4-Dkxp83n_.js"></script>
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-BF_yRpYv.js">
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAo3sOd1.js">
     <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-pvEVaMIN.css">
   </head>
   <body class="bg-black d-flex justify-content-center align-items-center">
@@ -297,12 +299,11 @@
             </div>
           </div>
 
-          <!-- nextBtn -->
+          <!-- doneBtn -->
           <div class="px-6">
             <a
               id="doneBtn"
               class="btn-done fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
-              href="role-step1.html"
               >完成設定</a
             >
           </div>
@@ -319,65 +320,6 @@
       </div>
     </div>
 
-    <script src="../role.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 取得第三題答案（可能會用來處理平手）
-        let lastAnswers =
-          JSON.parse(sessionStorage.getItem("step3Answers")) || [];
-        // 根據分數計算最後角色
-        let role = getFinalRole(lastAnswers);
 
-        // 所有角色對應到 tab id
-        const roleMap = {
-          A: { tab: "bubu-tab", pane: "bubu" },
-          B: { tab: "toki-tab", pane: "toki" },
-          C: { tab: "lumi-tab", pane: "lumi" },
-          D: { tab: "yoyo-tab", pane: "yoyo" },
-        };
-
-        // 清掉所有 active
-        document.querySelectorAll(".btn-kidney").forEach((btn) => {
-          btn.classList.remove("active");
-          btn.setAttribute("aria-selected", "false");
-        });
-        document.querySelectorAll(".tab-pane").forEach((pane) => {
-          pane.classList.remove("show", "active");
-        });
-
-        // 找到正確角色的 tab 與內容
-        const selected = roleMap[role] || roleMap["A"]; // 沒分數預設 A
-        let tabButton = document.getElementById(selected.tab);
-        let tabPane = document.getElementById(selected.pane);
-
-        // 設定 active
-        tabButton.classList.add("active");
-        tabButton.setAttribute("aria-selected", "true");
-        tabPane.classList.add("show", "active");
-
-        // 讓「最適合你！」標籤出現
-        tabButton.querySelector(".kidney-label").style.display = "block";
-      });
-    </script>
-
-    <script>
-      document
-        .getElementById("doneBtn")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-
-          // 取得最後角色 (A/B/C/D)
-          const finalRole = getFinalRole(); // 這裡假設你有寫好 getFinalRole()
-          sessionStorage.setItem("finalRole", finalRole);
-
-          // 顯示 loading 畫面
-          document.getElementById("loadingOverlay").style.display = "flex";
-
-          // 固定延遲 2 秒後跳轉
-          setTimeout(function () {
-            window.location.href = "Homepage.html";
-          }, 2000);
-        });
-    </script>
   </body>
 </html>

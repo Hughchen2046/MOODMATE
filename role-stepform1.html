@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Step 1 - 選取角色 | MOODMATE</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/main-BF_yRpYv.js"></script>
+    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform1-C2H-BO-2.js"></script>
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-BF_yRpYv.js">
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAo3sOd1.js">
     <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-pvEVaMIN.css">
   </head>
   <body class="bg-black d-flex justify-content-center align-items-center">
@@ -119,46 +121,5 @@
       <div class="role-bar-item"></div>
     </div>
 
-    <script src="../role.js"></script>
-    <script>
-      const form = document.getElementById("step1Form");
-      const nextBtn = document.getElementById("nextBtn");
-
-      // 預載舊資料
-      window.addEventListener("DOMContentLoaded", () => {
-        const saved = JSON.parse(sessionStorage.getItem("step1Answers")) || [];
-        if (saved.length > 0) {
-          saved.forEach((val) => {
-            const checkbox = document.querySelector(`#q1-${val}`);
-            if (checkbox) checkbox.checked = true;
-          });
-          nextBtn.disabled = false; // 有舊答案 → 允許下一步
-        }
-      });
-
-      // 檢查是否至少有勾選
-      form.addEventListener("change", () => {
-        const hasChecked =
-          [...form.querySelectorAll("input[name='q1']:checked")].length > 0;
-        nextBtn.disabled = !hasChecked;
-      });
-
-      // 送出 → 儲存答案 & 記錄分數
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let selected = [
-          ...form.querySelectorAll("input[name='q1']:checked"),
-        ].map((el) => parseInt(el.value));
-
-        // 存答案 (下次回來可以還原)
-        sessionStorage.setItem("step1Answers", JSON.stringify(selected));
-
-        // 更新分數
-        updateScores(0, selected); // 0 = 第一題
-
-        // 跳下一頁
-        window.location.href = "role-stepform2.html";
-      });
-    </script>
   </body>
 </html>
