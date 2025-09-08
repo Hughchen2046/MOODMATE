@@ -5,27 +5,49 @@
     background-size: 100% auto;
 }
 
+.role-bg {
+    min-height: 844px;
+    min-width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #FFF4E5 0%, #FFFFFF 100%);
+    position: relative;
+}
+
 .welcome-img {
     width: 100%;
-    height: auto;
+    min-height: 210px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .text {
-    &-title {
+    &-title, &-new-color-1 {
         color: #64483e;
     }
-    &-subTitle {
+    &-subTitle, &-new-color-2 {
         color: #A67668;
     }
+}
+
+.py-08 {
+    padding-top: .8125rem;
+    padding-bottom: .8125rem;
 }
 
 .py-148 {
     padding-top: 148px;
     padding-bottom: 148px;
 }
+
+.pt-148 {
+    padding-top: 148px;
+}
+
+.pb-113 {
+    padding-bottom: 113px;
+}
+
 
 .pt-48 {
     padding-top: 48px;
@@ -49,6 +71,14 @@
 
 .mb-14 {
     margin-bottom: 14px;
+}
+
+.mb-35 {
+    margin-bottom: 35px;
+}
+
+.mb-125 {
+    margin-bottom: 125px;
 }
 
 .lh-145 {
@@ -91,6 +121,11 @@
     &:active {
         background-color: #64483E;
     }
+    &:disabled {
+        background-color: #7D594E;
+        opacity: 0.4;
+        cursor: none;
+    }
 }
 
 .role-bar-item {
@@ -99,7 +134,7 @@
     width: 134px;
     height: 5px;
     left: 50%;
-    bottom: .5rem;
+    bottom: 1.5rem;
     transform: translateX(-50%);
     background: $gray-400;
 
@@ -170,6 +205,7 @@ a.next {
 .situation-select {
     background-color: $white;
     color: #64483e;
+    text-wrap: nowrap;
     border: 1px solid $seccolor-400;
     border-radius: 8px;
     transition:
@@ -249,7 +285,7 @@ a.next {
     border: 1px solid $seccolor-400;
     border-radius: 8px;
     padding: 24px;
-    margin-bottom: 76px;
+    margin-bottom: 32px;
 }
 
 .content-talk {
