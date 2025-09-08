@@ -1,19 +1,65 @@
-.ios-font{
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: -0.41px;
-}
-.nav-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;              /* 讓它撐滿螢幕 */
-  z-index: 1030;            /* 確保在最上層 */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+.header {
+    background: linear-gradient(180deg, rgba($black, .3) 0%, rgba($black, 0) 100%);
 
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 37px;
+        top: 0;
+        left: 0;
+        background: url(../images/header/dynamic-island.png) no-repeat center top;
+        background-size: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
 }
-.container-mobile{
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0 auto;
+
+.device {
+    position: relative;
+    padding: 1.2rem 1.3rem;
+    max-width: 408px;
+    width: 100%;
+    height: 829px;
+    background: url("../images/common/device.png") no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+        max-width: 100%;
+        height: 100%;
+        background: none;
+    }
+}
+
+.screen {
+    position: relative;
+    border-radius: 2.9rem;
+    margin: 0 auto;
+    max-width: 390px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    @include media-breakpoint-down(sm) {
+        border-radius: 0;
+        max-width: 100%;
+    }
+}
+
+.scroll {
+    padding-top: 3rem;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    @include media-breakpoint-down(sm) {
+        padding-top: 0;
+    }
 }
