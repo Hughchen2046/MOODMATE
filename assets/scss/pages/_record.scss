@@ -61,8 +61,8 @@
 }
 
 .mood-label:active {
-    transform: scale(.96);
-    transition: transform .15s ease
+    // transform: scale(.96);
+    // transition: transform .15s ease
 }
 
 .record-badge{
@@ -195,4 +195,11 @@
     &:active{
         background: #27747A !important;
     }
+}
+
+.accordion-button::after,.accordion-button:not(.collapsed)::after {
+    background-image: url(/assets/images/common/accordion-down-icon.svg);
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
 }
