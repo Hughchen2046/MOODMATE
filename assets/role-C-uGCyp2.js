@@ -1,0 +1,1 @@
+import"./main-BF_yRpYv.js";document.addEventListener("DOMContentLoaded",()=>{function t(){const e=new Date,o=String(e.getHours()).padStart(2,"0"),d=String(e.getMinutes()).padStart(2,"0"),n=document.getElementById("time");n&&(n.textContent=`${o}:${d}`)}t(),setInterval(t,1e3)});
