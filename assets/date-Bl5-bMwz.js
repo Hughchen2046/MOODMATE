@@ -1,0 +1,1 @@
+const t=new Date,o=t.getMonth()+1,e=t.getDate(),n=t.toLocaleDateString("zh-TW",{weekday:"long"}),a=t.toLocaleDateString("zh-TW",{weekday:"short"}),d=`${o}月${e}日 ${n}`,c=`${e} ${a}`;document.getElementById("date-todayheading").textContent=d;document.getElementById("date-todayheadingshort").textContent=c;
