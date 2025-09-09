@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Step 3 - 選取角色 | MOODMATE</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform3-CShSjt9f.js"></script>
-    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-C_jvA03p.js">
-    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAo3sOd1.js">
-    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-DpWAlLKC.css">
+    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform3-C5J0Z4f4.js"></script>
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-yNVqtwv4.js">
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAh8cVaj.js">
+    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-CiZXTnWL.css">
   </head>
   <body class="bg-black d-flex justify-content-center align-items-center">
     <div class="device">
-      <div class="screen">
-        <section class="role-bg d-flex flex-column align-items-between">
+      <div class="screen role-bg">
+        <div class="role-nav-header">
           <header class="header position-absolute start-0 top-0 w-100 px-6 py-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="SF-Pro-Text text-seccolor-800 text-center fs-t2" id="time"></span>
@@ -30,137 +34,142 @@
             <div class="d-flex justify-content-center">
               <div class="active-bar-item me-4"></div>
               <div class="active-bar-item me-4"></div>
-              <div class="active-bar-item me-4"></div>
+             <div class="active-bar-item me-4"></div>
               <div class="step-bar-item"></div>
             </div>
 
             <a class="next fs-t2 ms-4" href="role-stepform4.html">跳過</a>
           </div>
           <!-- step bar end -->
-          <h1 class="h6 text-new-color-1 text-center mb-6">
-            你想透過這裡，慢慢做到什麼？
-          </h1>
-          <!-- step question 3 start -->
-          <form id="step3Form">
-            <div class="d-flex flex-column flex-nowrap px-6 g-5">
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  name="q3"
-                  value="1"
-                  id="q3-1"
-                />
-                <label
-                  class="situation-select fs-t2 fw-normal lh-145 w-100 py-5 px-6 shadow mb-5"
-                  for="q3-1"
-                  >更認識自己的情緒模式</label
-                >
+        </div>
+      <form id="step3Form">
+        <main class="scroll">
+          <section class="d-flex flex-column align-items-between">
+
+            <h1 class="animate__animated animate__fadeInUp h6 text-new-color-1 text-center mb-6">
+              你想透過這裡，慢慢做到什麼？
+            </h1>
+            <!-- step question 3 start -->
+              <div class="d-flex flex-column flex-nowrap px-6 g-5">
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="q3"
+                    value="1"
+                    id="q3-1"
+                  />
+                  <label
+                    class="situation-select fs-t2 fw-normal lh-145 w-100 py-5 px-6 shadow mb-5"
+                    for="q3-1"
+                    >更認識自己的情緒模式</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="q3"
+                    value="2"
+                    id="q3-2"
+                  />
+                  <label
+                    class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                    for="q3-2"
+                    >有個地方可以抒發心情</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="q3"
+                    value="3"
+                    id="q3-3"
+                  />
+                  <label
+                    class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                    for="q3-3"
+                  >
+                    在低潮時獲得一點陪伴感
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="q3"
+                    value="4"
+                    id="q3-4"
+                  />
+                  <label
+                    class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                    for="q3-4"
+                  >
+                    建立記錄心情的習慣
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="q3"
+                    value="5"
+                    id="q3-5"
+                  />
+                  <label
+                    class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                    for="q3-5"
+                  >
+                    學到一點情緒/心理相關的知識
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="q3"
+                    value="6"
+                    id="q3-6"
+                  />
+                  <label
+                    class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                    for="q3-6"
+                  >
+                    看見自己的變化與進步
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="q3"
+                    value="7"
+                    id="q3-7"
+                  />
+                  <label
+                    class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-9"
+                    for="q3-7"
+                  >
+                    不知道，只是想先試試看
+                  </label>
+                </div>
               </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  name="q3"
-                  value="2"
-                  id="q3-2"
-                />
-                <label
-                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
-                  for="q3-2"
-                  >有個地方可以抒發心情</label
-                >
-              </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  name="q3"
-                  value="3"
-                  id="q3-3"
-                />
-                <label
-                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
-                  for="q3-3"
-                >
-                  在低潮時獲得一點陪伴感
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  name="q3"
-                  value="4"
-                  id="q3-4"
-                />
-                <label
-                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
-                  for="q3-4"
-                >
-                  建立記錄心情的習慣
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  name="q3"
-                  value="5"
-                  id="q3-5"
-                />
-                <label
-                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
-                  for="q3-5"
-                >
-                  學到一點情緒/心理相關的知識
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  name="q3"
-                  value="6"
-                  id="q3-6"
-                />
-                <label
-                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
-                  for="q3-6"
-                >
-                  看見自己的變化與進步
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  name="q3"
-                  value="7"
-                  id="q3-7"
-                />
-                <label
-                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-9"
-                  for="q3-7"
-                >
-                  不知道，只是想先試試看
-                </label>
-              </div>
-            </div>
-            <div class="px-6">
-              <button
-                id="nextBtn"
-                type="submit"
-                class="btn btn-next fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
-              disabled>
-                下一步
-              </button>
-            </div>
-          </form>
-        </section>
-      </div>
+            </section>
+          </main>
+        </div>
+        <div class="role-nav-footer">
+          <button
+            id="nextBtn"
+            type="submit"
+            class="btn btn-next fs-t2 fw-bold text-center text-white py-4 px-6 d-block text-decoration-none"
+          disabled>
+            下一步
+          </button>
+        </div>
+      </form>
       <div class="role-bar-item"></div>
     </div>
-
+
   </body>
 </html>

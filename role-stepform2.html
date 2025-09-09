@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Step 2 - 選取角色 | MOODMATE</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform2-Crx_P_2X.js"></script>
-    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-C_jvA03p.js">
-    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAo3sOd1.js">
-    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-DpWAlLKC.css">
+    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform2-CthkBHl_.js"></script>
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-yNVqtwv4.js">
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAh8cVaj.js">
+    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-CiZXTnWL.css">
   </head>
   <body class="bg-black d-flex justify-content-center align-items-center">
     <div class="device">
-      <div class="screen">
-        <section class="role-bg d-flex flex-column align-items-between">
+      <div class="screen role-bg">
+        <div class="role-nav-header">
           <header class="header position-absolute start-0 top-0 w-100 px-6 py-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="SF-Pro-Text text-seccolor-800 text-center fs-t2" id="time"></span>
@@ -37,329 +41,335 @@
             <a class="next fs-t2 ms-4" href="role-stepform3.html">跳過</a>
           </div>
           <!-- step bar end -->
-          <h1 class="h6 text-new-color-1 text-center mb-2">
-            最近是否常有以下情境？
-          </h1>
-          <p class="fs-t3 fw-normal text-new-color-2 text-center mb-6">
-            請點選符合的情境
-          </p>
-          <!-- step question 2 start -->
-          <form id="step2Form">
-            <div class="d-flex flex-wrap px-6">
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="1"
-                    id="q2-1"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 py-08 px-6 shadow me-5"
-                    for="q2-1"
-                    >穩定</label
-                  >
+        </div>
+        <form id="step2Form">
+        <main class="scroll">
+          <section class="d-flex flex-column align-items-between">
+
+            <h1 class="animate__animated animate__fadeInUp h6 text-new-color-1 text-center mb-2">
+              最近是否常有以下情境？
+            </h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s fs-t3 fw-normal text-new-color-2 text-center mb-6">
+              請點選符合的情境
+            </p>
+            <!-- step question 2 start -->
+              <div class="d-flex flex-wrap px-6">
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="1"
+                      id="q2-1"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 py-08 px-6 shadow me-5"
+                      for="q2-1"
+                      >穩定</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="2"
+                      id="q2-2"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
+                      for="q2-2"
+                      >快樂</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="3"
+                      id="q2-3"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-3"
+                    >
+                      有安全感的
+                    </label>
+                  </div>
                 </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="2"
-                    id="q2-2"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
-                    for="q2-2"
-                    >快樂</label
-                  >
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="4"
+                      id="q2-4"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
+                      for="q2-4"
+                    >
+                      感覺被支持
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="5"
+                      id="q2-5"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-5"
+                    >
+                      有成就感
+                    </label>
+                  </div>
                 </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="3"
-                    id="q2-3"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-3"
-                  >
-                    有安全感的
-                  </label>
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="6"
+                      id="q2-6"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
+                      for="q2-6"
+                    >
+                      疲累
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="7"
+                      id="q2-7"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-7"
+                    >
+                      不知道自己怎麼了
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="8"
+                      id="q2-8"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
+                      for="q2-8"
+                    >
+                      有點卡卡的
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="9"
+                      id="q2-9"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
+                      for="q2-9"
+                    >
+                      緊繃
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="10"
+                      id="q2-10"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-10"
+                    >
+                      低落
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="11"
+                      id="q2-11"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
+                      for="q2-11"
+                    >
+                      生氣
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="12"
+                      id="q2-12"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-12"
+                    >
+                      沒什麼特別起伏
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="13"
+                      id="q2-13"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-3"
+                      for="q2-13"
+                    >
+                      模糊不清
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="14"
+                      id="q2-14"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-3"
+                      for="q2-14"
+                    >
+                      空虛
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="15"
+                      id="q2-15"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-15"
+                    >
+                      想躱起來
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="16"
+                      id="q2-16"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5 "
+                      for="q2-16"
+                    >
+                      孤單
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="17"
+                      id="q2-17"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-17"
+                    >
+                      被壓著喘不過氣
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex flex-nowrap mb-5">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="18"
+                      id="q2-18"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
+                      for="q2-18"
+                    >
+                      很想發脾氣
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="q2"
+                      value="19"
+                      id="q2-19"
+                    />
+                    <label
+                      class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
+                      for="q2-19"
+                    >
+                      感覺不被尊重
+                    </label>
+                  </div>
                 </div>
               </div>
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="4"
-                    id="q2-4"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
-                    for="q2-4"
-                  >
-                    感覺被支持
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="5"
-                    id="q2-5"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-5"
-                  >
-                    有成就感
-                  </label>
-                </div>
-              </div>
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="6"
-                    id="q2-6"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
-                    for="q2-6"
-                  >
-                    疲累
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="7"
-                    id="q2-7"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-7"
-                  >
-                    不知道自己怎麼了
-                  </label>
-                </div>
-              </div>
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="8"
-                    id="q2-8"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
-                    for="q2-8"
-                  >
-                    有點卡卡的
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="9"
-                    id="q2-9"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
-                    for="q2-9"
-                  >
-                    緊繃
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="10"
-                    id="q2-10"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-10"
-                  >
-                    低落
-                  </label>
-                </div>
-              </div>
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="11"
-                    id="q2-11"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
-                    for="q2-11"
-                  >
-                    生氣
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="12"
-                    id="q2-12"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-12"
-                  >
-                    沒什麼特別起伏
-                  </label>
-                </div>
-              </div>
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="13"
-                    id="q2-13"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-3"
-                    for="q2-13"
-                  >
-                    模糊不清
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="14"
-                    id="q2-14"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-3"
-                    for="q2-14"
-                  >
-                    空虛
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="15"
-                    id="q2-15"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-15"
-                  >
-                    想躱起來
-                  </label>
-                </div>
-              </div>
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="16"
-                    id="q2-16"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5 "
-                    for="q2-16"
-                  >
-                    孤單
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="17"
-                    id="q2-17"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-17"
-                  >
-                    被壓著喘不過氣
-                  </label>
-                </div>
-              </div>
-              <div class="d-flex flex-nowrap mb-5">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="18"
-                    id="q2-18"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow me-5"
-                    for="q2-18"
-                  >
-                    很想發脾氣
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    name="q2"
-                    value="19"
-                    id="q2-19"
-                  />
-                  <label
-                    class="situation-select fs-t2 fw-normal lh-145 text-start py-08 px-6 shadow"
-                    for="q2-19"
-                  >
-                    感覺不被尊重
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white px-6">
-              <button
-                id="nextBtn"
-                type="submit"
-                class="btn btn-next fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
-              disabled>
-                下一步
-              </button>
-            </div>
-          </form>
-        </section>
-      </div>
+
+            </section>
+          </main>
+        </div>
+        <div class="role-nav-footer">
+          <button
+            id="nextBtn"
+            type="submit"
+            class="btn btn-next fs-t2 fw-bold text-center text-white py-4 px-6 d-block text-decoration-none"
+            disabled>
+            下一步
+          </button>
+        </div>
+      </form>
       <div class="role-bar-item"></div>
     </div>
-
+
   </body>
 </html>
