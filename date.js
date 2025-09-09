@@ -7,4 +7,4 @@
       const dateStr1 = `${day} ${weekdayshort}`;
 
       document.getElementById("date-todayheading").textContent = dateStr;
-         document.getElementById("date-todayheadingshort").textContent = dateStr1;   
+      document.getElementById("date-todayheadingshort").textContent = dateStr1;   

@@ -1,6 +1,7 @@
 # MOODMATE使用手冊
 
 ## 更新 Layout
+- 09/08 更新 role 所有頁面與role.js
 - 09/05 新增 index頁面 + onboarding-start頁面 + onboarding-check頁面 (Hugh)
 - 09/02 新增 role 頁面外框(Tetsu)
 - 09/02 新增 role-step2.html、role-step3.html (Tetsu)
