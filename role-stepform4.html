@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>選取角色 | MOODMATE</title>
-    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform4-CpbeXHvY.js"></script>
-    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-C_jvA03p.js">
-    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAo3sOd1.js">
-    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-DpWAlLKC.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>完成設定 - 選取角色 | MOODMATE</title>
+    <script type="module" crossorigin src="/MOODMATE/assets/role-stepform4-RwjgsAAA.js"></script>
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-VwMLmL_0.js">
+    <link rel="modulepreload" crossorigin href="/MOODMATE/assets/role-CAh8cVaj.js">
+    <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-Bjs1clfv.css">
   </head>
   <body class="bg-black d-flex justify-content-center align-items-center">
     <div class="device">
-      <div class="screen">
-        <section class="role-bg d-flex flex-column align-items-between">
+      <div class="screen role-bg">
+        <div class="role-nav-header">
           <header class="header position-absolute start-0 top-0 w-100 px-6 py-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="SF-Pro-Text text-seccolor-800 text-center fs-t2" id="time"></span>
@@ -34,20 +38,22 @@
               <div class="active-bar-item"></div>
             </div>
 
-            <a class="next fs-t2 ms-4" href="Homepage.html">跳過</a>
+            <a class="next fs-t2 ms-4">跳過</a>
           </div>
           <!-- step bar end -->
+        </div>
+        <section class="d-flex flex-column align-items-between mt-95">
           <div class="text-center">
-            <h1 class="h6 text-new-color-1 text-center mb-6">
+            <h1 class="animate__animated animate__fadeInUp h6 text-new-color-1 text-center mb-6">
               選擇 Moodmate 的個性<br />
               讓我們的對話更貼近你
             </h1>
           </div>
           <!-- 選角結果 -->
-          <div class="d-flex justify-content-evenly mb-6" role="tablist">
+          <div class="d-flex justify-content-center mb-6" role="tablist">
             <!-- role 1 -->
             <button
-              class="btn-kidney active"
+              class="btn-kidney me-4 active"
               id="bubu-tab"
               data-bs-toggle="pill"
               data-bs-target="#bubu"
@@ -68,7 +74,7 @@
 
             <!-- role 2 -->
             <button
-              class="btn-kidney"
+              class="btn-kidney me-4"
               id="toki-tab"
               data-bs-toggle="pill"
               data-bs-target="#toki"
@@ -89,7 +95,7 @@
 
             <!-- role 3 -->
             <button
-              class="btn-kidney"
+              class="btn-kidney me-4"
               id="lumi-tab"
               data-bs-toggle="pill"
               data-bs-target="#lumi"
@@ -298,16 +304,17 @@
               </div>
             </div>
           </div>
-
-          <!-- doneBtn -->
-          <div class="px-6">
-            <a
-              id="doneBtn"
-              class="btn-done fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
-              >完成設定</a
-            >
-          </div>
         </section>
+      </div>
+      <div class="role-nav-footer">
+        <!-- doneBtn -->
+        <div class="px-6">
+          <a
+            id="doneBtn"
+            class="btn-done fs-t2 fw-bold text-center text-white py-4 px-6 d-block text-decoration-none"
+            >完成設定</a
+          >
+        </div>
       </div>
       <div class="role-bar-item"></div>
     </div>
@@ -324,6 +331,155 @@
       </div>
     </div>
 
+
+    <!-- <script type="module">
+      import { getFinalRole } from "../role.js";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 取得第三題答案（可能會用來處理平手）
+        let lastAnswers =
+          JSON.parse(sessionStorage.getItem("step3Answers")) || [];
+
+        // 取得分數
+        const scores = JSON.parse(sessionStorage.getItem("scores")) || {
+          A: 0,
+          B: 0,
+          C: 0,
+          D: 0,
+        };
+
+        // 角色對應
+        const roleMap = {
+          A: { tab: "bubu-tab", pane: "bubu" },
+          B: { tab: "toki-tab", pane: "toki" },
+          C: { tab: "lumi-tab", pane: "lumi" },
+          D: { tab: "yoyo-tab", pane: "yoyo" },
+        };
+
+        // 預設：判斷是否全跳過
+        const isAllZero = Object.values(scores).every((v) => v === 0);
+        let role;
+        if (isAllZero) {
+          role = "A"; // 系統推薦布布
+        } else {
+          role = getFinalRole(lastAnswers); // 根據分數 & 平手處理
+        }
+
+        const selected = roleMap[role] || roleMap["A"];
+        const tabButton = document.getElementById(selected.tab);
+        const tabPane = document.getElementById(selected.pane);
+
+        // 先清掉所有 active
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
+        });
+        document.querySelectorAll(".tab-pane").forEach((pane) => {
+          pane.classList.remove("show", "active");
+        });
+
+        // 設定結果角色為 active
+        tabButton.classList.add("active");
+        tabButton.setAttribute("aria-selected", "true");
+        tabPane.classList.add("show", "active");
+
+        // 設定 kidney-label
+        const label = tabButton.querySelector(".kidney-label");
+        if (isAllZero) {
+          label.textContent = "系統推薦";
+        } else {
+          label.textContent = "最適合你！";
+        }
+        label.style.display = "block";
+
+        // 鎖定：不管使用者點誰，label 永遠留在結果角色上
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // 移除所有 active
+            document.querySelectorAll(".btn-kidney").forEach((b) => {
+              b.classList.remove("active");
+              b.setAttribute("aria-selected", "false");
+            });
+            document.querySelectorAll(".tab-pane").forEach((pane) => {
+              pane.classList.remove("show", "active");
+            });
+
+            // 使用者點擊的角色 → 顯示內容
+            const targetPane = document.querySelector(
+              btn.getAttribute("data-bs-target")
+            );
+            btn.classList.add("active");
+            btn.setAttribute("aria-selected", "true");
+            targetPane.classList.add("show", "active");
+
+            // 但 kidney-label 只顯示在「結果角色」tab，不動
+            document
+              .querySelectorAll(".kidney-label")
+              .forEach((el) => (el.style.display = "none"));
+            label.style.display = "block"; // 保留在結果角色 tab
+          });
+        });
+      });
+    </script> -->
+
+    <!-- <script type="module">
+      import { getFinalRole } from "../role.js";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 取得第三題答案（可能會用來處理平手）
+        let lastAnswers =
+          JSON.parse(sessionStorage.getItem("step3Answers")) || [];
+
+        // 根據分數計算最後角色
+        let role = getFinalRole(lastAnswers);
+
+        // 讀取所有分數
+        const scores = JSON.parse(sessionStorage.getItem("scores")) || {
+          A: 0,
+          B: 0,
+          C: 0,
+          D: 0,
+        };
+
+        // 所有角色對應到 tab id
+        const roleMap = {
+          A: { tab: "bubu-tab", pane: "bubu" },
+          B: { tab: "toki-tab", pane: "toki" },
+          C: { tab: "lumi-tab", pane: "lumi" },
+          D: { tab: "yoyo-tab", pane: "yoyo" },
+        };
+
+        // 清掉所有 active
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
+        });
+        document.querySelectorAll(".tab-pane").forEach((pane) => {
+          pane.classList.remove("show", "active");
+        });
+
+        // 找到正確角色的 tab 與內容
+        const selected = roleMap[role] || roleMap["A"]; // 預設 A
+        let tabButton = document.getElementById(selected.tab);
+        let tabPane = document.getElementById(selected.pane);
+
+        // 設定 active
+        tabButton.classList.add("active");
+        tabButton.setAttribute("aria-selected", "true");
+        tabPane.classList.add("show", "active");
+
+        // 判斷是否全都沒分數
+        const isAllZero = Object.values(scores).every((v) => v === 0);
+        if (isAllZero) {
+          tabButton.querySelector(".kidney-label").textContent = "系統推薦";
+        } else {
+          tabButton.querySelector(".kidney-label").textContent = "最適合你！";
+        }
+
+        // 確保標籤顯示
+        tabButton.querySelector(".kidney-label").style.display = "block";
+      });
+    </script> -->
 
   </body>
 </html>
