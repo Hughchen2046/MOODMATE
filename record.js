@@ -121,7 +121,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('mood-addimages'); // <input type="file">
     const mbody  = document.getElementById('mood-body');      // accordion-body 容器
     if (!input || !mbody) return;
+    function getBase() {
+      if (typeof window.__BASE_URL__ === 'string') return window.__BASE_URL__;
+      const segs = location.pathname.split('/').filter(Boolean);
+      // user/org pages: segs[0] 可能是子頁，不該加 repo；project pages: segs[0] 是 repo
+      return segs.length > 0 ? `/${segs[0]}/` : '/';
+    }
+    const BASE = getBase();
+    const url = (p) => BASE + String(p).replace(/^\/+/, ''); // 去掉開頭的 '/'
 
+    const STORE4   = url('assets/images/record/store4.png');
+    const ADD_ICON = url('assets/images/record/add-photo.svg');
     let count = 0; // 目前顯示的張數（0~3）
 
     input.addEventListener('change', () => {
@@ -149,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const slot = document.createElement('div');
         slot.className = 'iu-slot';
         slot.innerHTML = `
-          <img src="../assets/images/record/store4.png" alt="選取圖片">
+          <img src="${STORE4}" alt="選取圖片">
           <button class="iu-remove" data-index="${i}" aria-label="移除">×</button>
         `;
         grid.appendChild(slot);
@@ -160,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const add = document.createElement('div');
         add.className = 'iu-add';
         add.innerHTML = `
-          <img src="../assets/images/record/add-photo.svg" alt="新增">
+          <img src="${ADD_ICON}" alt="新增">
         `;
         add.addEventListener('click', () => input.click());
         grid.appendChild(add);

@@ -113,7 +113,7 @@
       cleanup();
     }, { once: true });
 
-    banner.classList.add('fade-out'); // 請確保 .added-banner.fade-out 會把 opacity 降到 0
+    banner.classList.add('fade-out'); 
   }, stayMs);
 
   // 只顯示一次，顯示完就移除旗標
