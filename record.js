@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   // ================= 時間 =================
   function updateTime() {
@@ -121,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('mood-addimages'); // <input type="file">
     const mbody  = document.getElementById('mood-body');      // accordion-body 容器
     if (!input || !mbody) return;
-  const STORE4   = `/assets/images/record/store4.png`;
-  const ADD_ICON = `/assets/images/record/add-photo.svg`;
+const STORE4   = mbody.dataset.store4Img;
+const ADD_ICON = mbody.dataset.addIconImg;
     let count = 0; // 目前顯示的張數（0~3）
 
     input.addEventListener('change', () => {
