@@ -121,17 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('mood-addimages'); // <input type="file">
     const mbody  = document.getElementById('mood-body');      // accordion-body 容器
     if (!input || !mbody) return;
-    function getBase() {
-      if (typeof window.__BASE_URL__ === 'string') return window.__BASE_URL__;
-      const segs = location.pathname.split('/').filter(Boolean);
-      // user/org pages: segs[0] 可能是子頁，不該加 repo；project pages: segs[0] 是 repo
-      return segs.length > 0 ? `/${segs[0]}/` : '/';
-    }
-    const BASE = getBase();
-    const url = (p) => BASE + String(p).replace(/^\/+/, ''); // 去掉開頭的 '/'
-
-    const STORE4   = url('assets/images/record/store4.png');
-    const ADD_ICON = url('assets/images/record/add-photo.svg');
+  const STORE4   = `/assets/images/record/store4.png`;
+  const ADD_ICON = `/assets/images/record/add-photo.svg`;
     let count = 0; // 目前顯示的張數（0~3）
 
     input.addEventListener('change', () => {
