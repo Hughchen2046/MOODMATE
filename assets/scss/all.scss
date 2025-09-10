@@ -6,11 +6,14 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import "/assets/scss/utils/button";
 
+@import './utils/utils.scss';
 @import './base/base.scss';
 
+// layout
 @import './layout/header.scss';
 @import './layout/footer.scss';
 
+// pages
 @import './pages/index';
 @import './pages/role';
 @import './pages/record';

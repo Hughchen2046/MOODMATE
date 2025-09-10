@@ -1,18 +1,4 @@
-.bottom-line {
-    border-radius: $border-radius-pill;
-    position: absolute;
-    width: 134px;
-    height: 5px;
-    left: 50%;
-    bottom: .5rem;
-    transform: translateX(-50%);
-    background: $black;
-
-    @include media-breakpoint-down(sm) {
-        display: none;
-    }
-}
-
+// chat
 .chat {
     padding-top: 3rem;
     height: 100%;
@@ -21,15 +7,7 @@
 
     @include media-breakpoint-down(sm) {
         padding-top: 0;
-    }
-
-    .text-default {
-        color: #64483E;
-        letter-spacing: 0;
-    }
-
-    .text-error {
-        color: $red;
+        background-position: center;
     }
 
     .chat-loading {
@@ -42,23 +20,14 @@
         padding-top: 6.25rem;
 
         @include media-breakpoint-down(sm) {
-            margin-top: 6.8rem;
-        }
-
-        .chat-prompt {
-            max-width: 206px;
-            opacity: 0;
-            transition: .2s;
-
-            &.status {
-                opacity: 1;
-            }
+            margin-top: 2rem;
         }
     }
 
     .chat-dialog {
         position: relative;
         max-width: 280px;
+        width: 100%;
         background: #FFF3EE;
         animation: dialog .3s ease-in-out forwards;
         animation-delay: .15s;
@@ -91,6 +60,25 @@
             max-height: 3em;
             min-height: 1.5em;
         }
+
+        &.dialog-lg {
+            margin-top: -3rem;
+            max-width: 342px;
+
+            @include media-breakpoint-down(sm) {
+                margin-top: -1rem;
+            }
+
+            p {
+                max-height: 6.5em;
+                overflow-y: scroll;
+                scrollbar-width: none;
+
+                @include media-breakpoint-down(sm) {
+                    max-height: 4.5em;
+                }
+            }
+        }
     }
     
     .chat-role {
@@ -108,6 +96,17 @@
     .chat-bottom {
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
+
+        .chat-message {
+            margin-top: -4rem;
+            max-width: 206px;
+            opacity: 0;
+            transition: .2s;
+
+            &.status {
+                opacity: 1;
+            }
+        }
 
         .chat-recording {
             max-width: 228px;
@@ -167,6 +166,119 @@
         &::placeholder {
             color: rgba(#A67668, .5);
         }
+    }
+}
+
+// popup
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba($black, .8);
+    opacity: 0;
+    pointer-events: none; 
+    visibility: hidden;
+    transition: .3s;
+}
+
+.popup-dialog {
+    width: 100%;
+    box-shadow: 0px 4px 24px 0px rgba(#1C534A, .15);
+
+    .btn {
+        --bs-btn-padding-x: 1.5rem;
+        --bs-btn-padding-y: .75rem;
+        border-radius: $border-radius-pill;
+        border: none;
+        width: 100%;
+
+        &.btn-primary {
+            color: $white;
+
+            &:hover {
+                background-color: $pricolor-600;
+            }
+
+            &:focus {
+                background-color: $pricolor-500;
+                box-shadow: 0 0 0 4px rgba(#D5F2F180, .5);
+            }
+        }
+
+        &.btn-premium {
+            background: linear-gradient(270deg, #FFE369 0%, #FFF0CC 100%);
+            color: #491F1A;
+            box-shadow: 0px 0px 4px 4px rgba(#FFEBBF, .25);
+        }
+    }
+}
+
+.popup-header {
+    border-top-left-radius: .75rem;
+    border-top-right-radius: .75rem;
+    padding: .5rem;
+    padding-bottom: 0;
+    background: #7D594E;
+}
+
+.popup-content {
+    border-bottom-left-radius: .75rem;
+    border-bottom-right-radius: .75rem;
+    margin-bottom: 1.5rem;
+    padding: .5rem;
+    padding-top: 0;
+    background: $seccolor-200;
+
+    .sleep-bubu {
+        max-width: 158px;
+    }
+
+    .sleep-message {
+        position: relative;
+        border: 1px solid #ECE0DB;
+        letter-spacing: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 135px;
+            height: 135px;
+            bottom: 0;
+            right: -4rem;
+            background: url(../images/chat/chat_timesup_Quill.png) no-repeat;
+            background-size: cover;
+            animation: quill 1s ease-in infinite alternate;
+        }
+
+        @keyframes quill {
+            to {
+                transform: translate(1rem, -1rem);
+            }
+        }
+    }
+}
+
+.popup-border {
+    border: 1px dashed;
+
+    &.popup-border-top {
+        border-color: #A67668;
+        border-bottom: none;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+    }
+
+    &.popup-border-bottom {
+        border-color: #D8B9AC;
+        border-top: none;
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
     }
 }
 
