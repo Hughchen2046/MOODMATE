@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>聊聊 | Moodmate</title>
 	<link rel="icon" href="/MOODMATE/assets/favicon-CdyjmR9C.ico">
-  <script type="module" crossorigin src="/MOODMATE/assets/main-pKTmIh9K.js"></script>
-  <script type="module" crossorigin src="/MOODMATE/assets/chat-DqUxWsgn.js"></script>
-  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-D9T9riG5.css">
+  <script type="module" crossorigin src="/MOODMATE/assets/main-D6eMWylb.js"></script>
+  <script type="module" crossorigin src="/MOODMATE/assets/chat-Diag7wzF.js"></script>
+  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-D-rfF7w1.css">
 </head>
 <body class="bg-black d-flex justify-content-center align-items-center">
 
@@ -24,11 +24,142 @@
                     </div>
                 </div>
             </header>
-			<section class="chat-diary">
-				<div class="d-flex justify-content-between align-items-center px-5 pt-5 pt-sm-0">
-					<a href="" class="btn-arrow-left p-3">
-						<img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6.52083%2010.8333L10.6042%2014.9167C10.7708%2015.0833%2010.8507%2015.2778%2010.8437%2015.5C10.8368%2015.7222%2010.75%2015.9167%2010.5833%2016.0833C10.4167%2016.2361%2010.2222%2016.316%2010%2016.3229C9.77778%2016.3299%209.58333%2016.25%209.41667%2016.0833L3.91667%2010.5833C3.83333%2010.5%203.77431%2010.4097%203.73958%2010.3125C3.70486%2010.2153%203.6875%2010.1111%203.6875%2010C3.6875%209.88889%203.70486%209.78472%203.73958%209.6875C3.77431%209.59028%203.83333%209.5%203.91667%209.41667L9.41667%203.91667C9.56944%203.76389%209.76042%203.6875%209.98958%203.6875C10.2187%203.6875%2010.4167%203.76389%2010.5833%203.91667C10.75%204.08333%2010.8333%204.28125%2010.8333%204.51042C10.8333%204.73958%2010.75%204.9375%2010.5833%205.10417L6.52083%209.16667H15.8333C16.0694%209.16667%2016.2674%209.24653%2016.4271%209.40625C16.5868%209.56597%2016.6667%209.76389%2016.6667%2010C16.6667%2010.2361%2016.5868%2010.434%2016.4271%2010.5938C16.2674%2010.7535%2016.0694%2010.8333%2015.8333%2010.8333H6.52083Z'%20fill='%2364483E'/%3e%3c/svg%3e" alt="arrow-left">
+			<section class="chat-diary d-flex flex-column">
+				<div class="position-relative d-flex justify-content-between align-items-center px-6 pt-5 pt-sm-0 mt-2 mb-5 shadow">
+					<a href="chat.html" class="btn-arrow-left btn-arrow-light p-3">
+						<img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.8248%2013L12.7248%2017.9C12.9248%2018.1%2013.0206%2018.3334%2013.0123%2018.6C13.004%2018.8667%2012.8998%2019.1%2012.6998%2019.3C12.4998%2019.4834%2012.2665%2019.5792%2011.9998%2019.5875C11.7331%2019.5959%2011.4998%2019.5%2011.2998%2019.3L4.6998%2012.7C4.5998%2012.6%204.52897%2012.4917%204.4873%2012.375C4.44564%2012.2584%204.4248%2012.1334%204.4248%2012C4.4248%2011.8667%204.44564%2011.7417%204.4873%2011.625C4.52897%2011.5084%204.5998%2011.4%204.6998%2011.3L11.2998%204.70005C11.4831%204.51672%2011.7123%204.42505%2011.9873%204.42505C12.2623%204.42505%2012.4998%204.51672%2012.6998%204.70005C12.8998%204.90005%2012.9998%205.13755%2012.9998%205.41255C12.9998%205.68755%2012.8998%205.92505%2012.6998%206.12505L7.8248%2011H18.9998C19.2831%2011%2019.5206%2011.0959%2019.7123%2011.2875C19.904%2011.4792%2019.9998%2011.7167%2019.9998%2012C19.9998%2012.2834%2019.904%2012.5209%2019.7123%2012.7125C19.5206%2012.9042%2019.2831%2013%2018.9998%2013H7.8248Z'%20fill='white'/%3e%3c/svg%3e" alt="arrow-left">
 					</a>
+					<h6 class="h6 w-100 text-white text-center">7 月 14 日 星期一</h6>
+				</div>
+				<div class="diary position-relative px-6">
+					<ul class="list-unstyled d-flex flex-column row-gap-5 accordion accordion-flush mb-6">
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-1">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+									<p class="text-white fw-bold">今天過得怎麼樣？</p>
+								</button>
+							</div>
+							<div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="accordion-1">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<div class="text-center mb-5">
+											<img src="data:image/svg+xml,%3csvg%20width='50'%20height='50'%20viewBox='0%200%2050%2050'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.299927'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='%2349BC6E'/%3e%3crect%20x='0.299927'%20y='0.300049'%20width='49.4'%20height='49.4'%20rx='24.7'%20fill='url(%23paint0_linear_8669_1713)'%20fill-opacity='0.7'%20style='mix-blend-mode:overlay'/%3e%3crect%20x='4.09998'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='36.3999'%20y='25'%20width='9.5'%20height='9.5'%20rx='4.75'%20fill='white'%20fill-opacity='0.2'%20style='mix-blend-mode:hard-light'/%3e%3crect%20x='14.5499'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%231A4227'/%3e%3crect%20x='28.4827'%20y='20.5664'%20width='6.96667'%20height='6.96667'%20rx='3.48333'%20fill='%231A4227'/%3e%3cpath%20d='M28.9999%2029.75L29.0761%2029.7546C29.4544%2029.8031%2029.7499%2030.208%2029.7499%2030.7C29.7499%2031.192%2029.4544%2031.5969%2029.0761%2031.6454L28.9999%2031.65H20.9999C20.5857%2031.65%2020.2499%2031.2247%2020.2499%2030.7C20.2499%2030.1753%2020.5857%2029.75%2020.9999%2029.75H28.9999Z'%20fill='%231A4227'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_8669_1713'%20x1='24.9999'%20y1='0.300049'%20x2='24.9999'%20y2='49.7'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='white'/%3e%3cstop%20offset='1'%20stop-color='white'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="mood-normal">
+										</div>
+										<div class="d-flex justify-content-center column-gap-4 mb-5">
+											<div class="badge bg-white rounded-1 d-flex p-3">
+												<span class="fs-t3 fw-bold">#合作協調</span>
+											</div>
+											<div class="badge bg-white rounded-1 d-flex p-3">
+												<span class="fs-t3 fw-bold">#面對新挑戰</span>
+											</div>
+										</div>
+										<p class="text-default border-dashed fs-t3 pb-5 mb-5">今天首次接手新的工作任務，雖有準備並經前輩指導，但實際執行時仍感到緊張與缺乏信心，擔心自己會犯錯。</p>
+										<div class="d-flex flex-column row-gap-5">
+											<div class="mood-item">
+												<div class="mood-title p-3">
+													<p class="fs-t3 fw-semibold text-white text-center">情感</p>
+												</div>
+												<div class="mood-body d-flex justify-content-center column-gap-5 py-4">
+													<div class="mood">
+														<img class="img-fluid mb-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAlCAYAAAAqXEs9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPZSURBVHgBvZgLbtNIGMf/M3aTUJKSbtE+2G6VSiutdrUs5QQNJ1g4Ab3BsicgnAA4QeEG5QSUE1BERSUeigWFikdJaNLmYY+H75s2Vh9xMnYNf6nNeDxf/Mt/vpnxjEAK6frjctt1F+A4l6B1WUBXTD2EByGaUOpJMQjWxPzlJhJK2DY0EPn8dSC8Sk+uWgUJrIrQuVec/fM+LDUWyIDk3BvU9D+6LCOFBDmnEd4v/XqxNr7tCLXePK0KRy5rvd8lpxWDURdfK87+vRbXRsbdaL9bvwEpHmYFw9KUa1rgcevt0xqSAHGA1riNbyZxMw5KDIPhAHwX6VvH8+oI0M7m+pIQWMYpFaoQ0pFWbbUKr03N/bMyuI6iOlsbFSntnOEHxl13dlp4//wVbMWDplPfqJwAUmF40zaBG5tb+PjS419nrj+8rKO3u2fAujtta3cOVFa5MDLCdBm7E4SqbvsNyvfxniCKMz9g6sfz0GEIFSh8qr+mssL07AUUSkUkUqivlH67uGp+CruTJNaZmMBk+Rz65ApLSGnKDPrzH78bmNanz5GDNtJC/MufskEzMc0PS0go6TgICGAg90wehamigQuVQn+PupDcshUNpiVmcR3HqSKFGOhMqWTKQd8nhzqYmZuN7g3KCVTO5XKLLly5SFNoYhVnpqMyO9Hb3Y3qOLl3G034vR4c6eAs1bu5ibHfqbSuupTVC0io4/NMrlCIHOl3uia5qQswQfUhfEp43wqIYqouvcNURAKLtl9vmqHNSV2iEXb8Qa0P25icKuHchZ9MPiURUZRF6+26NQ0n69bGiyN1cWBp5SZpHPSDE3V7zS/mr0CucA7lz07iNErkqfL7sfe6tGRw7rS3GzgVEE1Inm3jw/NOnPxuF2lFueNJobFmG6D6o4E4j3gpSSti8cgh7dkG+N0eRsGcn58zy0pakUNrUij9wDaAR9m3gmHRq8iK5BWWylb7p2CIQ1nBcP6Ufvnr0cEoE3fGBQRD8icrmAOt8j+5/7D+XYxxSR0bYRnD8IC5FQFNmy3vaJcOj7CsYejZNWLwIiAWu0R7Ji8uJF+cNCA8E2cJw7lz0EP7aIdvtjfXFwjqIVJumdOIcnN+4A7ryNLBW1zaIP6P7ySaCJcOw5i6YQ2z2p+NgyEDTpyKxB428EGDdsQyBVaQoShnmvSedJXnnGH3Y1d7njCV8K/QF9xDdjSrNFovx8GwrA6sWlvPFmmvVKPWVaQRgdDLdW0USCKggRo0Ch3gutgHWxjNYM6CVnh9sgFJBXQEjvdQhfwlHeoypIymCUXni/B9bzrF+SLrKwjnsz/IHqw0AAAAAElFTkSuQmCC" alt="mood">
+														<p class="text-second text-center fs-t4">憂鬱</p>
+													</div>
+													<div class="mood">
+														<img class="img-fluid mb-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAlCAYAAAAqXEs9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPZSURBVHgBvZgLbtNIGMf/M3aTUJKSbtE+2G6VSiutdrUs5QQNJ1g4Ab3BsicgnAA4QeEG5QSUE1BERSUeigWFikdJaNLmYY+H75s2Vh9xMnYNf6nNeDxf/Mt/vpnxjEAK6frjctt1F+A4l6B1WUBXTD2EByGaUOpJMQjWxPzlJhJK2DY0EPn8dSC8Sk+uWgUJrIrQuVec/fM+LDUWyIDk3BvU9D+6LCOFBDmnEd4v/XqxNr7tCLXePK0KRy5rvd8lpxWDURdfK87+vRbXRsbdaL9bvwEpHmYFw9KUa1rgcevt0xqSAHGA1riNbyZxMw5KDIPhAHwX6VvH8+oI0M7m+pIQWMYpFaoQ0pFWbbUKr03N/bMyuI6iOlsbFSntnOEHxl13dlp4//wVbMWDplPfqJwAUmF40zaBG5tb+PjS419nrj+8rKO3u2fAujtta3cOVFa5MDLCdBm7E4SqbvsNyvfxniCKMz9g6sfz0GEIFSh8qr+mssL07AUUSkUkUqivlH67uGp+CruTJNaZmMBk+Rz65ApLSGnKDPrzH78bmNanz5GDNtJC/MufskEzMc0PS0go6TgICGAg90wehamigQuVQn+PupDcshUNpiVmcR3HqSKFGOhMqWTKQd8nhzqYmZuN7g3KCVTO5XKLLly5SFNoYhVnpqMyO9Hb3Y3qOLl3G034vR4c6eAs1bu5ibHfqbSuupTVC0io4/NMrlCIHOl3uia5qQswQfUhfEp43wqIYqouvcNURAKLtl9vmqHNSV2iEXb8Qa0P25icKuHchZ9MPiURUZRF6+26NQ0n69bGiyN1cWBp5SZpHPSDE3V7zS/mr0CucA7lz07iNErkqfL7sfe6tGRw7rS3GzgVEE1Inm3jw/NOnPxuF2lFueNJobFmG6D6o4E4j3gpSSti8cgh7dkG+N0eRsGcn58zy0pakUNrUij9wDaAR9m3gmHRq8iK5BWWylb7p2CIQ1nBcP6Ufvnr0cEoE3fGBQRD8icrmAOt8j+5/7D+XYxxSR0bYRnD8IC5FQFNmy3vaJcOj7CsYejZNWLwIiAWu0R7Ji8uJF+cNCA8E2cJw7lz0EP7aIdvtjfXFwjqIVJumdOIcnN+4A7ryNLBW1zaIP6P7ySaCJcOw5i6YQ2z2p+NgyEDTpyKxB428EGDdsQyBVaQoShnmvSedJXnnGH3Y1d7njCV8K/QF9xDdjSrNFovx8GwrA6sWlvPFmmvVKPWVaQRgdDLdW0USCKggRo0Ch3gutgHWxjNYM6CVnh9sgFJBXQEjvdQhfwlHeoypIymCUXni/B9bzrF+SLrKwjnsz/IHqw0AAAAAElFTkSuQmCC" alt="mood">
+														<p class="text-second text-center fs-t4">緊張</p>
+													</div>
+												</div>
+											</div>
+											<div class="mood-item">
+												<div class="mood-title p-3">
+													<p class="fs-t3 fw-semibold text-white text-center">對你影響最大</p>
+												</div>
+												<div class="mood-body d-flex justify-content-center column-gap-5 py-4">
+													<div class="mood">
+														<img class="img-fluid mb-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAlCAYAAAAqXEs9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPZSURBVHgBvZgLbtNIGMf/M3aTUJKSbtE+2G6VSiutdrUs5QQNJ1g4Ab3BsicgnAA4QeEG5QSUE1BERSUeigWFikdJaNLmYY+H75s2Vh9xMnYNf6nNeDxf/Mt/vpnxjEAK6frjctt1F+A4l6B1WUBXTD2EByGaUOpJMQjWxPzlJhJK2DY0EPn8dSC8Sk+uWgUJrIrQuVec/fM+LDUWyIDk3BvU9D+6LCOFBDmnEd4v/XqxNr7tCLXePK0KRy5rvd8lpxWDURdfK87+vRbXRsbdaL9bvwEpHmYFw9KUa1rgcevt0xqSAHGA1riNbyZxMw5KDIPhAHwX6VvH8+oI0M7m+pIQWMYpFaoQ0pFWbbUKr03N/bMyuI6iOlsbFSntnOEHxl13dlp4//wVbMWDplPfqJwAUmF40zaBG5tb+PjS419nrj+8rKO3u2fAujtta3cOVFa5MDLCdBm7E4SqbvsNyvfxniCKMz9g6sfz0GEIFSh8qr+mssL07AUUSkUkUqivlH67uGp+CruTJNaZmMBk+Rz65ApLSGnKDPrzH78bmNanz5GDNtJC/MufskEzMc0PS0go6TgICGAg90wehamigQuVQn+PupDcshUNpiVmcR3HqSKFGOhMqWTKQd8nhzqYmZuN7g3KCVTO5XKLLly5SFNoYhVnpqMyO9Hb3Y3qOLl3G034vR4c6eAs1bu5ibHfqbSuupTVC0io4/NMrlCIHOl3uia5qQswQfUhfEp43wqIYqouvcNURAKLtl9vmqHNSV2iEXb8Qa0P25icKuHchZ9MPiURUZRF6+26NQ0n69bGiyN1cWBp5SZpHPSDE3V7zS/mr0CucA7lz07iNErkqfL7sfe6tGRw7rS3GzgVEE1Inm3jw/NOnPxuF2lFueNJobFmG6D6o4E4j3gpSSti8cgh7dkG+N0eRsGcn58zy0pakUNrUij9wDaAR9m3gmHRq8iK5BWWylb7p2CIQ1nBcP6Ufvnr0cEoE3fGBQRD8icrmAOt8j+5/7D+XYxxSR0bYRnD8IC5FQFNmy3vaJcOj7CsYejZNWLwIiAWu0R7Ji8uJF+cNCA8E2cJw7lz0EP7aIdvtjfXFwjqIVJumdOIcnN+4A7ryNLBW1zaIP6P7ySaCJcOw5i6YQ2z2p+NgyEDTpyKxB428EGDdsQyBVaQoShnmvSedJXnnGH3Y1d7njCV8K/QF9xDdjSrNFovx8GwrA6sWlvPFmmvVKPWVaQRgdDLdW0USCKggRo0Ch3gutgHWxjNYM6CVnh9sgFJBXQEjvdQhfwlHeoypIymCUXni/B9bzrF+SLrKwjnsz/IHqw0AAAAAElFTkSuQmCC" alt="mood">
+														<p class="text-second text-center fs-t4">工作</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-2">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="true" aria-controls="collapse-2">
+									<p class="text-white fw-bold">聊癒回顧</p>
+								</button>
+							</div>
+							<div id="collapse-2" class="accordion-collapse collapse show" aria-labelledby="accordion-2">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<p class="text-default fs-t3">今天，Lora 願意停下腳步，和我分享她對新挑戰的緊張與害怕。雖然內心有些不安，但她仍然選擇面對，這份坦誠與勇氣真的很難得。從這段對話裡，我看見了一個正在努力相信自己的 Lora，也感受到她希望變得更穩定、更溫柔地對待自己的心。謝謝 Lora 讓我陪伴一起走過今天的情緒，明天我們再一起慢慢前進，好嗎？</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-3">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="true" aria-controls="collapse-3">
+									<p class="text-white fw-bold">心情解析</p>
+								</button>
+							</div>
+							<div id="collapse-3" class="accordion-collapse collapse show" aria-labelledby="accordion-3">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<p class="text-default fs-t3">第一次接手新的工作任務，會緊張是很自然的反應。從你的描述中可以感受到，你其實有做準備，也有前輩的協助，但當真的要獨立完成時，仍會擔心表現不夠好、怕自己犯錯。這樣的焦慮，不代表你不夠好，而是你對自己的表現有期待，也在乎這份工作。</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-4">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="true" aria-controls="collapse-4">
+									<p class="text-white fw-bold">暖心建議</p>
+								</button>
+							</div>
+							<div id="collapse-4" class="accordion-collapse collapse show" aria-labelledby="accordion-4">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<p class="text-default fs-t3">今晚可以試著回想一下：「我今天完成了哪些事情？」哪怕只是完成了一個小任務、聽懂了一個流程，也值得寫下來。每天累積一點點成功感，信心就會慢慢長出來的。你做得到，真的。</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-5">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
+									<p class="text-white fw-bold">獲得獎章</p>
+								</button>
+							</div>
+							<div id="collapse-5" class="accordion-collapse collapse show" aria-labelledby="accordion-5">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom px-4 py-5">
+										<ul class="list-unstyled d-flex column-gap-3">
+											<li class="chat-prize bg-white rounded text-center w-100 py-5">
+												<img class="img-fluid mb-2" src="/MOODMATE/assets/chat_prize01-CbRwmNAM.png" alt="chat_prize">
+												<p class="text-default fs-t3 fw-bold mb-2">起步章</p>
+												<p class="text-second fs-t4">完成第 1 天</p>
+											</li>
+											<li class="chat-prize bg-white rounded text-center w-100 py-5">
+												<img class="img-fluid mb-2" src="/MOODMATE/assets/chat_prize02-B-VYXLhO.png" alt="chat_prize">
+												<p class="text-default fs-t3 fw-bold mb-2">暖身章</p>
+												<p class="text-second fs-t4">連續 3 天</p>
+											</li>
+											<li class="chat-prize bg-white rounded text-center w-100 py-5">
+												<img class="img-fluid mb-2" src="/MOODMATE/assets/chat_prize03-DHJIQ5yo.png" alt="chat_prize">
+												<p class="text-default fs-t3 fw-bold mb-2">勢如破竹</p>
+												<p class="text-second fs-t4">連續 7 天</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<button class="btn btn-primary fw-semibold mb-7" type="button">回首頁</a>
 				</div>
 				<div class="bottom-line"></div>
 			</section>
@@ -41,7 +172,7 @@
                             <h6 class="h6 text-white text-center">今天就先聊到這裡吧！</h6>
                         </div>
                     </div>
-                    <div class="popup-content">
+                    <div class="popup-content mb-6">
                         <div class="popup-border popup-border-bottom p-6">
                             <div class="sleep-bubu mx-auto mb-6">
                                 <img class="img-fluid" src="/MOODMATE/assets/chat_timesup_sleep_frame-Ce9eZQRz.png" alt="sleep-bubu">
@@ -56,7 +187,7 @@
                         </div>
                     </div>
                     <div class="d-flex flex-column row-gap-5">
-                        <a href="" class="btn btn-primary fw-semibold" type="button">查看今天情緒日記</a>
+                        <a href="chat-diary.html" class="btn btn-primary fw-semibold" type="button">查看今天情緒日記</a>
                         <button class="btn btn-premium fw-semibold" type="button">解鎖無限療癒時數</button>
                     </div>
                 </div>
