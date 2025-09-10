@@ -175,6 +175,11 @@
     background: url("../images/chat/chat_diary_background.jpg") no-repeat center top;
     background-size: cover;
 
+    @include media-breakpoint-down(sm) {
+        padding-top: 0;
+        background-position: center;
+    }
+
     &::before {
         content: "";
         display: block;
@@ -324,7 +329,7 @@
     }
 }
 
-.popup-header, .accordion-header {
+.popup-header, .chat-diary .accordion-header {
     border-top-left-radius: .75rem;
     border-top-right-radius: .75rem;
     padding: .5rem;
@@ -332,17 +337,17 @@
     background: #7D594E;
 }
 
-.accordion-header:has(.accordion-button.collapsed) {
+.chat-diary .accordion-header:has(.accordion-button.collapsed) {
     border-radius: .75rem;
 }
 
-.accordion-header {
+.chat-diary .accordion-header {
     padding-bottom: .5rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.popup-content, .accordion-body {
+.popup-content, .chat-diary .accordion-body {
     border-bottom-left-radius: .75rem;
     border-bottom-right-radius: .75rem;
     padding: .5rem;
@@ -379,7 +384,7 @@
     }
 }
 
-.popup-border, .accordion-button, .accordion-border {
+.popup-border, .chat-diary .accordion-button, .chat-diary .accordion-border {
     border: 1px dashed;
 
     &.popup-border-top, &.accordion-border-top {

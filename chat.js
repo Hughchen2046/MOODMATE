@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateTime, 1000);
 
     // ---- chat 模組初始化
-    const chatContainer = document.querySelector(".chat");
-    if (!chatContainer) return;
-    initChatSection();
+    if (document.querySelector(".chat")) {
+        initChatSection();
+    }
 
     function initChatSection() {
         //---- countdown
@@ -237,5 +237,23 @@ document.addEventListener("DOMContentLoaded", function () {
             );
             chatInput.value = "";
         });
+    }
+
+    // ---- chat-diary 模組初始化
+    if (document.querySelector(".chat-diary")) {
+        initChatDiarySection();
+    }
+
+    function initChatDiarySection() {
+        //---- 回首頁
+        const btnHomeIntro = document.querySelector(".btn-login-intro");
+        const popuploginIntro = document.getElementById("loginIntro");
+
+        btnHomeIntro.addEventListener('click', () => {
+            // popup
+            setTimeout(() => {
+                popuploginIntro.classList.add("status");
+            }, 500);
+        })
     }
 });
