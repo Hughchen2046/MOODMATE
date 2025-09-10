@@ -90,3 +90,10 @@
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
+@media (max-width: 476px) {
+    .sm-fix {
+        margin-top: 0 !important;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+}
