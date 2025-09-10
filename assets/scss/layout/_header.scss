@@ -1,5 +1,6 @@
 .header {
     background: linear-gradient(180deg, rgba($black, .3) 0%, rgba($black, 0) 100%);
+    z-index: 1;
 
     &::before {
         content: "";
