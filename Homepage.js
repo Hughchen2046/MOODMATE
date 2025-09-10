@@ -152,3 +152,64 @@ document.addEventListener('DOMContentLoaded', () => {
     startTypewriter();
   }
 });
+
+
+
+// 10 秒後顯示「抽小卡」提示；可一鍵恢復或前往 getcard.html
+(() => {
+  const bubble = document.querySelector('.talk-bubble');
+  if (!bubble) return;
+
+  const ORIGINAL_HTML = `
+    <p class="fs-t2 fw-bold " id="typeWriter">嗨!Lora!<br>今天過得怎麼樣?</p>
+    <i class="bi bi-caret-down-fill triangle-mark"></i>
+  `;
+
+  let prompted = false;
+  const SHOW_AFTER = 10_000; // 10 秒
+
+  const timerId = setTimeout(showPrompt, SHOW_AFTER);
+
+  function showPrompt() {
+    if (prompted) return;
+    prompted = true;
+    bubble.innerHTML = `
+      <p class="fs-t2 fw-bold text-color-new-4 mb-3" id="typeWriter">我準備了很多心情小卡要給你<br>你要抽一張試試嗎？</p>
+      <div class="mini-btn-row d-flex gap-3 justify-content-center">
+        <button type="button" class="btn-mini-second" id="btn-skip">先不抽</button>
+        <button type="button" class="btn-mini-pri" id="btn-draw">抽小卡</button>
+      </div>
+      <i class="bi bi-caret-down-fill triangle-mark"></i>
+    `;
+
+    bubble.querySelector('#btn-skip').addEventListener('click', () => {
+      bubble.innerHTML = ORIGINAL_HTML;
+      runTypewriterIfPresent(); // 恢復後再跑一次打字機
+    });
+
+    bubble.querySelector('#btn-draw').addEventListener('click', () => {
+      location.href = 'getcard.html';
+    });
+  }
+
+  // 若別處已提前顯示抽卡（例如你有三擊觸發），就取消這個 10 秒計時
+  document.addEventListener('mini-card:shown', () => {
+    clearTimeout(timerId);
+    prompted = true;
+  });
+
+  function runTypewriterIfPresent() {
+    const el = document.getElementById('typeWriter');
+    if (!el) return;
+    const speed = 150, delay = 200;
+    const src = el.innerHTML.replace(/<br\s*\/?>/gi, '\n');
+    el.innerHTML = '';
+    let i = 0;
+    function tick() {
+      const ch = src[i++];
+      el.innerHTML += (ch === '\n') ? '<br>' : ch;
+      if (i < src.length) setTimeout(tick, speed);
+    }
+    setTimeout(tick, delay);
+  }
+})();
