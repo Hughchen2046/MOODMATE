@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const startCountdown = () => {
-            time = 1;
+            time = 4 * 60 + 59;
             clearInterval(timer);
 
             // 重置顏色
