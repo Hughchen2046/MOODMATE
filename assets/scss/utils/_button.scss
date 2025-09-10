@@ -25,7 +25,7 @@ button {
     color: white;
     border-radius: $border-radius-pill;
     min-width: 140px;
-    &:hover, &:focus {
+    &:focus {
         box-shadow: 0px 0px 0px 4px #D5F2F180;
         background-color: #379DA2;
     }

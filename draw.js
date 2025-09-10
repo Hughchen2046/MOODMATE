@@ -1,69 +1,69 @@
 (() => {
   // ===== 可調參數 =====
-  const INK = "#6b4b3f";                  // 筆色
-  const TIP_BASE_SIZE = 16;               // 筆尖基準尺寸(px，CSS像素)
-  const SPACING = TIP_BASE_SIZE * 0.2;   // 連續蓋章間距
+  const INK = "#6b4b3f";
+  const TIP_BASE_SIZE = 16;
+  const SPACING = TIP_BASE_SIZE * 0.2;
 
   // ===== 取得畫布 / context =====
   const canvas = document.getElementById("pad");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
-  // 視網膜適配：用 setTransform 避免重複 scale 疊加
+  // 視網膜適配
   function resizeCanvas() {
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect(); // CSS px
     canvas.width  = Math.round(rect.width  * dpr);
     canvas.height = Math.round(rect.height * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);      // 之後座標都用 CSS px
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // 後續座標都用 CSS px
   }
   resizeCanvas();
   window.addEventListener("resize", resizeCanvas);
 
   // ===== 筆尖（毛邊圓）產生器 =====
   function makeTip(size = TIP_BASE_SIZE, color = INK) {
-  const c = document.createElement("canvas");
-  c.width = c.height = size;
-  const t = c.getContext("2d");
+    const c = document.createElement("canvas");
+    c.width = c.height = size;
+    const t = c.getContext("2d");
+    const cx = size / 2, cy = size / 2;
+    const R  = size * 0.45, N = 64, J = 0.01;
 
-  const cx = size / 2, cy = size / 2;
-  const R  = size * 0.45;          // 基本半徑
-  const N  = 64;                   // 外輪廓點數（越大越圓滑）
-  const J  = 0.01;                 // 抖動幅度（0~0.3）：邊緣毛邊程度
-
-  t.fillStyle = color;
-  t.beginPath();
-  for (let i = 0; i < N; i++) {
-    const a = (i / N) * Math.PI * 2;
-    const r = R * (1 + (Math.random() * 2 - 1) * J); // 半徑有隨機抖動
-    const x = cx + Math.cos(a) * r;
-    const y = cy + Math.sin(a) * r;
-    i === 0 ? t.moveTo(x, y) : t.lineTo(x, y);
+    t.fillStyle = color;
+    t.beginPath();
+    for (let i = 0; i < N; i++) {
+      const a = (i / N) * Math.PI * 2;
+      const r = R * (1 + (Math.random() * 2 - 1) * J);
+      const x = cx + Math.cos(a) * r;
+      const y = cy + Math.sin(a) * r;
+      i === 0 ? t.moveTo(x, y) : t.lineTo(x, y);
+    }
+    t.closePath();
+    t.fill();
+    return c;
   }
-  t.closePath();
-  t.fill();                         // 直接實心填色 → 不會有透明暈
-  return c;
-}
-
   const tipCanvas = makeTip(TIP_BASE_SIZE, INK);
 
-  // ===== 繪製（蓋章式） =====
+  // ===== 狀態 =====
   let drawing = false;
+  let started = false;     // 是否曾在畫布上開始畫
+  let redirected = false;  // 避免重複跳轉
   let last = { x: 0, y: 0 };
-  let acc = 0;                 // 累積距離，達到 SPACING 才蓋一次
+  let acc = 0;
   let lastPressure = 1;
 
+  // ===== 工具函式 =====
   function getPos(e) {
     const r = canvas.getBoundingClientRect();
-    const cx = e.clientX ?? (e.touches && e.touches[0].clientX);
-    const cy = e.clientY ?? (e.touches && e.touches[0].clientY);
+    // 允許丟進來的是 PointerEvent、MouseEvent 或 Touch 物件
+    const src = e?.touches?.[0] || e?.changedTouches?.[0] || e;
+    const cx = src.clientX;
+    const cy = src.clientY;
     return { x: cx - r.left, y: cy - r.top }; // CSS px
   }
   const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
   const lerp = (a, b, t) => a + (b - a) * t;
 
   function stamp(x, y, baseSize) {
-    // 旋轉/大小/位置 抖動，讓筆觸更自然
     const scale = (0.9 + Math.random() * 0.2) * lastPressure;
     const rot = (Math.random() * 24 - 12) * (Math.PI / 180);
     const jx = Math.random() * 2 - 1;
@@ -83,10 +83,8 @@
     const cur = { x, y };
     let d = dist(cur, last);
     acc += d;
-
-    // 等距蓋章：每跨過一個 spacing 就補一顆
     while (acc >= SPACING) {
-      const t = (acc - SPACING) / d; // 回推應蓋章的位置
+      const t = (acc - SPACING) / d;
       const px = lerp(cur.x, last.x, t);
       const py = lerp(cur.y, last.y, t);
       stamp(px, py, TIP_BASE_SIZE);
@@ -95,41 +93,69 @@
     last = cur;
   }
 
-  // ===== 事件 =====
+  // ===== 事件處理（統一入口）=====
   function onDown(e) {
-    e.preventDefault();
+    e.preventDefault?.();
+    started = true;
+    drawing = true;
+    lastPressure = e.pressure || 1;
+
+    // 讓 pointerup 一定能回來
+    if ('pointerId' in e && canvas.setPointerCapture) {
+      try { canvas.setPointerCapture(e.pointerId); } catch {}
+    }
+
     const p = getPos(e);
     last = p;
-    lastPressure = e.pressure || 1;
-    drawing = true;
-    acc = SPACING;             // 立即蓋第一下
+    acc = SPACING; // 立即蓋第一下
     stamp(p.x, p.y, TIP_BASE_SIZE);
   }
+
   function onMove(e) {
     if (!drawing) return;
-    e.preventDefault();
+    e.preventDefault?.();
     lastPressure = e.pressure || 1;
     const p = getPos(e);
     drawTo(p.x, p.y);
   }
-  function onUp() { drawing = false; }
 
+  function maybeRedirect() {
+    if (started && !redirected) {
+      redirected = true;
+      requestAnimationFrame(() => { window.location.href = "role.html"; });
+    }
+  }
+
+  function onUp(e) {
+    drawing = false;
+    maybeRedirect();
+    if (e && 'pointerId' in e && canvas.releasePointerCapture) {
+      try { canvas.releasePointerCapture(e.pointerId); } catch {}
+    }
+  }
+
+  // ===== 主要：Pointer Events（同時支援滑鼠/手指/手寫筆）=====
   canvas.addEventListener("pointerdown", onDown);
   canvas.addEventListener("pointermove", onMove);
   window.addEventListener("pointerup", onUp);
+  window.addEventListener("pointercancel", onUp);
 
-  // 阻止手機觸控時畫面滾動
-  canvas.addEventListener("touchstart", e => e.preventDefault(), { passive: false });
-  canvas.addEventListener("touchmove",  e => e.preventDefault(), { passive: false });
+  // ===== 後備：不支援 Pointer Events 的舊瀏覽器 =====
+  if (!("PointerEvent" in window)) {
+    // mouse
+    canvas.addEventListener("mousedown", onDown);
+    canvas.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    // touch
+    canvas.addEventListener("touchstart", onDown, { passive: false });
+    canvas.addEventListener("touchmove", onMove,   { passive: false });
+    canvas.addEventListener("touchend", onUp,      { passive: false });
+    canvas.addEventListener("touchcancel", onUp,   { passive: false });
+  }
 
-  // 清空
+  // 清空（可選）
   document.getElementById("clear")?.addEventListener("click", () => {
     const rect = canvas.getBoundingClientRect();
-    ctx.clearRect(0, 0, rect.width, rect.height); // 因為已 setTransform，所以用 CSS px
+    ctx.clearRect(0, 0, rect.width, rect.height);
   });
-
-  // === 自動跳轉 ===
-  setTimeout(() => {
-    window.location.href = "role.html";
-  }, 13000);
 })();

@@ -69,6 +69,7 @@
     border-radius: 4px;
     background: #fff;
     border: 1px solid #EFEFEF;
+    touch-action: none;
 }
 .onboarding-bar-item {
     border-radius: $border-radius-pill;
