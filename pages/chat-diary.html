@@ -13,11 +13,142 @@
 		<div class="screen">
 			<%- include('./layout/header'); -%>
 
-			<section class="chat-diary">
-				<div class="d-flex justify-content-between align-items-center px-5 pt-5 pt-sm-0">
-					<a href="" class="btn-arrow-left p-3">
-						<img src="../assets/images/chat/arrow-left-brown-icon.svg" alt="arrow-left">
+			<section class="chat-diary d-flex flex-column">
+				<div class="position-relative d-flex justify-content-between align-items-center px-6 pt-5 pt-sm-0 mt-2 mb-5 shadow">
+					<a href="chat.html" class="btn-arrow-left btn-arrow-light p-3">
+						<img src="../assets/images/chat/arrow-left-light.svg" alt="arrow-left">
 					</a>
+					<h6 class="h6 w-100 text-white text-center">7 月 14 日 星期一</h6>
+				</div>
+				<div class="diary position-relative px-6">
+					<ul class="list-unstyled d-flex flex-column row-gap-5 accordion accordion-flush mb-6">
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-1">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+									<p class="text-white fw-bold">今天過得怎麼樣？</p>
+								</button>
+							</div>
+							<div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="accordion-1">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<div class="text-center mb-5">
+											<img src="../assets/images/Homepage/mood/mood-normal.svg" alt="mood-normal">
+										</div>
+										<div class="d-flex justify-content-center column-gap-4 mb-5">
+											<div class="badge bg-white rounded-1 d-flex p-3">
+												<span class="fs-t3 fw-bold">#合作協調</span>
+											</div>
+											<div class="badge bg-white rounded-1 d-flex p-3">
+												<span class="fs-t3 fw-bold">#面對新挑戰</span>
+											</div>
+										</div>
+										<p class="text-default border-dashed fs-t3 pb-5 mb-5">今天首次接手新的工作任務，雖有準備並經前輩指導，但實際執行時仍感到緊張與缺乏信心，擔心自己會犯錯。</p>
+										<div class="d-flex flex-column row-gap-5">
+											<div class="mood-item">
+												<div class="mood-title p-3">
+													<p class="fs-t3 fw-semibold text-white text-center">情感</p>
+												</div>
+												<div class="mood-body d-flex justify-content-center column-gap-5 py-4">
+													<div class="mood">
+														<img class="img-fluid mb-2" src="../assets/images/chat/mood.png" alt="mood">
+														<p class="text-second text-center fs-t4">憂鬱</p>
+													</div>
+													<div class="mood">
+														<img class="img-fluid mb-2" src="../assets/images/chat/mood.png" alt="mood">
+														<p class="text-second text-center fs-t4">緊張</p>
+													</div>
+												</div>
+											</div>
+											<div class="mood-item">
+												<div class="mood-title p-3">
+													<p class="fs-t3 fw-semibold text-white text-center">對你影響最大</p>
+												</div>
+												<div class="mood-body d-flex justify-content-center column-gap-5 py-4">
+													<div class="mood">
+														<img class="img-fluid mb-2" src="../assets/images/chat/mood.png" alt="mood">
+														<p class="text-second text-center fs-t4">工作</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-2">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="true" aria-controls="collapse-2">
+									<p class="text-white fw-bold">聊癒回顧</p>
+								</button>
+							</div>
+							<div id="collapse-2" class="accordion-collapse collapse show" aria-labelledby="accordion-2">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<p class="text-default fs-t3">今天，Lora 願意停下腳步，和我分享她對新挑戰的緊張與害怕。雖然內心有些不安，但她仍然選擇面對，這份坦誠與勇氣真的很難得。從這段對話裡，我看見了一個正在努力相信自己的 Lora，也感受到她希望變得更穩定、更溫柔地對待自己的心。謝謝 Lora 讓我陪伴一起走過今天的情緒，明天我們再一起慢慢前進，好嗎？</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-3">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="true" aria-controls="collapse-3">
+									<p class="text-white fw-bold">心情解析</p>
+								</button>
+							</div>
+							<div id="collapse-3" class="accordion-collapse collapse show" aria-labelledby="accordion-3">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<p class="text-default fs-t3">第一次接手新的工作任務，會緊張是很自然的反應。從你的描述中可以感受到，你其實有做準備，也有前輩的協助，但當真的要獨立完成時，仍會擔心表現不夠好、怕自己犯錯。這樣的焦慮，不代表你不夠好，而是你對自己的表現有期待，也在乎這份工作。</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-4">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="true" aria-controls="collapse-4">
+									<p class="text-white fw-bold">暖心建議</p>
+								</button>
+							</div>
+							<div id="collapse-4" class="accordion-collapse collapse show" aria-labelledby="accordion-4">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom p-5">
+										<p class="text-default fs-t3">今晚可以試著回想一下：「我今天完成了哪些事情？」哪怕只是完成了一個小任務、聽懂了一個流程，也值得寫下來。每天累積一點點成功感，信心就會慢慢長出來的。你做得到，真的。</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="accordion-item shadow-sm">
+							<div class="accordion-header" id="accordion-5">
+								<button class="accordion-button accordion-border-top p-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="true" aria-controls="collapse-5">
+									<p class="text-white fw-bold">獲得獎章</p>
+								</button>
+							</div>
+							<div id="collapse-5" class="accordion-collapse collapse show" aria-labelledby="accordion-5">
+								<div class="accordion-body">
+									<div class="accordion-border accordion-border-bottom px-4 py-5">
+										<ul class="list-unstyled d-flex column-gap-3">
+											<li class="chat-prize bg-white rounded text-center w-100 py-5">
+												<img class="img-fluid mb-2" src="../assets/images/chat/chat_prize01.png" alt="chat_prize">
+												<p class="text-default fs-t3 fw-bold mb-2">起步章</p>
+												<p class="text-second fs-t4">完成第 1 天</p>
+											</li>
+											<li class="chat-prize bg-white rounded text-center w-100 py-5">
+												<img class="img-fluid mb-2" src="../assets/images/chat/chat_prize02.png" alt="chat_prize">
+												<p class="text-default fs-t3 fw-bold mb-2">暖身章</p>
+												<p class="text-second fs-t4">連續 3 天</p>
+											</li>
+											<li class="chat-prize bg-white rounded text-center w-100 py-5">
+												<img class="img-fluid mb-2" src="../assets/images/chat/chat_prize03.png" alt="chat_prize">
+												<p class="text-default fs-t3 fw-bold mb-2">勢如破竹</p>
+												<p class="text-second fs-t4">連續 7 天</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<button class="btn btn-primary fw-semibold mb-7" type="button">回首頁</a>
 				</div>
 				<div class="bottom-line"></div>
 			</section>

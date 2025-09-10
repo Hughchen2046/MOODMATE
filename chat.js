@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // ---- chat 模組初始化
     const chatContainer = document.querySelector(".chat");
     if (!chatContainer) return;
-    initChatSection(chatContainer);
+    initChatSection();
 
-    function initChatSection(container) {
+    function initChatSection() {
         //---- countdown
         let time = 4 * 60 + 59; // 4:59 轉成秒數
         let timer = null;
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const startCountdown = () => {
-            time = 4 * 60 + 59;
+            time = 1;
             clearInterval(timer);
 
             // 重置顏色

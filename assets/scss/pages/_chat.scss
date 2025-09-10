@@ -183,7 +183,95 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: rgba($black, .6);
+        background: rgba($black, .4);
+    }
+
+    .diary {
+        height: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .accordion-item {
+        border: none;
+        background: none;
+    }
+
+    .accordion-flush > .accordion-item > .accordion-header .accordion-button {
+        border-radius: inherit;
+    }
+
+    .accordion-button {
+        background: #7D594E;
+        box-shadow: none;
+
+        &::after, &:not(.collapsed)::after {
+            background: url("../images/chat/arrow-down.svg");
+            transform: rotate(90deg);
+            transition: .3s;
+        }
+
+        &:not(.collapsed)::after {
+            transform: rotate(0deg);
+        }
+
+        &:not(.collapsed) {
+            color: #A67668;
+        }
+    }
+
+    .accordion-collapse {
+        margin-top: -.5rem;
+    }
+
+    .badge {
+        color: #A46939;
+    }
+
+    .text-default {
+        color: #64483E;
+    }
+
+    .text-second {
+        color: #A67668;
+    }
+
+    .mood-title {
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        background: #A67668;
+    }
+
+    .mood-body {
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        background: $white;
+    }
+
+    .chat-prize {
+        border: 1px solid #ECE0DB;
+        max-width: 95px;
+    }
+
+    .btn {
+        --bs-btn-padding-x: 1.5rem;
+        --bs-btn-padding-y: .75rem;
+        border-radius: $border-radius-pill;
+        border: none;
+        width: 100%;
+
+        &.btn-primary {
+            color: $white;
+
+            &:hover {
+                background-color: $pricolor-600;
+            }
+
+            &:focus {
+                background-color: $pricolor-500;
+                box-shadow: 0 0 0 4px rgba(#D5F2F180, .5);
+            }
+        }
     }
 }
 
@@ -236,7 +324,7 @@
     }
 }
 
-.popup-header {
+.popup-header, .accordion-header {
     border-top-left-radius: .75rem;
     border-top-right-radius: .75rem;
     padding: .5rem;
@@ -244,10 +332,19 @@
     background: #7D594E;
 }
 
-.popup-content {
+.accordion-header:has(.accordion-button.collapsed) {
+    border-radius: .75rem;
+}
+
+.accordion-header {
+    padding-bottom: .5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.popup-content, .accordion-body {
     border-bottom-left-radius: .75rem;
     border-bottom-right-radius: .75rem;
-    margin-bottom: 1.5rem;
     padding: .5rem;
     padding-top: 0;
     background: $seccolor-200;
@@ -282,22 +379,36 @@
     }
 }
 
-.popup-border {
+.popup-border, .accordion-button, .accordion-border {
     border: 1px dashed;
 
-    &.popup-border-top {
+    &.popup-border-top, &.accordion-border-top {
         border-color: #A67668;
         border-bottom: none;
-        border-top-left-radius: .5rem;
-        border-top-right-radius: .5rem;
+        border-top-left-radius: .5rem !important;
+        border-top-right-radius: .5rem !important;
     }
 
-    &.popup-border-bottom {
+    &.accordion-border-top {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom: 1px dashed #A67668;
+    }
+
+    &.collapsed.accordion-border-top {
+        border-radius: .5rem !important;
+    }
+
+    &.popup-border-bottom, &.accordion-border-bottom {
         border-color: #D8B9AC;
         border-top: none;
-        border-bottom-left-radius: .5rem;
-        border-bottom-right-radius: .5rem;
+        border-bottom-left-radius: .5rem !important;
+        border-bottom-right-radius: .5rem !important;
     }
+}
+
+.border-dashed {
+    border-bottom: 1px dashed #D8B9AC;
 }
 
 .status {
