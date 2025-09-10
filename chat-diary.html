@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_document" />
-    <title>MOODMATE</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>聊聊 | Moodmate</title>
+	<link rel="icon" href="/MOODMATE/assets/favicon-CdyjmR9C.ico">
   <script type="module" crossorigin src="/MOODMATE/assets/main-pKTmIh9K.js"></script>
   <script type="module" crossorigin src="/MOODMATE/assets/chat-DqUxWsgn.js"></script>
   <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-D9T9riG5.css">
 </head>
+<body class="bg-black d-flex justify-content-center align-items-center">
 
-<body class="bg-black d-flex justify-content-center align-items-center page-home">
-    <div class="device">
-        <div class="screen scrollbar-hidden">
-            <section class="index-background d-flex flex-column justify-content-end">
-                <header class="header position-absolute start-0 top-0 w-100 px-5 ps-7 py-4">
+	<div class="device">
+		<div class="screen">
+			<header class="header position-absolute start-0 top-0 w-100 px-5 ps-7 py-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="SF-Pro-Text text-white text-center fs-t2" id="time"></span>
                     <div class="d-flex column-gap-3">
@@ -27,18 +23,47 @@
                         <img src="data:image/svg+xml,%3csvg%20width='28'%20height='13'%20viewBox='0%200%2028%2013'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20opacity='0.35'%20d='M4%200.527344H21C22.9178%200.527344%2024.4727%202.08222%2024.4727%204V9C24.4727%2010.9178%2022.9178%2012.4727%2021%2012.4727H4C2.08222%2012.4727%200.527344%2010.9178%200.527344%209V4C0.527344%202.08222%202.08222%200.527344%204%200.527344Z'%20stroke='white'%20stroke-width='1.05509'/%3e%3cpath%20opacity='0.4'%20d='M26%205V9.22034C26.8491%208.86291%2027.4012%208.0314%2027.4012%207.11017C27.4012%206.18894%2026.8491%205.35744%2026%205Z'%20fill='white'/%3e%3cpath%20d='M2%204C2%202.89543%202.89543%202%204%202H21C22.1046%202%2023%202.89543%2023%204V9C23%2010.1046%2022.1046%2011%2021%2011H4C2.89543%2011%202%2010.1046%202%209V4Z'%20fill='white'/%3e%3c/svg%3e" alt="battery">
                     </div>
                 </div>
-            </header>                    <div class="px-6 pb-11 text-center">
-                        <div class="item-group" xyz="duration-10 short-100% wide-25% ">
-                        <img src="/MOODMATE/assets/Moodmate-CBc7wzCK.svg" alt="" class="mb-3 px-3 w-100 xyz-in">
+            </header>
+			<section class="chat-diary">
+				<div class="d-flex justify-content-between align-items-center px-5 pt-5 pt-sm-0">
+					<a href="" class="btn-arrow-left p-3">
+						<img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6.52083%2010.8333L10.6042%2014.9167C10.7708%2015.0833%2010.8507%2015.2778%2010.8437%2015.5C10.8368%2015.7222%2010.75%2015.9167%2010.5833%2016.0833C10.4167%2016.2361%2010.2222%2016.316%2010%2016.3229C9.77778%2016.3299%209.58333%2016.25%209.41667%2016.0833L3.91667%2010.5833C3.83333%2010.5%203.77431%2010.4097%203.73958%2010.3125C3.70486%2010.2153%203.6875%2010.1111%203.6875%2010C3.6875%209.88889%203.70486%209.78472%203.73958%209.6875C3.77431%209.59028%203.83333%209.5%203.91667%209.41667L9.41667%203.91667C9.56944%203.76389%209.76042%203.6875%209.98958%203.6875C10.2187%203.6875%2010.4167%203.76389%2010.5833%203.91667C10.75%204.08333%2010.8333%204.28125%2010.8333%204.51042C10.8333%204.73958%2010.75%204.9375%2010.5833%205.10417L6.52083%209.16667H15.8333C16.0694%209.16667%2016.2674%209.24653%2016.4271%209.40625C16.5868%209.56597%2016.6667%209.76389%2016.6667%2010C16.6667%2010.2361%2016.5868%2010.434%2016.4271%2010.5938C16.2674%2010.7535%2016.0694%2010.8333%2015.8333%2010.8333H6.52083Z'%20fill='%2364483E'/%3e%3c/svg%3e" alt="arrow-left">
+					</a>
+				</div>
+				<div class="bottom-line"></div>
+			</section>
+
+			<!-- Popup -->
+            <div class="popup" id="timeUp">
+                <div class="popup-dialog px-6">
+                    <div class="popup-header">
+                        <div class="popup-border popup-border-top px-5 py-6">
+                            <h6 class="h6 text-white text-center">今天就先聊到這裡吧！</h6>
                         </div>
-                        <h6 class=" text-white mb-6">陪你一起，練習和情緒好好相處</h6>
-                        <a href="onboarding-start.html" class="btn-pri fs-t2 fw-bold text-white py-4 px-6 w-100 mb-4 d-block text-decoration-none">開始記錄</a>
-                        <a href="#" class="btn-second fs-t2 fw-bold py-4 px-6 w-100 d-block text-decoration-none">登入/註冊</a>
                     </div>
-            </section>
-        </div>
-    </div>
+                    <div class="popup-content">
+                        <div class="popup-border popup-border-bottom p-6">
+                            <div class="sleep-bubu mx-auto mb-6">
+                                <img class="img-fluid" src="/MOODMATE/assets/chat_timesup_sleep_frame-Ce9eZQRz.png" alt="sleep-bubu">
+                            </div>
+                            <div class="sleep-message bg-white rounded p-6">
+                                <p class="text-default fs-t3">
+                                    免費時數已用完！<br>  
+                                    我的小腦袋也需要補充能量了💤<br> 
+                                    我已為你整理好今天的心情記錄快來看看今天的你有多勇敢 💌
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column row-gap-5">
+                        <a href="" class="btn btn-primary fw-semibold" type="button">查看今天情緒日記</a>
+                        <button class="btn btn-premium fw-semibold" type="button">解鎖無限療癒時數</button>
+                    </div>
+                </div>
+                <div class="bottom-line line-light"></div>
+            </div>
+		</div>
+	</div>
 
 </body>
-
 </html>
