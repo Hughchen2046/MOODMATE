@@ -321,6 +321,19 @@
             }
         }
 
+        &.btn-secondary {
+            color: #64483E;
+            background: #ECE0DB;
+
+            &:hover {
+                background-color: #D8B9AC;
+            }
+
+            &:active {
+                background-color: #A67668;
+            }
+        }
+
         &.btn-premium {
             background: linear-gradient(270deg, #FFE369 0%, #FFF0CC 100%);
             color: #491F1A;
@@ -356,6 +369,10 @@
 
     .sleep-bubu {
         max-width: 158px;
+    }
+
+    .diary-book {
+        max-width: 120px;
     }
 
     .sleep-message {

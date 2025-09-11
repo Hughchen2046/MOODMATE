@@ -16,6 +16,152 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function initChatSection() {
+        // ---- BgMusic
+        class BgMusic {
+            constructor(options) {
+                this.options = options;
+                this.audio = document.createElement('audio');
+                this.audio.src = options.src;
+                this.audio.loop = true;
+                this.audio.autoplay = true;
+                this.audio.id = 'createBgAudio';
+                document.body.appendChild(this.audio);
+
+                // 初始狀態
+                this.btn = document.querySelector('.bgMusic');
+                this.btnSound = document.querySelector('.btn-sound');
+                this.openIcon = this.btnSound.querySelector('.icon-sound.open');
+                this.closeIcon = this.btnSound.querySelector('.icon-sound.close');
+
+                // 自動播放處理相關
+                this.isHandled = false;
+
+                // 初始化 UI 與音樂（含自動播放檢測）
+                this.init();
+                // 綁定事件
+                this.bindEvents();
+            }
+
+            async init() {
+                // 先嘗試自動播放
+                const canAutoPlay = await this.testAutoPlay();
+                
+                if (canAutoPlay) {
+                    // 可以自動播放，設置為開啟狀態
+                    this.setUIState(true);
+                } else {
+                    // 無法自動播放，設置為關閉狀態並設置點擊啟動
+                    this.setUIState(false);
+                    if (!this.isHandled) {
+                        this.setAutoPlayWhenClick();
+                    }
+                }
+            }
+
+            testAutoPlay() {
+                return new Promise(resolve => {
+                    this.audio.play()
+                        .then(() => {
+                            // 自動播放成功
+                            this.options.on && this.options.on();
+                            resolve(true);
+                        })
+                        .catch(() => {
+                            // 自動播放失敗
+                            this.options.off && this.options.off();
+                            resolve(false);
+                        });
+                });
+            }
+
+            setAutoPlayWhenClick() {
+                const handleUserInteraction = async () => {
+                    this.isHandled = true;
+                    const canPlay = await this.testAutoPlay();
+                    
+                    if (canPlay) {
+                        this.setUIState(true);
+                    }
+                    
+                    // 移除事件監聽器
+                    document.removeEventListener('click', handleUserInteraction);
+                    document.removeEventListener('touchend', handleUserInteraction);
+                    document.removeEventListener('keydown', handleUserInteraction);
+                };
+
+                // 針對主流瀏覽器 (Chrome、Safari、Firefox 等)
+                document.addEventListener('click', handleUserInteraction);
+                document.addEventListener('touchend', handleUserInteraction);
+                document.addEventListener('keydown', handleUserInteraction);
+            }
+
+            setUIState(isPlaying) {
+                if (isPlaying) {
+                    this.openIcon.classList.add('active');
+                    this.closeIcon.classList.remove('active');
+                    this.btn.classList.remove('off');
+                } else {
+                    this.openIcon.classList.remove('active');
+                    this.closeIcon.classList.add('active');
+                    this.btn.classList.add('off');
+                }
+            }
+
+            toggleSound() {
+                const isOff = this.btn.classList.toggle('off');
+                if (isOff) {
+                    this.audio.pause();
+                    this.openIcon.classList.remove('active');
+                    this.closeIcon.classList.add('active');
+                    this.options.off && this.options.off();
+                } else {
+                    this.audio.play().catch(() => {
+                        // 如果播放失敗，恢復為關閉狀態
+                        this.btn.classList.add('off');
+                        this.openIcon.classList.remove('active');
+                        this.closeIcon.classList.add('active');
+                    });
+                    this.openIcon.classList.add('active');
+                    this.closeIcon.classList.remove('active');
+                    this.options.on && this.options.on();
+                }
+            }
+
+            handleVisibility() {
+                if (document.visibilityState === 'visible') {
+                    if (!this.btn.classList.contains('off')) {
+                        this.audio.play().catch(() => {
+                            // 播放失敗時不做任何處理，保持當前狀態
+                        });
+                    }
+                } else {
+                    if (!this.btn.classList.contains('off')) {
+                        this.audio.pause();
+                    }
+                }
+            }
+
+            bindEvents() {
+                // 點擊聲音按鈕
+                this.btnSound.addEventListener('click', () => this.toggleSound());
+                // 分頁切換
+                document.addEventListener('visibilitychange', () => this.handleVisibility());
+            }
+        }
+
+        // 使用範例 - 直接初始化，不需要儲存到變數
+        new BgMusic({
+            src: '../assets/media/relax-music.mp3',
+            on: () => {
+                console.log('音樂開啟');
+                document.querySelector('.bgMusic').classList.remove('off');
+            },
+            off: () => {
+                console.log('音樂關閉');
+                document.querySelector('.bgMusic').classList.add('off');
+            }
+        });
+
         //---- countdown
         let time = 4 * 60 + 59; // 4:59 轉成秒數
         let timer = null;
@@ -65,19 +211,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 popupTimeUp.classList.add("status");
             }, 500);
         })
-
-
-        //---- sound
-        const btnSound = document.querySelector('.btn-sound')
-        const openIcon = btnSound.querySelector('.icon-sound.open')
-        const closeIcon = btnSound.querySelector('.icon-sound.close')
-        openIcon.classList.add('active'); // 初始開啟
-
-        btnSound.addEventListener('click', () => {
-            openIcon.classList.toggle('active')
-            closeIcon.classList.toggle('active')
-        })
-
 
         //---- typeWriter
         const typeWriterEl = document.getElementById("typeWriter");
@@ -158,6 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
             chatPrompt.classList.add("remove-status");
             btnSoundWave.classList.add("status");
             closeRecording.classList.remove("disable");
+            btnKeyboard.classList.add("disable");
 
             // 如果 chatDialog 已經送出過文字訊息，重新顯示初始提示
             if (chatDialog.classList.contains("dialog-lg")) {
@@ -171,6 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
             btnSoundWave.classList.remove("status");
             btnRecording.classList.remove("remove-status");
             chatPrompt.classList.remove("remove-status");
+            btnKeyboard.classList.remove("disable");
 
             // 如果 chatDialog 已經送出過文字訊息，重新顯示初始提示
             if (chatDialog.classList.contains("dialog-lg")) {
@@ -191,6 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     onComplete: ()=>{
                         btnRecording.classList.remove("disable");
                         chatPrompt.classList.remove("remove-status");
+                        btnKeyboard.classList.remove("disable");
                     }
                 }
             );
