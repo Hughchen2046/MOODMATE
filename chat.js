@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function initChatSection() {
+
         // ---- BgMusic
         class BgMusic {
             constructor(options) {
@@ -149,15 +150,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // 使用範例 - 直接初始化，不需要儲存到變數
+        // 初始化
         new BgMusic({
-            src: '../assets/media/relax-music.mp3',
+            src: '/MOODMATE/media/relax-music.mp3',
             on: () => {
-                console.log('音樂開啟');
                 document.querySelector('.bgMusic').classList.remove('off');
             },
             off: () => {
-                console.log('音樂關閉');
                 document.querySelector('.bgMusic').classList.add('off');
             }
         });
