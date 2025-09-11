@@ -20,7 +20,7 @@
     padding: 12px 16px;
     border-radius: 12px;
     background: #fff8ee;
-    border: 1px dashed #d8b9ac
+    border: 1px dashed #d8b9ac;
 }
 
 .mood-group {
@@ -41,10 +41,11 @@
 .mood-label img {
     max-width: 52px;
     width: 100%;
+    aspect-ratio: 1 / 1 !important;
     max-height: 52px;
     display: block;
     user-select: none;
-    pointer-events: none
+    pointer-events: none;
 }
 
 .mood-label .img-b {
@@ -59,11 +60,6 @@
 /* 勾選後顯示 b 圖 */
 .mood-radio:checked+.mood-label .img-b {
     display: block;
-}
-
-.mood-label:active {
-    // transform: scale(.96);
-    // transition: transform .15s ease
 }
 
 .record-badge {
