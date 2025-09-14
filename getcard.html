@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_document" />
-    <title>MOODMATE</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>聊聊 | Moodmate</title>
+	<link rel="icon" href="/MOODMATE/assets/favicon-CdyjmR9C.ico">
   <script type="module" crossorigin src="/MOODMATE/assets/main-Q_t9GW8W.js"></script>
   <script type="module" crossorigin src="/MOODMATE/assets/chat-DhUGfpVP.js"></script>
   <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-CZef_42K.css">
 </head>
+<body class="bg-black d-flex justify-content-center align-items-center">
 
-<body class="bg-black d-flex justify-content-center align-items-center page-home">
-    <div class="device">
-        <div class="screen scrollbar-hidden">
-            <section class="index-background d-flex flex-column justify-content-end">
-                <header class="header position-absolute start-0 top-0 w-100 px-5 ps-7 py-4">
+	<div class="device">
+		<div class="screen">
+			<header class="header position-absolute start-0 top-0 w-100 px-5 ps-7 py-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="SF-Pro-Text text-white text-center fs-t2" id="time"></span>
                     <div class="d-flex column-gap-3">
@@ -27,18 +23,18 @@
                         <img src="data:image/svg+xml,%3csvg%20width='28'%20height='13'%20viewBox='0%200%2028%2013'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20opacity='0.35'%20d='M4%200.527344H21C22.9178%200.527344%2024.4727%202.08222%2024.4727%204V9C24.4727%2010.9178%2022.9178%2012.4727%2021%2012.4727H4C2.08222%2012.4727%200.527344%2010.9178%200.527344%209V4C0.527344%202.08222%202.08222%200.527344%204%200.527344Z'%20stroke='white'%20stroke-width='1.05509'/%3e%3cpath%20opacity='0.4'%20d='M26%205V9.22034C26.8491%208.86291%2027.4012%208.0314%2027.4012%207.11017C27.4012%206.18894%2026.8491%205.35744%2026%205Z'%20fill='white'/%3e%3cpath%20d='M2%204C2%202.89543%202.89543%202%204%202H21C22.1046%202%2023%202.89543%2023%204V9C23%2010.1046%2022.1046%2011%2021%2011H4C2.89543%2011%202%2010.1046%202%209V4Z'%20fill='white'/%3e%3c/svg%3e" alt="battery">
                     </div>
                 </div>
-            </header>                    <div class="px-6 pb-11 text-center">
-                        <div class="item-group" xyz="duration-10 short-100% wide-25% ">
-                        <img src="/MOODMATE/assets/Moodmate-CBc7wzCK.svg" alt="" class="mb-3 px-3 w-100 xyz-in">
-                        </div>
-                        <h6 class=" text-white mb-6">陪你一起，練習和情緒好好相處</h6>
-                        <a href="onboarding-start.html" class="btn-pri fs-t2 fw-bold text-white py-4 px-6 w-100 mb-4 d-block text-decoration-none">開始記錄</a>
-                        <a href="#" class="btn-second fs-t2 fw-bold py-4 px-6 w-100 d-block text-decoration-none">登入/註冊</a>
-                    </div>
-            </section>
-        </div>
-    </div>
+            </header>
+			<section class="getcard d-flex flex-column">
+                <div class="position-relative d-flex justify-content-between align-items-center px-6 pt-5 pt-sm-0 mt-2 mb-5 shadow">
+					<button class="btn-login-intro btn-arrow-left btn-arrow-light p-3" type="button">
+						<img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.8248%2013L12.7248%2017.9C12.9248%2018.1%2013.0206%2018.3334%2013.0123%2018.6C13.004%2018.8667%2012.8998%2019.1%2012.6998%2019.3C12.4998%2019.4834%2012.2665%2019.5792%2011.9998%2019.5875C11.7331%2019.5959%2011.4998%2019.5%2011.2998%2019.3L4.6998%2012.7C4.5998%2012.6%204.52897%2012.4917%204.4873%2012.375C4.44564%2012.2584%204.4248%2012.1334%204.4248%2012C4.4248%2011.8667%204.44564%2011.7417%204.4873%2011.625C4.52897%2011.5084%204.5998%2011.4%204.6998%2011.3L11.2998%204.70005C11.4831%204.51672%2011.7123%204.42505%2011.9873%204.42505C12.2623%204.42505%2012.4998%204.51672%2012.6998%204.70005C12.8998%204.90005%2012.9998%205.13755%2012.9998%205.41255C12.9998%205.68755%2012.8998%205.92505%2012.6998%206.12505L7.8248%2011H18.9998C19.2831%2011%2019.5206%2011.0959%2019.7123%2011.2875C19.904%2011.4792%2019.9998%2011.7167%2019.9998%2012C19.9998%2012.2834%2019.904%2012.5209%2019.7123%2012.7125C19.5206%2012.9042%2019.2831%2013%2018.9998%2013H7.8248Z'%20fill='white'/%3e%3c/svg%3e" alt="arrow-left">
+					</button>
+					<h6 class="h6 w-100 text-white text-center">7 月 14 日 星期一</h6>
+				</div>
+				<div class="bottom-line"></div>
+			</section>
+
+		</div>
+	</div>
 
 </body>
-
-</html>
