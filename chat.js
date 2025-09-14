@@ -24,76 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.audio = document.createElement('audio');
                 this.audio.src = options.src;
                 this.audio.loop = true;
-                this.audio.autoplay = true;
                 this.audio.id = 'createBgAudio';
                 document.body.appendChild(this.audio);
 
-                // 初始狀態
+                // UI 元素
                 this.btn = document.querySelector('.bgMusic');
                 this.btnSound = document.querySelector('.btn-sound');
                 this.openIcon = this.btnSound.querySelector('.icon-sound.open');
                 this.closeIcon = this.btnSound.querySelector('.icon-sound.close');
 
-                // 自動播放處理相關
-                this.isHandled = false;
-
-                // 初始化 UI 與音樂（含自動播放檢測）
+                // 初始化（預設關閉）
                 this.init();
                 // 綁定事件
                 this.bindEvents();
             }
 
-            async init() {
-                // 先嘗試自動播放
-                const canAutoPlay = await this.testAutoPlay();
-                
-                if (canAutoPlay) {
-                    // 可以自動播放，設置為開啟狀態
-                    this.setUIState(true);
-                } else {
-                    // 無法自動播放，設置為關閉狀態並設置點擊啟動
-                    this.setUIState(false);
-                    if (!this.isHandled) {
-                        this.setAutoPlayWhenClick();
-                    }
-                }
-            }
-
-            testAutoPlay() {
-                return new Promise(resolve => {
-                    this.audio.play()
-                        .then(() => {
-                            // 自動播放成功
-                            this.options.on && this.options.on();
-                            resolve(true);
-                        })
-                        .catch(() => {
-                            // 自動播放失敗
-                            this.options.off && this.options.off();
-                            resolve(false);
-                        });
-                });
-            }
-
-            setAutoPlayWhenClick() {
-                const handleUserInteraction = async () => {
-                    this.isHandled = true;
-                    const canPlay = await this.testAutoPlay();
-                    
-                    if (canPlay) {
-                        this.setUIState(true);
-                    }
-                    
-                    // 移除事件監聽器
-                    document.removeEventListener('click', handleUserInteraction);
-                    document.removeEventListener('touchend', handleUserInteraction);
-                    document.removeEventListener('keydown', handleUserInteraction);
-                };
-
-                // 針對主流瀏覽器 (Chrome、Safari、Firefox 等)
-                document.addEventListener('click', handleUserInteraction);
-                document.addEventListener('touchend', handleUserInteraction);
-                document.addEventListener('keydown', handleUserInteraction);
+            init() {
+                // 預設設置為關閉狀態
+                this.setUIState(false);
+                this.options.off && this.options.off();
             }
 
             setUIState(isPlaying) {
@@ -128,6 +77,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
+            // 新增：強制停止音樂的方法
+            stopMusic() {
+                this.audio.pause();
+                this.setUIState(false);
+                this.options.off && this.options.off();
+            }
+
             handleVisibility() {
                 if (document.visibilityState === 'visible') {
                     if (!this.btn.classList.contains('off')) {
@@ -150,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // 初始化
-        new BgMusic({
+        // 初始化並保存實例
+        const bgMusic = new BgMusic({
             src: '/MOODMATE/media/relax-music.mp3',
             on: () => {
                 document.querySelector('.bgMusic').classList.remove('off');
@@ -200,11 +156,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         startCountdown();
 
-
         //---- 提早結束
         const btnFinish = document.querySelector(".btn-finish");
         btnFinish.addEventListener('click', () => {
             clearInterval(timer); 
+            bgMusic.stopMusic();
+
             // popup
             setTimeout(() => {
                 popupTimeUp.classList.add("status");
@@ -233,7 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
             step();
         }
 
-
         //---- 初始提示文字模組
         const chatDialog = document.querySelector(".chat-dialog");
         const initChatPrompt = () => {
@@ -242,7 +198,6 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(()=>typeWriter("跟我說說你今天的心情吧？",100),500);
         }
         initChatPrompt();
-
 
         //---- 傳送訊息流程模組
         const chatLoading = document.querySelector(".chat-loading");
@@ -277,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }, options.delay||2000);
         }
-
 
         //---- recordingArea
         const btnSoundWave = document.querySelector(".btn-sound-wave");
@@ -381,14 +335,100 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function initChatDiarySection() {
         //---- 回首頁
-        const btnHomeIntro = document.querySelector(".btn-login-intro");
+        const btnHomeIntro = document.querySelectorAll(".btn-login-intro");
         const popuploginIntro = document.getElementById("loginIntro");
+        const btnGoHome = document.querySelector(".btn-go-home");
 
-        btnHomeIntro.addEventListener('click', () => {
-            // popup
+        btnHomeIntro.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(() => {
+                    popuploginIntro.classList.add("status");
+                }, 500);
+            });
+        });
+
+        btnGoHome.addEventListener('click', () => {
             setTimeout(() => {
-                popuploginIntro.classList.add("status");
+                popuploginIntro.classList.remove("status");
+                window.location.href = "Homepage.html?chat-finish";
             }, 500);
-        })
+        });
+
+        //---- 登入 & 註冊
+        const btnGoLogin = document.querySelector(".btn-go-login");
+        const btnGoLogin2 = document.getElementById("btn-go-login");
+        const btnGoRegister = document.getElementById("btn-go-register");
+        const loginArea = document.querySelector(".login");
+        const registerArea = document.querySelector(".register");
+        const btnClose = document.querySelectorAll(".btn-close");
+        const popuplogin = document.getElementById("login");
+
+        // 前往註冊
+        btnGoLogin.addEventListener('click', () => {
+            setTimeout(() => {
+                popuplogin.classList.add("status");
+                popuploginIntro.classList.remove("status");
+            }, 500);
+        });
+
+        // 關閉登入
+        btnClose.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(() => {
+                    popuploginIntro.classList.add("status");
+                    popuplogin.classList.remove("status");
+                }, 500);
+            });
+        });
+
+        // 切換註冊
+        btnGoRegister.addEventListener("click", () => {
+            loginArea.classList.add("down");
+            registerArea.classList.add("up");
+        });
+
+        // 切換登入
+        btnGoLogin2.addEventListener("click", () => {
+            loginArea.classList.remove("down");
+            registerArea.classList.remove("up");
+        });
+
+        //---- 登入成功
+        const btnLogin = document.querySelector(".btn-login");
+        const popupLoading = document.getElementById("loading");
+
+        btnLogin.addEventListener('click', () => {
+            setTimeout(function () {
+                popuplogin.classList.remove("status");
+                popupLoading.classList.add("status");
+            }, 100);
+
+            setTimeout(function () {
+                popupLoading.classList.remove("status");
+                window.location.href = "Homepage.html?chat-finish";
+            }, 2000);
+        });
+
+        //---- 註冊成功
+        const btnRegister = document.querySelector(".btn-register");
+        const registerForm = document.getElementById("registerForm");
+
+        btnRegister.addEventListener('click', () => {
+            setTimeout(() => {
+                registerForm.classList.add('success');
+
+                setTimeout(() => {
+                    popuplogin.classList.remove('status');
+                    popupLoading.classList.add('status');
+
+                    setTimeout(() => {
+                        popupLoading.classList.remove('status');
+                        window.location.href = "Homepage.html?chat-finish";
+                    }, 2000);
+
+                }, 500);
+
+            }, 3000);
+        });
     }
 });
