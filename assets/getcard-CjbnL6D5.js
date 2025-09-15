@@ -1,0 +1,1 @@
+import"./main-CNme9Gdp.js";document.addEventListener("DOMContentLoaded",function(){const t=()=>{const e=new Date,n=String(e.getHours()).padStart(2,"0"),o=String(e.getMinutes()).padStart(2,"0");document.getElementById("time").textContent=`${n}:${o}`};t(),setInterval(t,1e3),document.querySelector(".getcard")});
