@@ -7,9 +7,9 @@
 	<title>抽卡 | Moodmate</title>
 	<link rel="icon" href="/MOODMATE/assets/favicon-CdyjmR9C.ico">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <script type="module" crossorigin src="/MOODMATE/assets/getcard-CjbnL6D5.js"></script>
-  <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-CNme9Gdp.js">
-  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-DTbjrr_B.css">
+  <script type="module" crossorigin src="/MOODMATE/assets/getcard-CCgczdRN.js"></script>
+  <link rel="modulepreload" crossorigin href="/MOODMATE/assets/main-BcDeyH35.js">
+  <link rel="stylesheet" crossorigin href="/MOODMATE/assets/main-qxGBfLX5.css">
 </head>
 <body class="bg-black d-flex justify-content-center align-items-center">
 
@@ -33,15 +33,15 @@
 						</a>
 						<h6 class="h6 w-100 text-default text-center">心情小卡</h6>
 					</div>
-					<div class="intro d-flex flex-column justify-content-between align-items-center h-100">
+					<div class="d-flex flex-column justify-content-between align-items-center h-100">
 						<p class="text-default text-center animate__animated animate__fadeInUp">卡片中藏了一句話<br>獻給現在的你</p>
-						<button class="btn btn-primary fw-semibold mb-6 animate__animated animate__fadeInUp animate__delay-1s" type="button">翻開卡片</button>
+						<button class="btn-getcard btn btn-primary fw-semibold mb-6 animate__animated animate__fadeInUp animate__delay-1s" type="button">翻開卡片</button>
 					</div>
 				</div>
 				<div class="bottom-line"></div>
 			</section>
 
-			<section class="getcard-result d-flex flex-column">
+			<section class="getcard-result d-flex flex-column position-absolute top-0 start-0">
 				<div class="position-relative d-flex flex-column p-6 pb-8 h-100">
 					<div class="position-relative d-flex justify-content-between align-items-center mb-6">
 						<a href="Homepage.html" class="position-absolute start-0 top-0 fs-0">
@@ -49,9 +49,20 @@
 						</a>
 						<h6 class="h6 w-100 text-default text-center">心情小卡</h6>
 					</div>
-					<div class="intro d-flex flex-column justify-content-between align-items-center h-100">
-						<p class="text-default text-center animate__animated animate__fadeInUp">卡片中藏了一句話<br>獻給現在的你</p>
-						<button class="btn btn-primary fw-semibold mb-6 animate__animated animate__fadeInUp animate__delay-1s" type="button">翻開卡片</button>
+					<div class="d-flex flex-column justify-content-center align-items-center h-100">
+						<div class="card-type mb-6">
+							<img class="img-fluid" src="/MOODMATE/assets/card-type-Du-JxXw6.svg" alt="card">
+						</div>
+						<div class="d-flex column-gap-3 px-4">
+							<button class="btn btn-brown-light d-flex justify-content-center align-items-center" type="button">
+								<img src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.3749%2014.6249L16.1499%2011.8249C16.2166%2011.6249%2016.2124%2011.4249%2016.1374%2011.2249C16.0624%2011.0249%2015.9332%2010.8582%2015.7499%2010.7249L13.3749%209.09991C13.2416%208.99991%2013.0957%208.97907%2012.9374%209.03741C12.7791%209.09574%2012.6749%209.20824%2012.6249%209.37491L11.8499%2012.1749C11.7832%2012.3749%2011.7874%2012.5749%2011.8624%2012.7749C11.9374%2012.9749%2012.0666%2013.1416%2012.2499%2013.2749L14.6249%2014.8999C14.7582%2014.9999%2014.9041%2015.0207%2015.0624%2014.9624C15.2207%2014.9041%2015.3249%2014.7916%2015.3749%2014.6249ZM3.99991%2019.3249L3.17491%2018.9249C2.65824%2018.7082%202.30824%2018.3374%202.12491%2017.8124C1.94157%2017.2874%201.96657%2016.7666%202.19991%2016.2499L3.99991%2012.3499V19.3249ZM7.99991%2021.4999C7.44991%2021.4999%206.97907%2021.2999%206.58741%2020.8999C6.19574%2020.4999%205.99991%2020.0249%205.99991%2019.4749V13.4999L8.67491%2020.8499C8.72491%2020.9666%208.76657%2021.0791%208.79991%2021.1874C8.83324%2021.2957%208.89157%2021.3999%208.97491%2021.4999H7.99991ZM13.1499%2021.3749C12.6332%2021.5582%2012.1166%2021.5332%2011.5999%2021.2999C11.0832%2021.0666%2010.7332%2020.6916%2010.5499%2020.1749L6.12491%207.94991C5.94157%207.43324%205.96657%206.92074%206.19991%206.41241C6.43324%205.90407%206.80824%205.55824%207.32491%205.37491L14.8499%202.62491C15.3666%202.44157%2015.8791%202.46657%2016.3874%202.69991C16.8957%202.93324%2017.2416%203.30824%2017.4249%203.82491L21.8749%2016.0499C22.0582%2016.5666%2022.0332%2017.0791%2021.7999%2017.5874C21.5666%2018.0957%2021.1916%2018.4416%2020.6749%2018.6249L13.1499%2021.3749Z'%20fill='%2364483E'/%3e%3c/svg%3e" alt="card">
+								<span class="fw-semibold ms-2">查看卡冊</span>
+							</button>
+							<button class="btn btn-brown d-flex justify-content-center align-items-center" type="button">
+								<img src="data:image/svg+xml,%3csvg%20width='24'%20height='25'%20viewBox='0%200%2024%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6%2020.4998C5.45%2020.4998%204.97917%2020.304%204.5875%2019.9123C4.19583%2019.5206%204%2019.0498%204%2018.4998V16.4998C4%2016.2165%204.09583%2015.979%204.2875%2015.7873C4.47917%2015.5956%204.71667%2015.4998%205%2015.4998C5.28333%2015.4998%205.52083%2015.5956%205.7125%2015.7873C5.90417%2015.979%206%2016.2165%206%2016.4998V18.4998H18V16.4998C18%2016.2165%2018.0958%2015.979%2018.2875%2015.7873C18.4792%2015.5956%2018.7167%2015.4998%2019%2015.4998C19.2833%2015.4998%2019.5208%2015.5956%2019.7125%2015.7873C19.9042%2015.979%2020%2016.2165%2020%2016.4998V18.4998C20%2019.0498%2019.8042%2019.5206%2019.4125%2019.9123C19.0208%2020.304%2018.55%2020.4998%2018%2020.4998H6ZM11%208.3498L9.125%2010.2248C8.925%2010.4248%208.6875%2010.5206%208.4125%2010.5123C8.1375%2010.504%207.9%2010.3998%207.7%2010.1998C7.51667%209.9998%207.42083%209.76647%207.4125%209.4998C7.40417%209.23314%207.5%208.9998%207.7%208.7998L11.3%205.1998C11.4%205.0998%2011.5083%205.02897%2011.625%204.9873C11.7417%204.94564%2011.8667%204.9248%2012%204.9248C12.1333%204.9248%2012.2583%204.94564%2012.375%204.9873C12.4917%205.02897%2012.6%205.0998%2012.7%205.1998L16.3%208.7998C16.5%208.9998%2016.5958%209.23314%2016.5875%209.4998C16.5792%209.76647%2016.4833%209.9998%2016.3%2010.1998C16.1%2010.3998%2015.8625%2010.504%2015.5875%2010.5123C15.3125%2010.5206%2015.075%2010.4248%2014.875%2010.2248L13%208.3498V15.4998C13%2015.7831%2012.9042%2016.0206%2012.7125%2016.2123C12.5208%2016.404%2012.2833%2016.4998%2012%2016.4998C11.7167%2016.4998%2011.4792%2016.404%2011.2875%2016.2123C11.0958%2016.0206%2011%2015.7831%2011%2015.4998V8.3498Z'%20fill='white'/%3e%3c/svg%3e" alt="card">
+								<span class="fw-semibold ms-2">分享圖片</span>
+							</button>
+						</div>
 					</div>
 				</div>
 				<div class="bottom-line"></div>
