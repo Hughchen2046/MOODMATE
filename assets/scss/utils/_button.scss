@@ -152,6 +152,16 @@ button {
 
     &:focus, &:focus-visible {
         color: $white !important;
-        box-shadow: 0 0 0 4px rgba(#FCF3EE, 1) !important;
+        // box-shadow: 0 0 0 4px rgba(#FCF3EE, 1) !important;
+    }
+}
+
+.btn-brown-light {
+    color: #64483E;
+    background: #ECE0DB;
+
+    &:hover, &:active, &:focus, &:focus-visible {
+        color: #64483E !important;
+        background: #D8B9AC !important;
     }
 }

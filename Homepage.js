@@ -154,6 +154,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// --- 檢查網址是否包含 ?chat-finish ---
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('chat-finish')) {
+    const bubble = document.querySelector('.talk-bubble');
+    if (bubble) {
+      // 更新打字機的內容
+      bubble.innerHTML = `
+        <p class="fs-t2 fw-bold text-color-new-4" id="typeWriter">剛剛跟你聊聊很開心<br>期待明天能再見到你～</p>
+        <i class="bi bi-caret-down-fill triangle-mark"></i>
+      `;
+    }
+  }
+
 
 // 10 秒後顯示「抽小卡」提示；可一鍵恢復或前往 getcard.html
 (() => {

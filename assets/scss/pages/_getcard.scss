@@ -1,6 +1,7 @@
 // getcard
-.getcard {
+.getcard, .getcard-result {
     padding-top: 3rem;
+    width: 100%;
     height: 100%;
     background: url("../images/getcard/background.png") no-repeat center top;
     background-size: cover;
@@ -28,6 +29,42 @@
                 background-color: $pricolor-500;
                 box-shadow: 0 0 0 4px rgba(#D5F2F180, .5);
             }
+        }
+    }
+}
+
+.getcard-result {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($white, .6);
+        backdrop-filter: blur(.3rem);
+    }
+
+    .card-type {
+        filter: drop-shadow(0 0.75rem 2rem rgba(0, 0, 0, 0.2));
+    }
+
+    &.status {
+        opacity: 1; 
+        pointer-events: auto; 
+        visibility: visible;
+
+        .card-type {
+            animation: flipInY 1s ease-out;
+        }
+
+        .d-flex.column-gap-3 {
+            animation: fadeInUp .6s ease-out 1s both;
         }
     }
 }

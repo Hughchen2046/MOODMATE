@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function initGetCardSection() {
+        const btnGetCard = document.querySelector(".btn-getcard");
+        const getcardResult = document.querySelector(".getcard-result");
 
-        
+        btnGetCard.addEventListener("click", () => {
+            getcardResult.classList.add("status");
+        });
     }
 });
