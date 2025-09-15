@@ -15,9 +15,9 @@
 
 			<section class="chat-diary d-flex flex-column">
 				<div class="position-relative d-flex justify-content-between align-items-center px-6 pt-5 pt-sm-0 mt-2 mb-5 shadow">
-					<a href="chat.html" class="btn-arrow-left btn-arrow-light p-3">
+					<button class="btn-login-intro btn-arrow-left btn-arrow-light p-3" type="button">
 						<img src="../assets/images/chat/arrow-left-light.svg" alt="arrow-left">
-					</a>
+					</button>
 					<h6 class="h6 w-100 text-white text-center">7 月 14 日 星期一</h6>
 				</div>
 				<div class="diary position-relative px-6">
@@ -50,12 +50,12 @@
 												</div>
 												<div class="mood-body d-flex justify-content-center column-gap-5 py-4">
 													<div class="mood">
-														<img class="img-fluid mb-2" src="../assets/images/chat/mood.png" alt="mood">
-														<p class="text-second text-center fs-t4">憂鬱</p>
+														<img class="img-fluid mb-2" src="../assets/images/chat/depressed_circle.png" alt="mood">
+														<p class="text-default text-center fs-t4 fw-bold">憂鬱</p>
 													</div>
 													<div class="mood">
-														<img class="img-fluid mb-2" src="../assets/images/chat/mood.png" alt="mood">
-														<p class="text-second text-center fs-t4">緊張</p>
+														<img class="img-fluid mb-2" src="../assets/images/chat/nervous_circle.png" alt="mood">
+														<p class="text-default text-center fs-t4 fw-bold">緊張</p>
 													</div>
 												</div>
 											</div>
@@ -65,8 +65,8 @@
 												</div>
 												<div class="mood-body d-flex justify-content-center column-gap-5 py-4">
 													<div class="mood">
-														<img class="img-fluid mb-2" src="../assets/images/chat/mood.png" alt="mood">
-														<p class="text-second text-center fs-t4">工作</p>
+														<img class="img-fluid mb-2" src="../assets/images/chat/work_circle.png" alt="mood">
+														<p class="text-default text-center fs-t4 fw-bold">工作</p>
 													</div>
 												</div>
 											</div>
@@ -125,24 +125,12 @@
 							</div>
 							<div id="collapse-5" class="accordion-collapse collapse show" aria-labelledby="accordion-5">
 								<div class="accordion-body">
-									<div class="accordion-border accordion-border-bottom px-4 py-5">
-										<ul class="list-unstyled d-flex column-gap-3">
-											<li class="chat-prize bg-white rounded text-center w-100 py-5">
-												<img class="img-fluid mb-2" src="../assets/images/chat/chat_prize01.png" alt="chat_prize">
-												<p class="text-default fs-t3 fw-bold mb-2">起步章</p>
-												<p class="text-second fs-t4">完成第 1 天</p>
-											</li>
-											<li class="chat-prize bg-white rounded text-center w-100 py-5">
-												<img class="img-fluid mb-2" src="../assets/images/chat/chat_prize02.png" alt="chat_prize">
-												<p class="text-default fs-t3 fw-bold mb-2">暖身章</p>
-												<p class="text-second fs-t4">連續 3 天</p>
-											</li>
-											<li class="chat-prize bg-white rounded text-center w-100 py-5">
-												<img class="img-fluid mb-2" src="../assets/images/chat/chat_prize03.png" alt="chat_prize">
-												<p class="text-default fs-t3 fw-bold mb-2">勢如破竹</p>
-												<p class="text-second fs-t4">連續 7 天</p>
-											</li>
-										</ul>
+									<div class="accordion-border accordion-border-bottom p-5">
+										<div class="chat-prize bg-white rounded text-center w-100 p-5">
+											<img class="img-fluid mb-2" src="../assets/images/chat/prize.png" alt="chat_prize">
+											<p class="text-default fs-t3 fw-bold mb-2">暖身章</p>
+											<p class="text-second fs-t4">連續 3 天</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -154,6 +142,8 @@
 			</section>
 
 			<%- include('./layout/chat-homeIntro'); -%>
+
+			<%- include('./layout/login'); -%>
 
 		</div>
 	</div>

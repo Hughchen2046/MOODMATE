@@ -1,0 +1,84 @@
+<!-- login & register -->
+            <div class="popup" id="login">
+                <div class="popup-dialog">
+                    <div class="login position-absolute bottom-0 bg-white p-6">
+                        <div class="position-relative d-flex justify-content-center align-items-center mb-6">
+                            <h6 class="h6 position-absolute start-50 top-50 translate-middle text-default text-center w-100">登入帳號</h6>
+                            <button class="btn btn-close d-flex align-self-center p-3 ms-auto z-1" type="button">
+                                <img class="img-fluid" src="../assets/images/login/close.svg" alt="close">
+                            </button>
+                        </div>
+                        <div class="divider d-flex justify-content-center align-items-center column-gap-4 mb-4">
+                            <p class="flex-shrink-0 text-center fs-t4 fw-bold">第三方登入</p>
+                        </div>
+                        <div class="d-flex flex-column row-gap-4 mb-6">
+                            <button class="d-flex justify-content-center align-items-center column-gap-5 border-gray rounded-pill py-5" type="button">
+                                <img src="../assets/images/login/google.svg" alt="google">
+                                <span class="text-gray">使用 Google 帳號登入</span>
+                            </button>
+                            <button class="d-flex justify-content-center align-items-center column-gap-5 bg-black rounded-pill py-5" type="button">
+                                <img src="../assets/images/login/apple.svg" alt="apple">
+                                <span class="text-white">使用 Apple 帳號登入</span>
+                            </button>
+                        </div>
+                        <div class="divider divider-black d-flex justify-content-center align-items-center column-gap-4 mb-4">
+                            <p class="flex-shrink-0 text-center fs-t4 fw-bold">E-mail 登入</p>
+                        </div>
+                        <div class="mb-6">
+                            <form class="d-flex flex-column row-gap-4" action="">
+                                <input class="form-control text-default px-6 py-4" type="email" placeholder="請輸入 E-mail" value="">
+                                <input class="form-control text-default px-6 py-4" type="password" placeholder="請輸入密碼" value="">
+                                <button class="btn-login btn btn-brown fw-bold" type="button">登入</button>
+                                <p class="text-secondary text-center fs-t3">還沒有帳號嗎？按這裡<button id="btn-go-register" class="text-secondary fw-bold text-decoration-underline p-0" type="button">註冊</button></p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="register position-absolute bottom-0 bg-white p-6">
+                        <div class="position-relative d-flex justify-content-center align-items-center mb-6">
+                            <h6 class="h6 position-absolute start-50 top-50 translate-middle text-default text-center w-100">註冊帳號</h6>
+                            <button class="btn btn-close d-flex align-self-center p-3 ms-auto z-1" type="button">
+                                <img class="img-fluid" src="../assets/images/login/close.svg" alt="close">
+                            </button>
+                        </div>
+                        <div class="mb-6">
+                            <form class="d-flex flex-column" id="registerForm" action="">
+                                <div class="position-relative mb-4">
+                                    <label class="text-default fw-bold mb-3" for="username">你的暱稱</label>
+                                    <input class="form-control text-default px-6 py-4" type="text" id="username" placeholder="該怎麼稱呼你呢" value="">
+                                    <div class="success-icon">
+                                        <img class="img-fluid" src="../assets/images/chat/check.svg" alt="success">
+                                    </div>
+                                </div>
+                                <div class="position-relative mb-4">
+                                    <label class="text-default fw-bold mb-3" for="email">E-mail</label>
+                                    <input class="form-control text-default px-6 py-4" type="email" id="email" placeholder="請輸入 E-mail" value="">
+                                    <div class="success-icon">
+                                        <img class="img-fluid" src="../assets/images/chat/check.svg" alt="success">
+                                    </div>
+                                </div>
+                                <div class="position-relative mb-6">
+                                    <label class="text-default fw-bold mb-3" for="password">密碼</label>
+                                    <input class="form-control text-default px-6 py-4" type="password" id="password" placeholder="請輸入密碼" value="">
+                                    <div class="success-icon">
+                                        <img class="img-fluid" src="../assets/images/chat/check.svg" alt="success">
+                                    </div>
+                                    <div class="form-text text-default fs-t3 mt-3">8個字以上，包含1個大寫字母和1個數字</div>
+                                </div>
+                                <button class="btn-register btn btn-brown fw-bold mb-3" type="button">註冊</button>
+                                <p class="text-secondary text-center fs-t3">已經有帳號了？按這裡<button id="btn-go-login" class="text-secondary fw-bold text-decoration-underline p-0" type="button">登入</button></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-line line-gray"></div>
+            </div>
+
+            <div class="popup" id="loading">
+                <div class="popup-dialog">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <img class="img-fluid mb-4" src="../assets/images/Loading/moo-img.svg" alt="mood">
+                        <img class="img-fluid" src="../assets/images/Loading/word.svg" alt="loading">
+                    </div>
+                </div>
+                <div class="bottom-line line-light"></div>
+            </div>
