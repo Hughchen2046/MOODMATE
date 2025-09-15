@@ -426,9 +426,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         window.location.href = "Homepage.html?chat-finish";
                     }, 2000);
 
-                }, 500);
+                }, 800);
 
-            }, 3000);
+            });
         });
     }
 });

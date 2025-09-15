@@ -1,4 +1,33 @@
 // getcard
 .getcard {
-    
+    padding-top: 3rem;
+    height: 100%;
+    background: url("../images/getcard/background.png") no-repeat center top;
+    background-size: cover;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 0;
+        background-position: center;
+    }
+
+    .btn {
+        --bs-btn-padding-x: 1.5rem;
+        --bs-btn-padding-y: .75rem;
+        border-radius: $border-radius-pill;
+        border: none;
+        width: 100%;
+
+        &.btn-primary {
+            color: $white;
+
+            &:hover {
+                background-color: $pricolor-600;
+            }
+
+            &:focus {
+                background-color: $pricolor-500;
+                box-shadow: 0 0 0 4px rgba(#D5F2F180, .5);
+            }
+        }
+    }
 }
