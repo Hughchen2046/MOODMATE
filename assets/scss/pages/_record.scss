@@ -1,0 +1,282 @@
+.record-background {
+    min-height: 100vh;
+    /* 直接至少吃滿一個視窗高度 */
+    min-width: 100%;
+    background-image: url(/assets/images/chat/homegape_backgorund.png);
+    background-size: cover;
+    /* 背景圖填滿容器 */
+    background-position: center;
+    /* 置中 */
+    background-repeat: no-repeat;
+    /* 不重複 */
+}
+
+.icon-w-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.picked {
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: #fff8ee;
+    border: 1px dashed #d8b9ac;
+}
+
+.mood-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px
+}
+
+.mood-label {
+    max-width: 52px;
+    max-height: 52px;
+    border-radius: 1000px;
+    cursor: pointer;
+    // display: grid;
+    place-items: center
+}
+
+.mood-label img {
+    max-width: 52px;
+    width: 100%;
+    aspect-ratio: 1 / 1 !important;
+    max-height: 52px;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.mood-label .img-b {
+    display: none;
+}
+
+/* 預設顯示 a 圖 */
+.mood-radio:checked+.mood-label .img-a {
+    display: none;
+}
+
+/* 勾選後顯示 b 圖 */
+.mood-radio:checked+.mood-label .img-b {
+    display: block;
+}
+
+.record-badge {
+    border-radius: 4px;
+    padding: 4px 8px;
+    background-color: #A67668;
+}
+
+/* 讓標題和內容背景都透明 */
+.mood-accordion .accordion-button,
+.mood-accordion .accordion-collapse .accordion-body {
+    background-color: #FDF3E6 !important;
+    padding: 0;
+}
+
+/* 移除 Bootstrap 展開狀態自動加的背景 */
+.mood-accordion .accordion-button:not(.collapsed) {
+    background-color: #FDF3E6 !important;
+    box-shadow: none;
+    /* 避免陰影 */
+    color: #64483e !important;
+    /* 保持原本的字色 */
+    padding-bottom: 12px;
+}
+
+.mood-accordion .accordion-button,
+.mood-accordion .accordion-collapse,
+.mood-accordion .accordion-body {
+    box-shadow: none !important;
+    /* 移除陰影 */
+}
+
+.mood-today-icon-b {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 1000px;
+    border: 1px solid #ECE0DB;
+}
+
+.mood-today-icon-a {
+    padding: 8px 12px;
+    width: 40px;
+    height: 40px;
+    background-color: #F3E5D4;
+    border-radius: 1000px;
+}
+
+.min-w-72 {
+    min-width: 72px;
+}
+
+.emo-label {
+    place-items: center;
+    cursor: pointer;
+    /* 未選背景 */
+    transition: all .2s ease;
+}
+
+/* 文字顏色 */
+.emo-text {
+    color: #a38b7d;
+    /* 未選文字色 */
+}
+
+/* 預設只顯示 a 圖 */
+.emo-icon-b {
+    display: none;
+}
+
+// /* 選中狀態：背景變透明+邊框，換 b 圖，文字加深 */
+// .emo-check:checked + .emo-label {
+//   background: transparent;
+//   border-color: #c4a79a;        /* 邊框色 */
+// }
+.emo-check:checked+.emo-label .emo-icon-a {
+    display: none;
+}
+
+.emo-check:checked+.emo-label .emo-icon-b {
+    display: block;
+}
+
+.emo-check:checked+.emo-label .emo-text {
+    color: #64483E;
+    font-weight: bold;
+}
+
+.textarea-pack {
+    padding-top: 12px;
+    padding-bottom: 37px;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 4px;
+    border: 1px solid #D8B9AC;
+    min-width: 200px;
+    min-height: 100px;
+    background-color: white;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        border: 1px solid #A5A5A5 !important;
+        box-shadow: 0px 0px 0px 4px #FCF3EE !important;
+    }
+}
+
+.mood-Note-text {
+    width: 100%;
+    resize: none;
+    overflow-y: auto;
+
+    scrollbar-color: #DBDBDB white;
+    scrollbar-width: thin;
+    border: 0;
+
+    &:focus,
+    &:focus-visible {
+        outline: none;
+    }
+
+}
+
+.textarea-count {
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+}
+
+.mood-whitebackground {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px 12px;
+}
+
+.mood-add-icon {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+}
+
+.upload-btn {
+    padding: 8px 16px;
+    border-radius: 1000px;
+    background-color: #ECE0DB;
+    cursor: pointer;
+}
+
+.submit-btn {
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 1000px;
+    border: none;
+
+    &:hover,
+    &:focus {
+        background: #379DA2;
+        box-shadow: 0px 0px 0px 4px #D5F2F180;
+    }
+
+    &:active {
+        background: #27747A !important;
+    }
+}
+
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+    background-image: url(/assets/images/common/accordion-down-icon.svg);
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+
+.iu-grid {
+    display: flex;
+    gap: 8px;
+}
+
+.iu-slot {
+    position: relative;
+    width: calc((100% - 16px) / 3);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.iu-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.iu-remove {
+    position: absolute;
+    top: 5px;
+    right: 4px;
+    background: #EFEFEF;
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+}
+
+.iu-add {
+    width: calc((100% - 16px) / 3);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    padding: 28px;
+    background-color: #ECE0DB;
+    cursor: pointer;
+}
+
+.iu-add img {
+    color: #64483E;
+    width: 100%;
+}

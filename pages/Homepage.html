@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_document" />
+  <title>Homepage</title>
+</head>
+
+<body class="bg-black d-flex justify-content-center align-items-center page-home">
+
+  <div class="device">
+    <div class="screen">
+        <section class="Homepage p-6 pt-9">
+          <%- include('./layout/header'); -%>
+          <!-- <%- include('./layout/header'); -%> -->
+          <div class="d-flex justify-content-between align-items-center  ">
+            <a href="award.html" class="btn btn-image"><img
+                src="/assets/images/Homepage/prize.png" alt="prize-logo" class="user-image"></a>
+            <button type="button" class="btn btn-image" data-bs-toggle="button"><img
+                src="/assets/images/Homepage/user-img.png" alt="user-logo" class="user-image"></button>
+          </div>
+          <div class="px-6 pt-9">
+            <div class="talk-bubble text-center top-0 position-relative">
+              <p class="fs-t2 fw-bold " id="typeWriter">嗨!Lora!<br>今天過得怎麼樣?</p>
+              <i class="bi bi-caret-down-fill triangle-mark"></i>
+            </div>
+            <img src="/assets/images/chat/chat_bubu.png" alt="bubu" class="character-image">
+          </div>
+          <div id="default-list" class="mood-block mt-4 mb-9">
+            <div class="line-block text-center">
+              <h3 class="fs-t2 fw-bold text-color-new-1" id="date-todayheading"></h3>
+              <p class="fs-t4 text-color-new-2 mb-3">請選擇符合心情的圖示</p>
+              <ul class="nav justify-content-between">
+                <li><img class="mood-img" data-mood="very-happy" data-label="超開心"
+                    src="/assets/images/Homepage/mood/mood-very-happy.svg" alt="超開心"></li>
+                <li><img class="mood-img" data-mood="happy" data-label="開心"
+                    src="/assets/images/Homepage/mood/mood-happy.svg" alt="開心">
+                </li>
+                <li><img class="mood-img" data-mood="normal" data-label="普通"
+                    src="/assets/images/Homepage/mood/mood-normal.svg" alt="普通">
+                </li>
+                <li><img class="mood-img" data-mood="unhappy" data-label="不開心"
+                    src="/assets/images/Homepage/mood/mood-unhappy.svg" alt="不開心"></li>
+                <li><img class="mood-img" data-mood="sad" data-label="傷心" src="/assets/images/Homepage/mood/mood-sad.svg"
+                    alt="傷心"></li>
+              </ul>
+            </div>
+          </div>
+          <div id="journal-list" class="mt-4 mb-10"></div>
+
+          <nav class="d-flex justify-content-between position-relative nav-footer-fix">
+            <div class="d-flex gap-4">
+              <a href="Homepage.html" class="fs-t4 fw-bold icon-inactive" data-key="page-home">
+                <div class="text-center position-relative current-page">
+                  <img src="/assets/images/nav/forest-icon.svg" alt="首頁" class="icon-img">
+                  <img src="/assets/images/nav/forest-icon-b.svg" alt="首頁" class="icon-bigger">
+                  <p>首頁</p>
+                </div>
+              </a>
+              <a href="#" class="fs-t4 fw-bold icon-inactive" data-key="page-diary">
+                <div class="text-center position-relative current-page">
+                  <img src="/assets/images/nav/diary-icon.svg" alt="日記" class="icon-img">
+                  <img src="/assets/images/nav/diary-icon-b.svg" alt="日記" class="icon-bigger">
+                  <p>日記</p>
+                </div>
+              </a>
+            </div>
+            <div class="text-center fs-t4 fw-bold">
+              <button type="button" class="bh-white icon-add icon-add-position-fix"
+                onclick="location.href='record.html'"><img src="/assets/images/nav/add-icon.svg" alt=""></button>
+              <img src="/assets/images/nav/home-img.png" alt="" class="icon-img unvisible">
+              <p class="text-primary-700">新增</p>
+            </div>
+            <div class="d-flex gap-4">
+              <a href="#" class="fs-t4 fw-bold icon-inactive"  data-key="page-search">
+                <div class="text-center position-relative current-page">
+                  <img src="/assets/images/nav/search-icon.svg" alt="分析" class="icon-img">
+                  <img src="/assets/images/nav/search-icon-b.svg" alt="分析" class="icon-bigger">                  
+                  <p>分析</p>
+                </div>
+              </a>
+              <a href="chat.html" class="fs-t4 fw-bold icon-inactive"  data-key="page-chat">
+                <div class="text-center position-relative current-page">
+                  <img src="/assets/images/nav/chat-icon.svg" alt="聊聊" class="icon-img">
+                  <img src="/assets/images/nav/chat-icon-b.svg" alt="聊聊" class="icon-bigger">                        
+                  <p>聊聊</p>
+                </div>
+              </a>
+            </div>
+          </nav>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <%- include('./layout/footer'); -%> -->
+
+  <script type="module" src="../main.js"></script>
+  <script type="module" src="../Homepage.js"></script>
+
+</body>
+
+</html>

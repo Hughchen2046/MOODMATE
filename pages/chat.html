@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>聊聊 | Moodmate</title>
+	<link rel="icon" href="../assets/images/favicon.ico">
+</head>
+<body class="bg-black d-flex justify-content-center align-items-center">
+
+	<div class="device">
+		<div class="screen">
+			<%- include('./layout/header'); -%>
+
+			<section class="chat">
+				<div class="d-flex justify-content-between align-items-center px-5 pt-5 pt-sm-0">
+					<button class="btn-finish btn-arrow-left p-3" type="button">
+						<img src="../assets/images/chat/arrow-left-brown-icon.svg" alt="arrow-left">
+					</button>
+					<div class="bg-seccolor-200 rounded-pill py-3 px-6">
+						<p class="countdown text-default fs-t3 fw-bold text-center">聊天時間剩餘 <span id="countdown">04:59</span></p>
+					</div>
+					<button class="btn-sound bgMusic" type="button">
+						<img class="icon-sound open" src="../assets/images/chat/open-sound-icon.svg" alt="open-sound">
+						<img class="icon-sound close" src="../assets/images/chat/close-sound-icon.svg" alt="close-sound">
+					</button>
+				</div>
+				<div class="chat-box position-relative d-flex flex-column justify-content-center px-6 pb-7">
+					<div class="chat-dialog position-absolute start-50 top-0 translate-middle-x w-100 d-flex justify-content-center align-items-center rounded-5 shadow p-6">
+						<div class="chat-loading me-3 d-none">
+							<img class="img-fluid" src="../assets/images/chat/loading_gray.gif" alt="loading">
+						</div>
+						<p class="text-default fs-t2 fw-bold text-center" id="typeWriter"></p>
+					</div>
+					<div class="chat-role px-8">
+						<img class="img-fluid" src="../assets/images/chat/chat_bubu.png" alt="chat-bubu">
+					</div>
+				</div>
+				<div class="chat-bottom recordingArea bg-seccolor-200 position-absolute bottom-0 w-100 d-flex justify-content-center py-11 pb-7 pb-sm-11">
+					<div class="chat-message position-absolute top-0 start-50 translate-middle-x w-100 bg-white rounded-pill px-6 py-3">
+						<p class="text-default fs-t3 text-center">訊息已傳送給 Moodmate</p>
+					</div>
+					<div class="chat-recording d-flex justify-content-center align-items-center column-gap-6">
+						<button class="btn-recording-close p-3 disable" type="button">
+							<img src="../assets/images/chat/close-icon.svg" alt="close">
+						</button>
+						<div class="position-relative">
+							<button class="btn-sound-wave position-absolute start-0 top-0" type="button">
+								<div class="wave">
+									<img src="../assets/images/chat/sound-wave.gif" alt="sound-wave">
+								</div>
+							</button>
+							<button class="btn-recording" type="button">
+								<img src="../assets/images/chat/micphine-lg-icon.svg" alt="micphine">
+							</button>
+						</div>
+						<button class="btn-keyboard p-3" type="button">
+							<img src="../assets/images/chat/keyboard-icon.svg" alt="keyboard-icon">
+						</button>
+					</div>
+					<div class="chat-prompt position-absolute top-0 start-50 translate-middle-x bg-white rounded-5 shadow px-5 py-3 mt-6">
+						<p class="text-default fs-t3 fw-bold text-center">按一下開始說話！</p>
+					</div>
+				</div>
+				<div class="chat-bottom typingArea bg-seccolor-200 position-absolute bottom-0 w-100 d-flex justify-content-center align-items-center p-5 pb-8">
+					<div class="chat-message position-absolute top-0 start-50 translate-middle-x w-100 bg-white rounded-pill px-6 py-3">
+						<p class="text-default fs-t3 text-center">訊息已傳送給 Moodmate</p>
+					</div>
+					<input class="form-control text-default px-6 py-4" id="chatInput" type="text" placeholder="輸入你想說的話" value="">
+					<button class="btn-micphine p-3 ms-3" type="button">
+						<img src="../assets/images/chat/micphine-sm-icon.svg" alt="micphine">
+					</button>
+					<button class="btn-send p-3 ms-3" type="button">
+						<img src="../assets/images/chat/send-icon.svg" alt="send">
+					</button>
+				</div>
+				<div class="bottom-line"></div>
+			</section>
+
+			<%- include('./layout/chat-finish'); -%>
+
+		</div>
+	</div>
+
+	<script type="module" src="../main.js"></script>
+	<script type="module" src="../chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>完成設定 - 選取角色 | MOODMATE</title>
+  </head>
+  <body class="bg-black d-flex justify-content-center align-items-center">
+    <div class="device">
+      <div class="screen role-bg">
+        <div class="role-nav-header">
+          <%- include('./layout/header-role'); -%>
+          <!-- step bar start -->
+          <div class="role-header pt-9">
+            <a class="pre fs-t2 me-4" href="role-stepform3.html">返回</a>
+
+            <div class="d-flex justify-content-center">
+              <div class="active-bar-item me-4"></div>
+              <div class="active-bar-item me-4"></div>
+              <div class="active-bar-item me-4"></div>
+              <div class="active-bar-item"></div>
+            </div>
+
+            <a class="next fs-t2 ms-4">跳過</a>
+          </div>
+          <!-- step bar end -->
+        </div>
+        <section class="d-flex flex-column align-items-between mt-95">
+          <div class="text-center">
+            <h1 class="animate__animated animate__fadeInUp h6 text-new-color-1 text-center mb-6">
+              選擇 Moodmate 的個性<br />
+              讓我們的對話更貼近你
+            </h1>
+          </div>
+          <!-- 選角結果 -->
+          <div class="d-flex justify-content-center mb-6" role="tablist">
+            <!-- role 1 -->
+            <button
+              class="btn-kidney me-4 active"
+              id="bubu-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#bubu"
+              type="button"
+              role="tab"
+              aria-controls="bubu"
+              aria-selected="true"
+            >
+              <div class="kidney-wrapper">
+                <img
+                  src="../assets/images/onboarding/onboarding_bubu_thumb.png"
+                  alt="bubu"
+                  class="kidney-image"
+                />
+              </div>
+              <span class="kidney-label">最適合你！</span>
+            </button>
+
+            <!-- role 2 -->
+            <button
+              class="btn-kidney me-4"
+              id="toki-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#toki"
+              type="button"
+              role="tab"
+              aria-controls="toki"
+              aria-selected="false"
+            >
+              <div class="kidney-wrapper">
+                <img
+                  src="../assets/images/onboarding/onboarding_toki_thumb.png"
+                  alt="toki"
+                  class="kidney-image"
+                />
+              </div>
+              <span class="kidney-label">最適合你！</span>
+            </button>
+
+            <!-- role 3 -->
+            <button
+              class="btn-kidney me-4"
+              id="lumi-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#lumi"
+              type="button"
+              role="tab"
+              aria-controls="lumi"
+              aria-selected="false"
+            >
+              <div class="kidney-wrapper">
+                <img
+                  src="../assets/images/onboarding/onboarding_lumi_thumb.png"
+                  alt="lumi"
+                  class="kidney-image"
+                />
+              </div>
+              <span class="kidney-label">最適合你！</span>
+            </button>
+
+            <!-- role 4 -->
+            <button
+              class="btn-kidney"
+              id="yoyo-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#yoyo"
+              type="button"
+              role="tab"
+              aria-controls="yoyo"
+              aria-selected="false"
+            >
+              <div class="kidney-wrapper">
+                <img
+                  src="../assets/images/onboarding/onboarding_yoyo_thumb.png"
+                  alt="lumi"
+                  class="kidney-image"
+                />
+              </div>
+              <span class="kidney-label">最適合你！</span>
+            </button>
+          </div>
+
+          <!-- Tab content -->
+          <div class="tab-content px-6" id="Kidney-Content">
+            <!-- bubu tab -->
+            <div
+              class="tab-pane fade show active"
+              id="bubu"
+              role="tabpanel"
+              aria-labelledby="bubu-tab"
+              tabindex="0"
+            >
+              <div class="text-center mb-6">
+                <div class="content-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_bubu.png"
+                    alt="Role-Bubu"
+                    class="content-img"
+                  />
+
+                  <!-- 左邊 -->
+                  <div class="label left">陪伴</div>
+
+                  <!-- 右上 -->
+                  <div class="label top-right">傾聽</div>
+
+                  <!-- 右下 -->
+                  <div class="label bottom-right">好麻吉</div>
+                </div>
+              </div>
+
+              <!-- comment -->
+              <div class="content-comment">
+                <h2 class="fs-t2 fw-bold text-new-color-1 mb-4">
+                  Bubu（布布）
+                </h2>
+                <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                  我會傾聽你的心情，陪你輕鬆聊聊<br />像朋友一樣在你身邊
+                </p>
+                <h3 class="fs-t4 fw-bold text-new-color-1 content-talk">
+                  布布：讓我陪你一起聊聊今天的心情 ☕️
+                </h3>
+              </div>
+            </div>
+            <!-- tab end -->
+
+            <!-- toki tab -->
+            <div
+              class="tab-pane fade"
+              id="toki"
+              role="tabpanel"
+              aria-labelledby="toki-tab"
+              tabindex="0"
+            >
+              <div class="text-center mb-6">
+                <div class="content-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_toki.png"
+                    alt="Role-Toki"
+                    class="content-img"
+                  />
+
+                  <!-- 左邊 -->
+                  <div class="label toki-left">心理學</div>
+
+                  <!-- 右上 -->
+                  <div class="label toki-top-right">理性</div>
+
+                  <!-- 右下 -->
+                  <div class="label toki-bottom-right">知識</div>
+                </div>
+              </div>
+
+              <!-- comment -->
+              <div class="content-comment">
+                <h2 class="fs-t2 fw-bold text-new-color-1 mb-4">
+                  Toki（托奇）
+                </h2>
+                <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                  我會幫你一起釐清情緒、找出背後的想法<br />讓你更認識自己。
+                </p>
+                <h3 class="fs-t4 fw-bold text-new-color-1 content-talk">
+                  托奇：沒關係，我們一步一步來
+                </h3>
+              </div>
+            </div>
+            <!-- tab end -->
+
+            <!-- lumi tab -->
+            <div
+              class="tab-pane fade"
+              id="lumi"
+              role="tabpanel"
+              aria-labelledby="lumi-tab"
+              tabindex="0"
+            >
+              <div class="text-center mb-6">
+                <div class="content-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_lumi.png"
+                    alt="Role-Lumi"
+                    class="content-img"
+                  />
+
+                  <!-- 左邊 -->
+                  <div class="label lumi-left">找回動力</div>
+
+                  <!-- 右上 -->
+                  <div class="label lumi-top-right">行動</div>
+
+                  <!-- 右下 -->
+                  <div class="label lumi-bottom-right">鼓勵</div>
+                </div>
+              </div>
+
+              <!-- comment -->
+              <div class="content-comment">
+                <h2 class="fs-t2 fw-bold text-new-color-1 mb-4">
+                  Lumi（露米）
+                </h2>
+                <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                  我會替你加油，幫你找回動力和信心<br />陪你往目標邁進！
+                </p>
+                <h3 class="fs-t4 fw-bold text-new-color-1 content-talk">
+                  露米：你真的比你想的還厲害 💪！
+                </h3>
+              </div>
+            </div>
+
+            <!-- yoyo tab -->
+            <div
+              class="tab-pane fade"
+              id="yoyo"
+              role="tabpanel"
+              aria-labelledby="yoyo-tab"
+              tabindex="0"
+            >
+              <div class="text-center mb-6">
+                <div class="content-wrapper">
+                  <img
+                    src="../assets/images/onboarding/onboarding_yoyo.png"
+                    alt="Role-Yoyo"
+                    class="content-img"
+                  />
+
+                  <!-- 左邊 -->
+                  <div class="label yoyo-left">開心一下</div>
+
+                  <!-- 右上 -->
+                  <div class="label yoyo-top-right">幽默</div>
+
+                  <!-- 右下 -->
+                  <div class="label yoyo-bottom-right">放鬆</div>
+                </div>
+              </div>
+
+              <!-- comment -->
+              <div class="content-comment">
+                <h2 class="fs-t2 fw-bold text-new-color-1 mb-4">
+                  Yoyo（悠悠）
+                </h2>
+                <p class="fs-t4 fw-normal text-gray-700 mb-4">
+                  我會用一點幽默、一點可愛<br />讓你忘記煩惱，輕鬆一下！
+                </p>
+                <h3 class="fs-t4 fw-bold text-new-color-1 content-talk">
+                  悠悠：不想想事情也沒關係
+                </h3>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="role-nav-footer">
+        <!-- doneBtn -->
+        <div class="px-6">
+          <a
+            id="doneBtn"
+            class="btn-done fs-t2 fw-bold text-center text-white py-4 px-6 d-block text-decoration-none"
+            >完成設定</a
+          >
+        </div>
+      </div>
+      <div class="role-bar-item"></div>
+    </div>
+
+    <!-- loading 遮罩 -->
+    <div id="loadingOverlay">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <img
+          class="load-img"
+          src="../assets/images/Loading/moo-img.svg"
+          alt="loading-img"
+        />
+        <img src="../assets/images/Loading/word.svg" alt="loading word" />
+      </div>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+    <script type="module">
+      import { getFinalRole } from "../role.js";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 取得第三題答案（處理平手用）
+        let lastAnswers =
+          JSON.parse(sessionStorage.getItem("step3Answers")) || [];
+
+        // 計算最終角色
+        let { role, systemRecommend } = getFinalRole(lastAnswers);
+
+        // 角色對應 tab/pane
+        const roleMap = {
+          A: { tab: "bubu-tab", pane: "bubu" },
+          B: { tab: "toki-tab", pane: "toki" },
+          C: { tab: "lumi-tab", pane: "lumi" },
+          D: { tab: "yoyo-tab", pane: "yoyo" },
+        };
+
+        // 清掉所有 active 樣式
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
+          btn.querySelector(".kidney-label").style.display = "none"; // 先隱藏
+        });
+        document.querySelectorAll(".tab-pane").forEach((pane) => {
+          pane.classList.remove("show", "active");
+        });
+
+        // 找到最終角色 tab 與內容
+        const selected = roleMap[role] || roleMap["A"];
+        let tabButton = document.getElementById(selected.tab);
+        let tabPane = document.getElementById(selected.pane);
+
+        // 設定 active
+        tabButton.classList.add("active");
+        tabButton.setAttribute("aria-selected", "true");
+        tabPane.classList.add("show", "active");
+
+        // 修改 label
+        const label = tabButton.querySelector(".kidney-label");
+        label.style.display = "block";
+        label.textContent = systemRecommend ? "系統推薦" : "最適合你！";
+
+        // 🔒 鎖定 label：即使切換到其他角色，label 依然只在最終角色 tab 上顯示
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // 隱藏所有 label
+            document.querySelectorAll(".kidney-label").forEach((lbl) => {
+              lbl.style.display = "none";
+            });
+            // 只顯示最終角色的 label
+            label.style.display = "block";
+          });
+        });
+      });
+    </script>
+
+    <!-- <script type="module">
+      import { getFinalRole } from "../role.js";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 取得第三題答案（可能會用來處理平手）
+        let lastAnswers =
+          JSON.parse(sessionStorage.getItem("step3Answers")) || [];
+
+        // 取得分數
+        const scores = JSON.parse(sessionStorage.getItem("scores")) || {
+          A: 0,
+          B: 0,
+          C: 0,
+          D: 0,
+        };
+
+        // 角色對應
+        const roleMap = {
+          A: { tab: "bubu-tab", pane: "bubu" },
+          B: { tab: "toki-tab", pane: "toki" },
+          C: { tab: "lumi-tab", pane: "lumi" },
+          D: { tab: "yoyo-tab", pane: "yoyo" },
+        };
+
+        // 預設：判斷是否全跳過
+        const isAllZero = Object.values(scores).every((v) => v === 0);
+        let role;
+        if (isAllZero) {
+          role = "A"; // 系統推薦布布
+        } else {
+          role = getFinalRole(lastAnswers); // 根據分數 & 平手處理
+        }
+
+        const selected = roleMap[role] || roleMap["A"];
+        const tabButton = document.getElementById(selected.tab);
+        const tabPane = document.getElementById(selected.pane);
+
+        // 先清掉所有 active
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
+        });
+        document.querySelectorAll(".tab-pane").forEach((pane) => {
+          pane.classList.remove("show", "active");
+        });
+
+        // 設定結果角色為 active
+        tabButton.classList.add("active");
+        tabButton.setAttribute("aria-selected", "true");
+        tabPane.classList.add("show", "active");
+
+        // 設定 kidney-label
+        const label = tabButton.querySelector(".kidney-label");
+        if (isAllZero) {
+          label.textContent = "系統推薦";
+        } else {
+          label.textContent = "最適合你！";
+        }
+        label.style.display = "block";
+
+        // 鎖定：不管使用者點誰，label 永遠留在結果角色上
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // 移除所有 active
+            document.querySelectorAll(".btn-kidney").forEach((b) => {
+              b.classList.remove("active");
+              b.setAttribute("aria-selected", "false");
+            });
+            document.querySelectorAll(".tab-pane").forEach((pane) => {
+              pane.classList.remove("show", "active");
+            });
+
+            // 使用者點擊的角色 → 顯示內容
+            const targetPane = document.querySelector(
+              btn.getAttribute("data-bs-target")
+            );
+            btn.classList.add("active");
+            btn.setAttribute("aria-selected", "true");
+            targetPane.classList.add("show", "active");
+
+            // 但 kidney-label 只顯示在「結果角色」tab，不動
+            document
+              .querySelectorAll(".kidney-label")
+              .forEach((el) => (el.style.display = "none"));
+            label.style.display = "block"; // 保留在結果角色 tab
+          });
+        });
+      });
+    </script> -->
+
+    <!-- <script type="module">
+      import { getFinalRole } from "../role.js";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 取得第三題答案（可能會用來處理平手）
+        let lastAnswers =
+          JSON.parse(sessionStorage.getItem("step3Answers")) || [];
+
+        // 根據分數計算最後角色
+        let role = getFinalRole(lastAnswers);
+
+        // 讀取所有分數
+        const scores = JSON.parse(sessionStorage.getItem("scores")) || {
+          A: 0,
+          B: 0,
+          C: 0,
+          D: 0,
+        };
+
+        // 所有角色對應到 tab id
+        const roleMap = {
+          A: { tab: "bubu-tab", pane: "bubu" },
+          B: { tab: "toki-tab", pane: "toki" },
+          C: { tab: "lumi-tab", pane: "lumi" },
+          D: { tab: "yoyo-tab", pane: "yoyo" },
+        };
+
+        // 清掉所有 active
+        document.querySelectorAll(".btn-kidney").forEach((btn) => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
+        });
+        document.querySelectorAll(".tab-pane").forEach((pane) => {
+          pane.classList.remove("show", "active");
+        });
+
+        // 找到正確角色的 tab 與內容
+        const selected = roleMap[role] || roleMap["A"]; // 預設 A
+        let tabButton = document.getElementById(selected.tab);
+        let tabPane = document.getElementById(selected.pane);
+
+        // 設定 active
+        tabButton.classList.add("active");
+        tabButton.setAttribute("aria-selected", "true");
+        tabPane.classList.add("show", "active");
+
+        // 判斷是否全都沒分數
+        const isAllZero = Object.values(scores).every((v) => v === 0);
+        if (isAllZero) {
+          tabButton.querySelector(".kidney-label").textContent = "系統推薦";
+        } else {
+          tabButton.querySelector(".kidney-label").textContent = "最適合你！";
+        }
+
+        // 確保標籤顯示
+        tabButton.querySelector(".kidney-label").style.display = "block";
+      });
+    </script> -->
+
+    <script type="module">
+      import { getFinalRole } from "../role.js";
+
+      document
+        .getElementById("doneBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // 取得最後角色 (A/B/C/D)
+          const finalRole = getFinalRole(); // 這裡假設你有寫好 getFinalRole()
+          sessionStorage.setItem("finalRole", finalRole);
+
+          // 顯示 loading 畫面
+          document.getElementById("loadingOverlay").style.display = "flex";
+
+          // 固定延遲 2 秒後跳轉
+          setTimeout(function () {
+            window.location.href = "Homepage.html";
+          }, 2000);
+        });
+
+      document.getElementById("next").addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // 顯示 loading 畫面
+        document.getElementById("loadingOverlay").style.display = "flex";
+
+        // 固定延遲 2 秒後跳轉
+        setTimeout(function () {
+          window.location.href = "Homepage.html";
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

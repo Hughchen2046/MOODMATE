@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Step 1 - 選取角色 | MOODMATE</title>
+  </head>
+  <body class="bg-black d-flex justify-content-center align-items-center">
+    <div class="device">
+      <div class="screen">
+        <section class="role-bg d-flex flex-column align-items-between">
+          <%- include('./layout/header-role'); -%>
+          <!-- step bar start -->
+          <div class="role-header pt-9">
+            <a class="pre fs-t2 me-4 disabled">返回</a>
+
+            <div class="d-flex justify-content-center">
+              <div class="active-bar-item me-4"></div>
+              <div class="step-bar-item me-4"></div>
+              <div class="step-bar-item me-4"></div>
+              <div class="step-bar-item"></div>
+            </div>
+
+            <a class="next fs-t2 ms-4" href="role-stepform2.html">跳過</a>
+          </div>
+          <!-- step bar end -->
+          <h1 class="animate__animated animate__fadeInUp h6 text-new-color-1 text-center mb-2">
+            最近是否常有以下情境？
+          </h1>
+          <p class="animate__animated animate__fadeInUp animate__delay-1s fs-t3 fw-normal text-new-color-2 text-center mb-6">
+            請點選符合的情境
+          </p>
+          <!-- step question 1 start -->
+          <form id="step1Form">
+            <div class="d-flex flex-column flex-nowrap px-6 g-5">
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="q1"
+                  value="1"
+                  id="q1-1"
+                />
+                <label
+                  class="situation-select fs-t2 fw-normal lh-145 w-100 py-5 px-6 shadow mb-5"
+                  for="q1-1"
+                  >情緒起伏大但找不到原因</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="q1"
+                  value="2"
+                  id="q1-2"
+                />
+                <label
+                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                  for="q1-2"
+                  >覺得壓力大</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="q1"
+                  value="3"
+                  id="q1-3"
+                />
+                <label
+                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                  for="q1-3"
+                >
+                  遇到低潮時，很難跟人說
+                </label>
+              </div>
+              <div class="form-check pb-200">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="q1"
+                  value="4"
+                  id="q1-4"
+                />
+                <label
+                  class="situation-select fs-t2 fw-normal lh-145 text-start w-100 py-5 px-6 shadow mb-5"
+                  for="q1-4"
+                >
+                  目前都沒有
+                </label>
+              </div>
+            </div>
+            <div class="px-6">
+              <button
+                id="nextBtn"
+                type="submit"
+                class="btn btn-next fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
+                disabled
+              >
+                下一步
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+      <div class="role-bar-item"></div>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+    <script type="module">
+      import { updateScores } from "../role.js";
+
+      const form = document.getElementById("step1Form");
+      const nextBtn = document.getElementById("nextBtn");
+
+      // 預載舊資料
+      window.addEventListener("DOMContentLoaded", () => {
+        const saved = JSON.parse(sessionStorage.getItem("step1Answers")) || [];
+        if (saved.length > 0) {
+          saved.forEach((val) => {
+            const checkbox = document.querySelector(`#q1-${val}`);
+            if (checkbox) checkbox.checked = true;
+          });
+          nextBtn.disabled = false; // 有舊答案 → 允許下一步
+        }
+      });
+
+      // 檢查是否至少有勾選
+      form.addEventListener("change", () => {
+        const hasChecked =
+          [...form.querySelectorAll("input[name='q1']:checked")].length > 0;
+        nextBtn.disabled = !hasChecked;
+      });
+
+      // 送出 → 儲存答案 & 記錄分數
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let selected = [
+          ...form.querySelectorAll("input[name='q1']:checked"),
+        ].map((el) => parseInt(el.value));
+
+        // 存答案 (下次回來可以還原)
+        sessionStorage.setItem("step1Answers", JSON.stringify(selected));
+
+        // 更新分數
+        updateScores(0, selected); // 0 = 第一題
+
+        // 跳下一頁
+        window.location.href = "role-stepform2.html";
+      });
+    </script>
+  </body>
+</html>

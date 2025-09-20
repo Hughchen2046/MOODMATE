@@ -1,0 +1,52 @@
+.bottom-line {
+    border-radius: $border-radius-pill;
+    position: absolute;
+    width: 134px;
+    height: 5px;
+    left: 50%;
+    bottom: .5rem;
+    transform: translateX(-50%);
+    background: $black;
+
+    &.line-light {
+        background: $white;
+        opacity: .4;
+    }
+
+    &.line-gray {
+        background: $gray-400;
+        opacity: .4;
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+.fs-0 {
+    font-size: 0;
+}
+
+.text-default {
+    color: #64483E;
+    letter-spacing: 0;
+}
+
+.text-message {
+    color: #491F1A;
+    letter-spacing: 0;
+}
+
+.text-error {
+    color: $red;
+}
+
+.icon-sound {
+    display: none;
+}
+
+.icon-sound.open, .icon-sound.close {
+    &.active {
+        display: inline;
+    }
+}

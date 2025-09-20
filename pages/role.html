@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>選取角色 | MOODMATE</title>
+  </head>
+  <body class="bg-black d-flex justify-content-center align-items-center">
+    <div class="device">
+      <div class="screen">
+        <section class="role-bg d-flex flex-column align-items-between">
+          <%- include('./layout/header-role'); -%>
+          <div class="text-center py-148">
+            <h1 class="h2 text-new-color-1 mb-6">Welcome!</h1>
+            <img
+              class="welcome-img mb-6 animate__animated animate__bounce"
+              src="/assets/images/onboarding/onboarding_welcome.png"
+              alt="welcome"
+            />
+            <p class="animate__animated animate__fadeInUp animate__delay-1s text-new-color-2 mb-6">
+              準備好了嗎？<br />
+              現在先花點時間認識自己，<br />
+              接下來我們一起踏上屬於你的成長旅程。<br />
+            </p>
+            <p class="animate__animated animate__fadeInUp animate__delay-2s text-new-color-2">想更了解自己的情緒，跟它做朋友嗎？</p>
+          </div>
+          <div class="px-6">
+            <a
+              class="btn-start fs-t2 fw-bold text-center text-white py-4 px-6 w-100 mb-35 d-block text-decoration-none"
+              href="role-stepform1.html"
+              >開始吧！</a
+            >
+          </div>
+        </section>
+      </div>
+      <div class="role-bar-item"></div>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+    <script type="module">
+      import { initScores } from "../role.js";
+
+      document.getElementById("startBtn").addEventListener("click", () => {
+        initScores();
+      });
+    </script>
+  </body>
+</html>

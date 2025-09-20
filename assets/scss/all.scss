@@ -1,8 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import "/assets/scss/utils/font";
 @import "../../node_modules/bootstrap/scss/functions";
 @import './utils/variables';
 @import "../../node_modules/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import "/assets/scss/utils/button";
 
+@import './utils/utils.scss';
+@import './base/base.scss';
+
+// layout
 @import './layout/header.scss';
 @import './layout/footer.scss';
 
-@import './pages/index.scss';
+// pages
+@import './pages/index';
+@import './pages/role';
+@import './pages/record';
+@import './pages/chat';
+@import './pages/login';
+@import './pages/getcard';
+@import './pages/award';
+@import './pages/Homepage'

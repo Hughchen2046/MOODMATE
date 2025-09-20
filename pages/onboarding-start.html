@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_document" />
+    <title>Onboarding-start</title>
+</head>
+
+<body class="bg-black d-flex justify-content-center align-items-center page-home">
+    <div class="device">
+        <div class="screen">
+            <section class="onboarding-background d-flex flex-column justify-content-between">
+                <%- include('./layout/header-role'); -%>
+                    <div class="mt-8 px-6 py-120 text-center item-group sm-fix"
+                        xyz="fade-100% down-2 duration-3 stagger-5 ease-in">
+                        <img src="/assets/images/index/seeding-img.png" alt="" class="w-100 mb-6 xyz-in">
+                        <h2 class="text-color-new-1 mb-4 xyz-in">歡迎來到<br>Moodmate!</h2>
+                        <p class="fs-t1 text-color-new-2 fw-bold xyz-in">這裡是你與情緒好好對話的起點</p>
+                    </div>
+                    <div class="px-6 text-center">
+                        <a href="onboarding-check.html"
+                            class="btn-pri fs-t2 fw-bold text-white py-4 mb-9 w-100 d-block text-decoration-none">下一步</a>
+                    </div>
+                    <div class="onboarding-bar-item"></div>
+            </section>
+        </div>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="../chat.js"></script>
+</body>
+
+</html>

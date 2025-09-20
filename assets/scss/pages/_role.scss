@@ -1,0 +1,450 @@
+.role-bg {
+    border-radius: 2.9rem;
+    min-height: 790px;
+    min-width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #FFF4E5 0%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+    @include media-breakpoint-down(sm) {
+        border-radius: 0;
+        max-width: 100%;
+    }
+}
+
+.role-nav-header {
+    position: absolute;
+    width: 100%;
+    height: 71px;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+}
+
+.role-nav-footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 49px;
+    z-index: 1050;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.role-nav-footer button {
+  width: calc(100% - 48px);
+  margin: 0 24px;
+}
+
+// 新增 main 區塊可滾動
+.screen main.scroll {
+  position: absolute;
+  top: 95px;    // header 高度
+  bottom: 83px; // footer 高度
+  left: 0;
+  right: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mt-95 {
+    margin-top: 95px;
+}
+
+.welcome-img {
+    max-width: 342px;
+    min-height: 210px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.text {
+    &-title, &-new-color-1 {
+        color: #64483e;
+    }
+    &-subTitle, &-new-color-2 {
+        color: #A67668;
+    }
+}
+
+.py-08 {
+    padding-top: .8125rem;
+    padding-bottom: .8125rem;
+}
+
+.py-148 {
+    padding-top: 148px;
+    padding-bottom: 148px;
+}
+
+.pt-148 {
+    padding-top: 148px;
+}
+
+.pb-113 {
+    padding-bottom: 113px;
+}
+
+
+.pt-48 {
+    padding-top: 48px;
+}
+
+.pb-77 {
+    padding-bottom: 77px;
+}
+
+.pb-125 {
+    padding-bottom: 125px;
+}
+
+.pb-200 {
+    padding-bottom: 240px;
+}
+
+.mt-48 {
+    margin-top: 48px;
+}
+
+.mb-14 {
+    margin-bottom: 14px;
+}
+
+.mb-35 {
+    margin-bottom: 35px;
+}
+
+.mb-125 {
+    margin-bottom: 125px;
+}
+
+.lh-145 {
+    line-height: 1.45;
+}
+
+.scroll-area {
+    overflow-y: hidden;
+    height: calc(100vh - 5px) !important;
+}
+
+.footer-area {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 48px;
+}
+
+.btn-start, .btn-done {
+    background-color: #4DB1B4;
+    border-radius: $border-radius-pill;
+    min-width: 140px;
+    &:hover, &:focus {
+        background-color: #379DA2;
+        box-shadow: 0 0 0 4px #d5f2f180;
+    }
+    &:active {
+        background-color: #27747A;
+    }
+}
+
+.btn-next {
+    background-color: #7D594E;
+    border-radius: $border-radius-pill;
+    min-width: 140px;
+    &:hover, &:focus {
+        background-color: #7D594E;
+        box-shadow: 0 0 4px #FCF3EE;
+    }
+    &:active {
+        background-color: #64483E;
+    }
+    &:disabled {
+        background-color: #7D594E;
+        opacity: 0.4;
+        cursor: none;
+    }
+}
+
+.role-bar-item {
+    border-radius: $border-radius-pill;
+    position: absolute;
+    width: 134px;
+    height: 5px;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
+    background: $gray-400;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+
+
+// 共用 mixin
+.step-bar-item, .active-bar-item {
+    width: 54.5px;
+    height: 8px;
+    border-radius: $border-radius-pill;
+}
+
+// bar item 樣式
+.step-bar-item {
+    background-color: #ffffff;
+}
+
+.active-bar-item {
+    background-color: #D8B9AC;
+}
+
+.role-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+a.pre,
+a.next {
+    color: #64483E;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.step-bar-item,
+.active-bar-item {
+    flex: 1 1 auto;     // 可以縮放
+    max-width: 70px;    // 最大 70px
+    height: 8px;
+    border-radius: 1000px;
+}
+
+.step-bar-item {
+    background-color: $white;
+}
+
+.active-bar-item {
+    background-color: $seccolor-400;
+}
+
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.form-check {
+    padding-left: 0;
+}
+
+// Step 1
+.situation-select {
+    background-color: $white;
+    color: #64483e;
+    text-wrap: nowrap;
+    border: 1px solid $seccolor-400;
+    border-radius: 8px;
+    transition:
+        background-color 0.3s,
+        border 0.3s; /* 添加平滑过渡效果 */
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #fcf3ee;
+        border: 1px solid $seccolor-400;
+        border-radius: 8px;
+    }
+}
+
+// Step 4
+.btn-kidney {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .kidney-wrapper {
+        border-radius: 50%;
+        border: 2px solid transparent; // 預設無邊框
+        padding: 4px; // 讓邊框和圖片分開一點
+        transition: border 0.3s;
+    }
+
+    .kidney-image {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: block;
+    }
+
+    .kidney-label {
+        display: none; /* 預設不顯示 */
+        margin-top: -12px;
+        background-color: #A67668;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    &.active {
+        .kidney-wrapper {
+            border: 2px solid #A67668;
+        }
+        .kidney-label {
+            display: block;
+        }
+    }
+}
+
+.content-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.content-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.content-comment {
+    text-align: center;
+    background-color: $white;
+    border: 1px solid $seccolor-400;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.content-talk {
+    background-color: #fcf3ee;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.label {
+    position: absolute;
+    background: $white;
+    border: 1px solid $seccolor-400;
+    border-radius: 1000px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 16px rgba(28, 83, 74, 0.1);
+    font-size: 16px;
+    color: #5a3d34;
+    white-space: nowrap;
+}
+
+/* 位置調整 */
+/* Bubu */
+.label.left {
+    right: 176px;
+    top: 60px;
+}
+
+.label.top-right {
+    left: 171px;
+    top: 28px;
+}
+
+.label.bottom-right {
+    left: 143px;
+    bottom: 18px;
+}
+
+/* Toki */
+.label.toki-left {
+    right: 172px;
+    top: 72px;
+}
+
+.label.toki-top-right {
+    left: 171px;
+    top: 28px;
+}
+
+.label.toki-bottom-right {
+    left: 143px;
+    bottom: 18px;
+}
+
+/* Lumi */
+.label.lumi-left {
+    right: 149px;
+    top: 111px;
+}
+
+.label.lumi-top-right {
+    left: 149px;
+    top: 11px;
+}
+
+.label.lumi-bottom-right {
+    left: 157px;
+    bottom: 18px;
+}
+
+/* Yoyo */
+.label.yoyo-left {
+    right: 160px;
+    top: 111px;
+}
+
+.label.yoyo-top-right {
+    left: 149px;
+    top: 11px;
+}
+
+.label.yoyo-bottom-right {
+    left: 170px;
+    bottom: 64px;
+}
+
+.role-content {
+    width: 100%;
+    padding: 24px;
+    background-color: $white;
+    border: 1px solid $seccolor-400;
+    text-align: center;
+}
+
+.form-check input[type="checkbox"] {
+    opacity: 0; /* 隐藏默认的复选框 */
+    width: 20px;
+    height: 20px;
+    position: absolute; /* 使用绝对定位避免影响布局 */
+    cursor: pointer;
+}
+
+.form-check input[type="checkbox"]:checked + .situation-select {
+    background-color: #fcf3ee; /* 选中时的背景色 */
+    color: #64483e; /* 选中时保持文字颜色不变 */
+    border: 1px solid $seccolor-400; /* 选中时的边框 */
+}
+
+/* 全螢幕 loading 遮罩 */
+#loadingOverlay {
+    position: fixed;
+    inset: 0; /* top, right, bottom, left = 0 */
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050; /* 高於 modal */
+    display: none; /* 預設隱藏 */
+}
+
+.load-img {
+    margin-bottom: 10px;
+}

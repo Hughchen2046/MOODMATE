@@ -1,3 +1,99 @@
-.index-title {
-  font-size: 100px;
+.index-background {
+    min-width: 100%;
+    height: 100%;
+    background-image: url(/assets/images/index/index-background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.onboarding-background {
+    min-width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #FFF4E5 0%, #FFFFFF 100%);
+    position: relative;
+
+}
+
+.py-120 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.py-150 {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.h-70p {
+    height: 70px;
+}
+
+.draw-card-title {
+    background: #379DA2;
+    color: #fff;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.draw-card-title-text{
+    border: 1px dashed #79CFCE;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;    
+    border-bottom: 0px;
+    padding: 16px;
+}
+.draw-body{
+    background: #FCF3EE;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;   
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;     
+    cursor: pointer;
+}
+.draw-area {
+    background: #FCF3EE;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;        
+    padding: 24px;
+    border: 1px dashed #D8B9AC;    
+}
+
+#pad {
+    width: 100%;
+    height: 190px;
+    display: block;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #EFEFEF;
+    touch-action: none;
+}
+.onboarding-bar-item {
+    border-radius: $border-radius-pill;
+    position: absolute;
+    width: 134px;
+    height: 5px;
+    left: 50%;
+    bottom: .5rem;
+    transform: translateX(-50%);
+    background: $gray-400;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+.scrollbar-hidden {
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+@media (max-width: 476px) {
+    .sm-fix {
+        margin-top: 0 !important;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
 }
